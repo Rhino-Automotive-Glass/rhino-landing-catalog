@@ -13,58 +13,85 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 0);
+      setIsScrolled(scrollPosition > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header 
       className={`
-        fixed top-0 left-0 right-0 
-        z-50
+        fixed top-0 left-0 right-0 z-50
         transition-all duration-300 ease-in-out
         ${isScrolled 
-          ? 'bg-white shadow-md py-2' 
-          : 'bg-gradient-to-bl from-blue-500 to-blue-900 py-2'}
+          ? 'bg-white/95 backdrop-blur-md shadow-lg py-3 border-b border-secondary-200' 
+          : 'bg-transparent py-4'}
       `}
     >
-      <div className="flex flex-col md:flex-row justify-between items-center p-6 py-0">
-        {/* Title */}
-        <h1 
-          className={`
-            text-center
-            md:text-left
-            sm:min-w-[450px]
-            m-2
-            text-2xl font-semibold
-            transition-all duration-300
-            ${isScrolled ? 'text-gray-800' : 'text-white'}
-          `}
-        >
-          {title}
-        </h1>
-        <div className="flex w-full" />
-        <CTAButton 
-          label="Agenda una visita"
-          page_location="tel:+525527488329"
-          button_name="Header_button"
-          className="
-            p-3
-            m-2
-            w-full
-            lg:max-w-[250px]
-            text-lg
-            bg-blue-300
-            rounded-lg 
-            transition-all duration-300
-            text-lg"
-        />
+      <div className="max-w-7xl mx-auto container-padding">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* Logo/Title */}
+          <div className="flex items-center space-x-3">
+            <div className={`
+              w-10 h-10 rounded-lg flex items-center justify-center font-bold text-lg
+              transition-all duration-300
+              ${isScrolled 
+                ? 'bg-primary-600 text-white' 
+                : 'bg-white/20 text-white backdrop-blur-sm'}
+            `}>
+              R
+            </div>
+            <h1 
+              className={`
+                text-xl md:text-2xl font-bold tracking-tight
+                transition-all duration-300
+                ${isScrolled ? 'text-secondary-900' : 'text-white'}
+              `}
+            >
+              {title}
+            </h1>
+          </div>
+
+          {/* Navigation & CTA */}
+          <div className="flex items-center space-x-6">
+            {/* Navigation Links (hidden on mobile) */}
+            <nav className="hidden lg:flex items-center space-x-6">
+              <a 
+                href="#catalogo" 
+                className={`
+                  text-sm font-medium transition-colors duration-300 hover:text-accent-500
+                  ${isScrolled ? 'text-secondary-600' : 'text-blue-100'}
+                `}
+              >
+                Catálogo
+              </a>
+              <a 
+                href="#contacto" 
+                className={`
+                  text-sm font-medium transition-colors duration-300 hover:text-accent-500
+                  ${isScrolled ? 'text-secondary-600' : 'text-blue-100'}
+                `}
+              >
+                Contacto
+              </a>
+            </nav>
+
+            {/* CTA Button */}
+            <CTAButton 
+              label="Llamar Ahora"
+              page_location="tel:+525527488329"
+              button_name="Header_CTA"
+              className={`
+                btn btn-md font-semibold transition-all duration-300
+                ${isScrolled 
+                  ? 'btn-primary shadow-sm' 
+                  : 'bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500 shadow-lg'}
+              `}
+            />
+          </div>
+        </div>
       </div>
     </header>
   );

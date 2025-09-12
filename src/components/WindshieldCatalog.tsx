@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import vehicleObjects from '@/config/vehicles'
+import { Search, Filter, Grid3X3, List } from 'lucide-react'
 
 // Types
 interface ProductItem {
@@ -68,6 +69,8 @@ const manufacturers: Manufacturer[] = Array.from(
 
 export function WindshieldCatalog() {
   const [selectedManufacturer, setSelectedManufacturer] = useState<Manufacturer | 'Todos'>('Todos')
+  const [searchTerm, setSearchTerm] = useState('')
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
   // Calculate counts for each manufacturer
   const manufacturerCounts = useMemo(() => {
@@ -78,52 +81,107 @@ export function WindshieldCatalog() {
     return counts
   }, [])
 
-  // Filter data based on selected manufacturer
+  // Filter data based on selected manufacturer and search term
   const filteredProducts = useMemo(() => {
-    if (selectedManufacturer === 'Todos') return allProducts
-    return allProducts.filter(item => item.manufacturer === selectedManufacturer)
-  }, [selectedManufacturer])
+    let filtered = allProducts
+
+    // Filter by manufacturer
+    if (selectedManufacturer !== 'Todos') {
+      filtered = filtered.filter(item => item.manufacturer === selectedManufacturer)
+    }
+
+    // Filter by search term
+    if (searchTerm) {
+      filtered = filtered.filter(item => 
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.manufacturer.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    }
+
+    return filtered
+  }, [selectedManufacturer, searchTerm])
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Catálogo de Parabrisas
-            </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Encuentra el parabrisas perfecto para tu vehículo. Somos fabricantes de la mayor variedad 
-              de cristales automotrices para todas las marcas y modelos.
-            </p>
+    <section id="catalogo" className="section-padding bg-secondary-50">
+      <div className="max-w-7xl mx-auto container-padding">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+            Catálogo de Parabrisas
+          </h2>
+          <p className="text-lg text-secondary-600 max-w-3xl mx-auto leading-relaxed">
+            Encuentra el parabrisas perfecto para tu vehículo. Somos fabricantes de la mayor variedad 
+            de cristales automotrices para todas las marcas y modelos.
+          </p>
+        </div>
+
+        {/* Search and Filters */}
+        <div className="mb-8 space-y-4">
+          <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+            {/* Search Bar */}
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Buscar por modelo o marca..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus-ring bg-white"
+              />
+            </div>
+
+            {/* View Toggle */}
+            <div className="flex items-center space-x-2 bg-white rounded-lg border border-secondary-300 p-1">
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`p-2 rounded-md transition-colors ${
+                  viewMode === 'grid' 
+                    ? 'bg-primary-600 text-white' 
+                    : 'text-secondary-600 hover:bg-secondary-100'
+                }`}
+              >
+                <Grid3X3 className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => setViewMode('list')}
+                className={`p-2 rounded-md transition-colors ${
+                  viewMode === 'list' 
+                    ? 'bg-primary-600 text-white' 
+                    : 'text-secondary-600 hover:bg-secondary-100'
+                }`}
+              >
+                <List className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex gap-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Sidebar Filter */}
-          <div className="w-48 lg:w-64 flex-shrink-0">
-            <div className="sticky top-4 bg-white rounded-lg shadow-md p-6 border border-gray-200">
-              <h3 className="font-semibold text-gray-900 mb-4">
-                Filtrar por Marca
-              </h3>
+          <div className="lg:w-72 flex-shrink-0">
+            <div className="card p-6 sticky top-24">
+              <div className="flex items-center space-x-2 mb-6">
+                <Filter className="w-5 h-5 text-secondary-600" />
+                <h3 className="font-semibold text-secondary-900">
+                  Filtrar por Marca
+                </h3>
+              </div>
               
               <div className="space-y-2">
                 {/* All Manufacturers Option */}
-                <label className="flex items-center p-2 rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                <label className="flex items-center p-3 rounded-lg cursor-pointer hover:bg-secondary-50 transition-colors group">
                   <input
                     type="radio"
                     name="manufacturer"
                     value="Todos"
                     checked={selectedManufacturer === 'Todos'}
                     onChange={(e) => setSelectedManufacturer(e.target.value as 'Todos')}
-                    className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                    className="w-4 h-4 text-primary-600 border-secondary-300 focus:ring-primary-500"
                   />
-                  <span className="ml-3 text-sm text-gray-700 flex-1">Todos</span>
-                  <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+                  <span className="ml-3 text-sm font-medium text-secondary-700 flex-1 group-hover:text-secondary-900">
+                    Todas las marcas
+                  </span>
+                  <span className="bg-secondary-100 text-secondary-600 text-xs px-2 py-1 rounded-full font-medium">
                     {manufacturerCounts['Todos']}
                   </span>
                 </label>
@@ -132,7 +190,7 @@ export function WindshieldCatalog() {
                 {manufacturers.map(manufacturer => (
                   <label
                     key={manufacturer}
-                    className="flex items-center p-2 rounded-md cursor-pointer hover:bg-gray-50 transition-colors"
+                    className="flex items-center p-3 rounded-lg cursor-pointer hover:bg-secondary-50 transition-colors group"
                   >
                     <input
                       type="radio"
@@ -140,10 +198,12 @@ export function WindshieldCatalog() {
                       value={manufacturer}
                       checked={selectedManufacturer === manufacturer}
                       onChange={(e) => setSelectedManufacturer(e.target.value as Manufacturer)}
-                      className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                      className="w-4 h-4 text-primary-600 border-secondary-300 focus:ring-primary-500"
                     />
-                    <span className="ml-3 text-sm text-gray-700 flex-1">{manufacturer}</span>
-                    <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+                    <span className="ml-3 text-sm font-medium text-secondary-700 flex-1 group-hover:text-secondary-900">
+                      {manufacturer}
+                    </span>
+                    <span className="bg-secondary-100 text-secondary-600 text-xs px-2 py-1 rounded-full font-medium">
                       {manufacturerCounts[manufacturer]}
                     </span>
                   </label>
@@ -152,87 +212,132 @@ export function WindshieldCatalog() {
             </div>
           </div>
 
-          {/* Product Grid */}
+          {/* Product Grid/List */}
           <div className="flex-1">
             {/* Results Header */}
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-xl font-semibold text-gray-900">
-                  Productos
-                </h2>
-                <p className="text-sm text-gray-600 mt-1">
+                <h3 className="text-xl font-semibold text-secondary-900">
+                  Productos Disponibles
+                </h3>
+                <p className="text-sm text-secondary-600 mt-1">
                   Mostrando {filteredProducts.length} de {allProducts.length} productos
+                  {searchTerm && ` para "${searchTerm}"`}
                 </p>
               </div>
             </div>
 
-            {/* Product Grid */}
+            {/* Product Grid/List */}
             {filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className={`${
+                viewMode === 'grid' 
+                  ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
+                  : 'space-y-4'
+              }`}>
                 {filteredProducts.map((item) => (
-                  <div
-                    key={item.id}
-                    className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-                  >
-                    <div className="aspect-[7/3] pt-5 overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
-                          {item.manufacturer}
-                        </span>
+                  viewMode === 'grid' ? (
+                    // Grid View
+                    <div
+                      key={item.id}
+                      className="card card-hover overflow-hidden group cursor-pointer"
+                    >
+                      <div className="aspect-[7/3] overflow-hidden bg-secondary-100">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
                       </div>
-                      <h3 className="text-sm font-medium text-gray-900 line-clamp-2">
-                        {item.title}
-                      </h3>
+                      <div className="p-5">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="inline-block bg-primary-100 text-primary-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            {item.manufacturer}
+                          </span>
+                        </div>
+                        <h4 className="text-sm font-medium text-secondary-900 line-clamp-2 leading-relaxed">
+                          {item.title}
+                        </h4>
+                        <div className="mt-4 pt-4 border-t border-secondary-100">
+                          <button className="btn btn-sm btn-primary w-full">
+                            Ver Detalles
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    // List View
+                    <div
+                      key={item.id}
+                      className="card p-6 hover:shadow-md transition-shadow cursor-pointer"
+                    >
+                      <div className="flex items-center space-x-6">
+                        <div className="w-24 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-secondary-100">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h4 className="text-base font-medium text-secondary-900 mb-1">
+                                {item.title}
+                              </h4>
+                              <span className="inline-block bg-primary-100 text-primary-800 text-xs font-semibold px-2 py-1 rounded">
+                                {item.manufacturer}
+                              </span>
+                            </div>
+                            <button className="btn btn-sm btn-primary ml-4">
+                              Ver Detalles
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
                 ))}
               </div>
             ) : (
               /* Empty State */
-              <div className="text-center py-12">
+              <div className="text-center py-16">
                 <div className="max-w-md mx-auto">
-                  <div className="mx-auto h-24 w-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                    <svg
-                      className="h-12 w-12 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                  <div className="mx-auto w-24 h-24 bg-secondary-100 rounded-full flex items-center justify-center mb-6">
+                    <Search className="w-12 h-12 text-secondary-400" />
                   </div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-secondary-900 mb-3">
                     No se encontraron productos
                   </h3>
-                  <p className="text-gray-500 mb-4">
-                    No hay productos que coincidan con los filtros seleccionados.
+                  <p className="text-secondary-600 mb-6 leading-relaxed">
+                    {searchTerm 
+                      ? `No hay productos que coincidan con "${searchTerm}"`
+                      : 'No hay productos que coincidan con los filtros seleccionados.'}
                   </p>
-                  <button
-                    onClick={() => {
-                      setSelectedManufacturer('Todos')
-                    }}
-                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
-                  >
-                    Limpiar filtros
-                  </button>
+                  <div className="space-x-3">
+                    {searchTerm && (
+                      <button
+                        onClick={() => setSearchTerm('')}
+                        className="btn btn-secondary btn-md"
+                      >
+                        Limpiar búsqueda
+                      </button>
+                    )}
+                    <button
+                      onClick={() => {
+                        setSelectedManufacturer('Todos')
+                        setSearchTerm('')
+                      }}
+                      className="btn btn-primary btn-md"
+                    >
+                      Ver todos los productos
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
