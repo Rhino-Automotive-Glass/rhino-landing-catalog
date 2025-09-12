@@ -9,7 +9,7 @@ export function Location() {
     address: "Calzada Acozac 13",
     city: "Ixtapaluca",
     postalCode: "56530",
-    phone: "‪+52 55 2748 8329‬",
+    phone: "+52 55 2748 8329",
     email: "info@rhinoautomotive.com",
     coordinates: {
       lat: 19.321183350618767,
