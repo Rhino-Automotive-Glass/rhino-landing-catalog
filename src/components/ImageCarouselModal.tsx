@@ -22,6 +22,9 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
 
+  // Escape characters that have special meaning in RegExp
+  const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
   // Parse filename to extract clave and dimensiones
   const parseFilename = (filename: string): { clave: string; dimensiones: string } => {
     // Remove .png extension
@@ -49,14 +52,19 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
     if (afterYears.length >= 2) {
       // Clave is typically the next part after years (like FB, FD, etc.) + number
       const clave = afterYears[0] + '-' + afterYears[1]
-      
-      // Dimensiones is typically the last part (contains X)
-      const dimensiones = afterYears[afterYears.length - 1]
-      
+
+      // Dimensiones pattern: [LL]-[5 digits]-[3 digits]x[3 digits]
+      // Example: RENAULT-KANGOO-2023-2024-FB-20075-790X476-MEDALLON-IZQUIERDO
+      const dimensionesMatch = nameWithoutExt.match(/[A-Z]{2}-\d{5}-(\d{3,4})[xX](\d{3,4})/i)
+      const dimensiones = dimensionesMatch ? `${dimensionesMatch[1]}x${dimensionesMatch[2]}` : ''
+
       return { clave, dimensiones }
     }
-    
-    return { clave: '', dimensiones: '' }
+
+    // If we cannot parse expected segments, attempt dimensiones best-effort on full name
+    const fallbackMatch = nameWithoutExt.match(/(\d{3,4})[xX](\d{3,4})/)
+    const fallbackDim = fallbackMatch ? `${fallbackMatch[1]}x${fallbackMatch[2]}` : ''
+    return { clave: '', dimensiones: fallbackDim }
   }
 
   // Fetch matching images when modal opens
@@ -77,14 +85,14 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
         const allImages: string[] = await response.json()
         
         // Filter images that match the vehicle model (case-insensitive, exact word match)
-        const modelRegex = new RegExp(`\\b${vehicleModel}\\b`, 'i')
+        const modelRegex = new RegExp(`\\b${escapeRegExp(vehicleModel)}\\b`, 'i')
         let matchingImages = allImages.filter(filename => 
           modelRegex.test(filename)
         )
         
         // If year range is provided, also filter by year range
         if (yearRange) {
-          const yearRangeRegex = new RegExp(yearRange.replace('-', '-'), 'i')
+          const yearRangeRegex = new RegExp(escapeRegExp(yearRange), 'i')
           matchingImages = matchingImages.filter(filename => 
             yearRangeRegex.test(filename)
           )
@@ -201,7 +209,7 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
                   <img
                     src={images[currentIndex].src}
                     alt={`Cristal ${currentIndex + 1}`}
-                    className="max-w-full max-h-full object-contain"
+                    className="w-[150%] h-[150%] object-contain"
                     onError={(e) => {
                     const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
