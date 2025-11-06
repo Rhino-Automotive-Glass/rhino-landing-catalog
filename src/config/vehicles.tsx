@@ -154,22 +154,22 @@ const vehicleObjects = [
     },
     {
       id: 'v18',
-      model: 'sprinter1',
+      model: 'sprinter',
       yearStart: '2008',
       yearEnd: '2018',
       side: 'lado',
-      image: 'mercedes-sprinter1-2008-2018-lado.png',
+      image: 'mercedes-sprinter-2008-2018-lado.png',
       manufacturer: 'Mercedes'
     },
-    {
-      id: 'v19',
-      model: 'sprinter2',
-      yearStart: '2008',
-      yearEnd: '2018',
-      side: 'lado',
-      image: 'mercedes-sprinter2-2008-2018-lado.png',
-      manufacturer: 'Mercedes'
-    },
+    // {
+    //   id: 'v19',
+    //   model: 'sprinter2',
+    //   yearStart: '2008',
+    //   yearEnd: '2018',
+    //   side: 'lado',
+    //   image: 'mercedes-sprinter2-2008-2018-lado.png',
+    //   manufacturer: 'Mercedes'
+    // },
     {
       id: 'v20',
       model: 'sprinter3',
