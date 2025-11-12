@@ -3223,6 +3223,25 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FB-20043-780X551-MEDALLON-IZQUIERDO.PNG"
   },
   {
+    "filename": "PEUGEOT-PARTNER-2023-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.PNG",
+    "brand": "PEUGEOT",
+    "model": "PARTNER",
+    "submodels": [
+      "PARTNER"
+    ],
+    "startYear": 2023,
+    "endYear": 2024,
+    "windowCode": "FD",
+    "windowNumber": "20036",
+    "size": {
+      "width": 784,
+      "height": 500,
+      "raw": "784X500"
+    },
+    "description": "PUERTA-DELANTERA-DERECHA",
+    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.PNG"
+  },
+  {
     "filename": "PEUGEOT-PARTNER-2023-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.PNG",
     "brand": "PEUGEOT",
     "model": "PARTNER",
@@ -3240,25 +3259,6 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
     "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.PNG"
-  },
-  {
-    "filename": "PEUGEOT-PARTNER-2023-2024-FD20036-784X500-PUERTA-DELANTERA-DERECHA.PNG",
-    "brand": "PEUGEOT",
-    "model": "PARTNER",
-    "submodels": [
-      "PARTNER"
-    ],
-    "startYear": 2023,
-    "endYear": 2024,
-    "windowCode": "FD20036",
-    "windowNumber": "784X500",
-    "size": {
-      "width": 0,
-      "height": 0,
-      "raw": "PUERTA"
-    },
-    "description": "DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FD20036-784X500-PUERTA-DELANTERA-DERECHA.PNG"
   },
   {
     "filename": "PEUGEOT-RIFTER-2022-2024-DQ-20038-830X488-TRASERA-DERECHA.PNG",
@@ -3354,6 +3354,63 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
     "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.PNG"
+  },
+  {
+    "filename": "RAM-PROMASTER-2019-2024-DB-12565-666X829-MEDALLON-IZQUIERDO.PNG",
+    "brand": "RAM",
+    "model": "PROMASTER",
+    "submodels": [
+      "PROMASTER"
+    ],
+    "startYear": 2019,
+    "endYear": 2024,
+    "windowCode": "DB",
+    "windowNumber": "12565",
+    "size": {
+      "width": 666,
+      "height": 829,
+      "raw": "666X829"
+    },
+    "description": "MEDALLON-IZQUIERDO",
+    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-DB-12565-666X829-MEDALLON-IZQUIERDO.PNG"
+  },
+  {
+    "filename": "RAM-PROMASTER-2019-2024-DB-12566-666X829-MEDALLON-DERECHO.PNG",
+    "brand": "RAM",
+    "model": "PROMASTER",
+    "submodels": [
+      "PROMASTER"
+    ],
+    "startYear": 2019,
+    "endYear": 2024,
+    "windowCode": "DB",
+    "windowNumber": "12566",
+    "size": {
+      "width": 666,
+      "height": 829,
+      "raw": "666X829"
+    },
+    "description": "MEDALLON-DERECHO",
+    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-DB-12566-666X829-MEDALLON-DERECHO.PNG"
+  },
+  {
+    "filename": "RAM-PROMASTER-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG",
+    "brand": "RAM",
+    "model": "PROMASTER",
+    "submodels": [
+      "PROMASTER"
+    ],
+    "startYear": 2019,
+    "endYear": 2024,
+    "windowCode": "FD",
+    "windowNumber": "20022",
+    "size": {
+      "width": 1400,
+      "height": 665,
+      "raw": "1400X665"
+    },
+    "description": "PUERTA-DELANTERA-DERECHA",
+    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG"
   },
   {
     "filename": "RAM-PROMASTER1500-2019-2024-DB-12565-660X829-MEDALLON-DERECHO.PNG",
@@ -3468,63 +3525,6 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
     "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.PNG"
-  },
-  {
-    "filename": "RAM-PROMASTER2019-2024-DB-12565-666X829-MEDALLON-IZQUIERDO.PNG",
-    "brand": "RAM",
-    "model": "PROMASTER2019",
-    "submodels": [
-      "PROMASTER2019"
-    ],
-    "startYear": 2024,
-    "endYear": 0,
-    "windowCode": "12565",
-    "windowNumber": "666X829",
-    "size": {
-      "width": 0,
-      "height": 0,
-      "raw": "MEDALLON"
-    },
-    "description": "IZQUIERDO",
-    "imagePath": "/detail-glass/RAM-PROMASTER2019-2024-DB-12565-666X829-MEDALLON-IZQUIERDO.PNG"
-  },
-  {
-    "filename": "RAM-PROMASTER2019-2024-DB-12566-666X829-MEDALLON-DERECHO.PNG",
-    "brand": "RAM",
-    "model": "PROMASTER2019",
-    "submodels": [
-      "PROMASTER2019"
-    ],
-    "startYear": 2024,
-    "endYear": 0,
-    "windowCode": "12566",
-    "windowNumber": "666X829",
-    "size": {
-      "width": 0,
-      "height": 0,
-      "raw": "MEDALLON"
-    },
-    "description": "DERECHO",
-    "imagePath": "/detail-glass/RAM-PROMASTER2019-2024-DB-12566-666X829-MEDALLON-DERECHO.PNG"
-  },
-  {
-    "filename": "RAM-PROMASTER2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG",
-    "brand": "RAM",
-    "model": "PROMASTER2019",
-    "submodels": [
-      "PROMASTER2019"
-    ],
-    "startYear": 2024,
-    "endYear": 0,
-    "windowCode": "20022",
-    "windowNumber": "1400X665",
-    "size": {
-      "width": 0,
-      "height": 0,
-      "raw": "PUERTA"
-    },
-    "description": "DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/RAM-PROMASTER2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG"
   },
   {
     "filename": "RAM-PROMASTER2500-2019-2024-DB-12565-6606X829-MEDALLON-DERECHO.PNG",
