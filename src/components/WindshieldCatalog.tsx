@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import vehicleObjects from '@/config/vehicles'
+import { passengerSideGlassData } from '@/config/vehicles'
 import { Search, Filter, Grid3X3, List } from 'lucide-react'
 import { ImageCarouselModal } from './ImageCarouselModal'
 
@@ -16,7 +16,7 @@ interface ProductItem {
 type Manufacturer = 'Chevrolet' | 'Fiat' | 'Ford' | 'Foton' | 'Hyundai' | 'JAC' | 'Mercedes' | 'Nissan' | 'Peugeot' | 'Ram' | 'Renault' | 'Toyota' | 'Volkswagen'
 
 // Transform vehicle data into product format
-const allProducts: ProductItem[] = vehicleObjects.map(vehicle => {
+const allProducts: ProductItem[] = passengerSideGlassData.map(vehicle => {
   // Create a proper title with year range
   const yearRange = vehicle.yearStart && vehicle.yearEnd 
     ? `${vehicle.yearStart}-${vehicle.yearEnd}`
@@ -69,7 +69,7 @@ const allProducts: ProductItem[] = vehicleObjects.map(vehicle => {
 
 // Extract unique manufacturers from the vehicle data
 const manufacturers: Manufacturer[] = Array.from(
-  new Set(vehicleObjects.map(vehicle => vehicle.manufacturer))
+  new Set(passengerSideGlassData.map(vehicle => vehicle.manufacturer))
 ).sort() as Manufacturer[]
 
 export function WindshieldCatalog() {
@@ -82,7 +82,7 @@ export function WindshieldCatalog() {
   // Handle opening modal
   const handleViewDetails = (productItem: ProductItem) => {
     // Find the original vehicle object to get the model
-    const vehicle = vehicleObjects.find(v => v.id === productItem.id)
+    const vehicle = passengerSideGlassData.find(v => v.id === productItem.id)
     if (vehicle) {
       // Create year range string from vehicle data
       const yearRange = vehicle.yearStart && vehicle.yearEnd 

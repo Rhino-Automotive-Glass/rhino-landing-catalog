@@ -123,7 +123,7 @@ export function parseVehicleWindowFilename(filename: string): VehicleWindowImage
  */
 export const vehicleWindowImages: VehicleWindowImage[] = [
   {
-    "filename": "CHEVROLET-TORNADO-2022-2024-DB-13664-1346X491-MEDALLON.PNG",
+    "filename": "CHEVROLET-TORNADO-2022-2024-DB-13664-1346X491-MEDALLON.png",
     "brand": "CHEVROLET",
     "model": "TORNADO",
     "submodels": [
@@ -139,10 +139,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1346X491"
     },
     "description": "MEDALLON",
-    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DB-13664-1346X491-MEDALLON.PNG"
+    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DB-13664-1346X491-MEDALLON.png"
   },
   {
-    "filename": "CHEVROLET-TORNADO-2022-2024-DD-20056-778X465-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "CHEVROLET-TORNADO-2022-2024-DD-20056-778X465-PUERTA-DELANTERA-DERECHA.png",
     "brand": "CHEVROLET",
     "model": "TORNADO",
     "submodels": [
@@ -158,10 +158,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "778X465"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DD-20056-778X465-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DD-20056-778X465-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "CHEVROLET-TORNADO-2022-2024-DD-20057-778X465-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "CHEVROLET-TORNADO-2022-2024-DD-20057-778X465-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "CHEVROLET",
     "model": "TORNADO",
     "submodels": [
@@ -177,10 +177,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "778X465"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DD-20057-778X465-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DD-20057-778X465-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "CHEVROLET-TORNADO-2022-2024-DQ-20058-812X445-COSTADO-TRASERO-DERECHO-A.PNG",
+    "filename": "CHEVROLET-TORNADO-2022-2024-DQ-20058-812X445-COSTADO-TRASERO-DERECHO-A.png",
     "brand": "CHEVROLET",
     "model": "TORNADO",
     "submodels": [
@@ -196,10 +196,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "812X445"
     },
     "description": "COSTADO-TRASERO-DERECHO-A",
-    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DQ-20058-812X445-COSTADO-TRASERO-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DQ-20058-812X445-COSTADO-TRASERO-DERECHO-A.png"
   },
   {
-    "filename": "CHEVROLET-TORNADO-2022-2024-DQ-20058-812X445-COSTADO-TRASERO-DERECHO-B.PNG",
+    "filename": "CHEVROLET-TORNADO-2022-2024-DQ-20058-812X445-COSTADO-TRASERO-DERECHO-B.png",
     "brand": "CHEVROLET",
     "model": "TORNADO",
     "submodels": [
@@ -215,10 +215,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "812X445"
     },
     "description": "COSTADO-TRASERO-DERECHO-B",
-    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DQ-20058-812X445-COSTADO-TRASERO-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DQ-20058-812X445-COSTADO-TRASERO-DERECHO-B.png"
   },
   {
-    "filename": "CHEVROLET-TORNADO-2022-2024-DQ-20059-812X445-COSTADO-TRASERO-IZQUIERDO-A.PNG",
+    "filename": "CHEVROLET-TORNADO-2022-2024-DQ-20059-812X445-COSTADO-TRASERO-IZQUIERDO-A.png",
     "brand": "CHEVROLET",
     "model": "TORNADO",
     "submodels": [
@@ -234,10 +234,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "812X445"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-A",
-    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DQ-20059-812X445-COSTADO-TRASERO-IZQUIERDO-A.PNG"
+    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DQ-20059-812X445-COSTADO-TRASERO-IZQUIERDO-A.png"
   },
   {
-    "filename": "CHEVROLET-TORNADO-2022-2024-DQ-20059-812X445-COSTADO-TRASERO-IZQUIERDO-B.PNG",
+    "filename": "CHEVROLET-TORNADO-2022-2024-DQ-20059-812X445-COSTADO-TRASERO-IZQUIERDO-B.png",
     "brand": "CHEVROLET",
     "model": "TORNADO",
     "submodels": [
@@ -253,10 +253,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "812X445"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-B",
-    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DQ-20059-812X445-COSTADO-TRASERO-IZQUIERDO-B.PNG"
+    "imagePath": "/detail-glass/CHEVROLET-TORNADO-2022-2024-DQ-20059-812X445-COSTADO-TRASERO-IZQUIERDO-B.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-DB-12565-660X829-MEDALLON-DERECHO.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-DB-12565-660X829-MEDALLON-DERECHO.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -272,10 +272,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "660X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-DB-12565-660X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-DB-12565-660X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-DB-12565-666X829-MEDALLON-DERECHO.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-DB-12565-666X829-MEDALLON-DERECHO.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -291,10 +291,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-DB-12565-666X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-DB-12565-666X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -310,10 +310,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "660X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-DB-12566-666X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-DB-12566-666X829-MEDALLON-IZQUIERDO.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -329,10 +329,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-DB-12566-666X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-DB-12566-666X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -348,10 +348,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-FD-20060-1230X665-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-FD-20060-1230X665-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -367,10 +367,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1230X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FD-20060-1230X665-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FD-20060-1230X665-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-FD-20061-1267X665-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-FD-20061-1267X665-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -386,10 +386,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1267X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FD-20061-1267X665-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FD-20061-1267X665-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-FQ-20062-1260X580-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-FQ-20062-1260X580-COSTADO-TRASERO-DERECHO.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -405,10 +405,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1260X580"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FQ-20062-1260X580-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FQ-20062-1260X580-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FIAT-DUCATO-2015-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "FIAT-DUCATO-2015-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "FIAT",
     "model": "DUCATO",
     "submodels": [
@@ -424,10 +424,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1260X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-2015-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024- DB-12565-660X829-MEDALLON-DERECHO.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024- DB-12565-660X829-MEDALLON-DERECHO.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -445,10 +445,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "660X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024- DB-12565-660X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024- DB-12565-660X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -466,10 +466,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "660X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-DQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-DQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -487,10 +487,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X665"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-A",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-DQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-DQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-DQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-DQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -508,10 +508,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X665"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-B",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-DQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-DQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -529,10 +529,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA-A",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -550,10 +550,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA-B",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -571,10 +571,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-A",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -592,10 +592,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-B",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20026-1135X665-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FD-20026-1135X665-COSTADO-TRASERO-DERECHO.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -613,10 +613,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20026-1135X665-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FD-20026-1135X665-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -634,10 +634,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X585"
     },
     "description": "COSTADO-CENTRAL-DERECHO-A",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -655,10 +655,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X585"
     },
     "description": "COSTADO-CENTRAL-DERECHO-B",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -676,10 +676,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -697,10 +697,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-A",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.png"
   },
   {
-    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.PNG",
+    "filename": "FIAT-DUCATO-MAXI-18-2015-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.png",
     "brand": "FIAT",
     "model": "DUCATO-MAXI-18",
     "submodels": [
@@ -718,15 +718,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-B",
-    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.PNG"
+    "imagePath": "/detail-glass/FIAT-DUCATO-MAXI-18-2015-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.png"
   },
   {
-    "filename": "FORD-TRANSIT-100.8-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-100HP8V-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.png",
     "brand": "FORD",
-    "model": "TRANSIT-100.8",
+    "model": "TRANSIT-100HP8V",
     "submodels": [
       "TRANSIT",
-      "100.8"
+      "100HP8V"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -738,15 +738,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "798X840"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-100.8-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-100HP8V-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-100.8-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-100HP8V-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.png",
     "brand": "FORD",
-    "model": "TRANSIT-100.8",
+    "model": "TRANSIT-100HP8V",
     "submodels": [
       "TRANSIT",
-      "100.8"
+      "100HP8V"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -758,15 +758,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "798X840"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-100.8-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-100HP8V-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-100.8-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-100HP8V-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FORD",
-    "model": "TRANSIT-100.8",
+    "model": "TRANSIT-100HP8V",
     "submodels": [
       "TRANSIT",
-      "100.8"
+      "100HP8V"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -778,15 +778,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1375X742"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-100.8-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-100HP8V-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-100.8-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-100HP8V-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "FORD",
-    "model": "TRANSIT-100.8",
+    "model": "TRANSIT-100HP8V",
     "submodels": [
       "TRANSIT",
-      "100.8"
+      "100HP8V"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -798,15 +798,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1375X742"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-100.8-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-100HP8V-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-100.8-2015-2024-DQ-12346-980X725-CENTRAL-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-100HP8V-2015-2024-DQ-12346-980X725-CENTRAL-DERECHO.png",
     "brand": "FORD",
-    "model": "TRANSIT-100.8",
+    "model": "TRANSIT-100HP8V",
     "submodels": [
       "TRANSIT",
-      "100.8"
+      "100HP8V"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -818,15 +818,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "980X725"
     },
     "description": "CENTRAL-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-100.8-2015-2024-DQ-12346-980X725-CENTRAL-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-100HP8V-2015-2024-DQ-12346-980X725-CENTRAL-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-100.8-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-100HP8V-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.png",
     "brand": "FORD",
-    "model": "TRANSIT-100.8",
+    "model": "TRANSIT-100HP8V",
     "submodels": [
       "TRANSIT",
-      "100.8"
+      "100HP8V"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -838,15 +838,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "980X725"
     },
     "description": "CENTRAL-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-100.8-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-100HP8V-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-100.8-2015-2024-DQ-12908-719X673-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-100HP8V-2015-2024-DQ-12908-719X673-COSTADO-TRASERO-DERECHO.png",
     "brand": "FORD",
-    "model": "TRANSIT-100.8",
+    "model": "TRANSIT-100HP8V",
     "submodels": [
       "TRANSIT",
-      "100.8"
+      "100HP8V"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -858,15 +858,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "719X673"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-100.8-2015-2024-DQ-12908-719X673-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-100HP8V-2015-2024-DQ-12908-719X673-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-100.8-2015-2024-DQ-12909-719X673-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-100HP8V-2015-2024-DQ-12909-719X673-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "FORD",
-    "model": "TRANSIT-100.8",
+    "model": "TRANSIT-100HP8V",
     "submodels": [
       "TRANSIT",
-      "100.8"
+      "100HP8V"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -878,15 +878,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "719X673"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-100.8-2015-2024-DQ-12909-719X673-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-100HP8V-2015-2024-DQ-12909-719X673-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2"
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -898,15 +898,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "798X840"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2"
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -918,15 +918,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "798X840"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2"
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -938,15 +938,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1375X742"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2"
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -958,15 +958,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1375X742"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2-2015-2024-DQ-12346-980X725-CENTRAL-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DQ-12346-980X725-CENTRAL-DERECHA.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2"
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -978,15 +978,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "980X725"
     },
     "description": "CENTRAL-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2-2015-2024-DQ-12346-980X725-CENTRAL-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DQ-12346-980X725-CENTRAL-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2"
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -998,15 +998,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "980X725"
     },
     "description": "CENTRAL-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2-2015-2024-DQ-12352-1374X715-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DQ-12352-1374X715-COSTADO-TRASERO-DERECHO.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2"
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1018,155 +1018,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1374X715"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2-2015-2024-DQ-12352-1374X715-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DQ-12352-1374X715-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2-2015-2024-DQ-12353-1374X715-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DQ-12352L-1400X715-COSTADO-TRASERO-DERECHO.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2"
-    ],
-    "startYear": 2015,
-    "endYear": 2024,
-    "windowCode": "DQ",
-    "windowNumber": "12353",
-    "size": {
-      "width": 1374,
-      "height": 715,
-      "raw": "1374X715"
-    },
-    "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2-2015-2024-DQ-12353-1374X715-COSTADO-TRASERO-IZQUIERDO.PNG"
-  },
-  {
-    "filename": "FORD-TRANSIT-110.2L-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.PNG",
-    "brand": "FORD",
-    "model": "TRANSIT-110.2L",
-    "submodels": [
-      "TRANSIT",
-      "110.2L"
-    ],
-    "startYear": 2015,
-    "endYear": 2024,
-    "windowCode": "DB",
-    "windowNumber": "12354",
-    "size": {
-      "width": 798,
-      "height": 840,
-      "raw": "798X840"
-    },
-    "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2L-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.PNG"
-  },
-  {
-    "filename": "FORD-TRANSIT-110.2L-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG",
-    "brand": "FORD",
-    "model": "TRANSIT-110.2L",
-    "submodels": [
-      "TRANSIT",
-      "110.2L"
-    ],
-    "startYear": 2015,
-    "endYear": 2024,
-    "windowCode": "DB",
-    "windowNumber": "12355",
-    "size": {
-      "width": 798,
-      "height": 840,
-      "raw": "798X840"
-    },
-    "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2L-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG"
-  },
-  {
-    "filename": "FORD-TRANSIT-110.2L-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.PNG",
-    "brand": "FORD",
-    "model": "TRANSIT-110.2L",
-    "submodels": [
-      "TRANSIT",
-      "110.2L"
-    ],
-    "startYear": 2015,
-    "endYear": 2024,
-    "windowCode": "DD",
-    "windowNumber": "12342",
-    "size": {
-      "width": 1375,
-      "height": 742,
-      "raw": "1375X742"
-    },
-    "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2L-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.PNG"
-  },
-  {
-    "filename": "FORD-TRANSIT-110.2L-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.PNG",
-    "brand": "FORD",
-    "model": "TRANSIT-110.2L",
-    "submodels": [
-      "TRANSIT",
-      "110.2L"
-    ],
-    "startYear": 2015,
-    "endYear": 2024,
-    "windowCode": "DD",
-    "windowNumber": "12343",
-    "size": {
-      "width": 1375,
-      "height": 742,
-      "raw": "1375X742"
-    },
-    "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2L-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.PNG"
-  },
-  {
-    "filename": "FORD-TRANSIT-110.2L-2015-2024-DQ-12346-980X725-CENTRAL-DERECHA.PNG",
-    "brand": "FORD",
-    "model": "TRANSIT-110.2L",
-    "submodels": [
-      "TRANSIT",
-      "110.2L"
-    ],
-    "startYear": 2015,
-    "endYear": 2024,
-    "windowCode": "DQ",
-    "windowNumber": "12346",
-    "size": {
-      "width": 980,
-      "height": 725,
-      "raw": "980X725"
-    },
-    "description": "CENTRAL-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2L-2015-2024-DQ-12346-980X725-CENTRAL-DERECHA.PNG"
-  },
-  {
-    "filename": "FORD-TRANSIT-110.2L-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.PNG",
-    "brand": "FORD",
-    "model": "TRANSIT-110.2L",
-    "submodels": [
-      "TRANSIT",
-      "110.2L"
-    ],
-    "startYear": 2015,
-    "endYear": 2024,
-    "windowCode": "DQ",
-    "windowNumber": "12347",
-    "size": {
-      "width": 980,
-      "height": 725,
-      "raw": "980X725"
-    },
-    "description": "CENTRAL-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2L-2015-2024-DQ-12347-980X725-CENTRAL-IZQUIERDA.PNG"
-  },
-  {
-    "filename": "FORD-TRANSIT-110.2L-2015-2024-DQ-12352L-1400X715-COSTADO-TRASERO-DERECHO.PNG",
-    "brand": "FORD",
-    "model": "TRANSIT-110.2L",
-    "submodels": [
-      "TRANSIT",
-      "110.2L"
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1178,15 +1038,35 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X715"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2L-2015-2024-DQ-12352L-1400X715-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DQ-12352L-1400X715-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-110.2L-2015-2024-DQ-12353L-1400X715-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DQ-12353-1374X715-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "FORD",
-    "model": "TRANSIT-110.2L",
+    "model": "TRANSIT-110HP2L",
     "submodels": [
       "TRANSIT",
-      "110.2L"
+      "110HP2L"
+    ],
+    "startYear": 2015,
+    "endYear": 2024,
+    "windowCode": "DQ",
+    "windowNumber": "12353",
+    "size": {
+      "width": 1374,
+      "height": 715,
+      "raw": "1374X715"
+    },
+    "description": "COSTADO-TRASERO-IZQUIERDO",
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DQ-12353-1374X715-COSTADO-TRASERO-IZQUIERDO.png"
+  },
+  {
+    "filename": "FORD-TRANSIT-110HP2L-2015-2024-DQ-12353L-1400X715-COSTADO-TRASERO-IZQUIERDO.png",
+    "brand": "FORD",
+    "model": "TRANSIT-110HP2L",
+    "submodels": [
+      "TRANSIT",
+      "110HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1198,10 +1078,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X715"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-110.2L-2015-2024-DQ-12353L-1400X715-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-110HP2L-2015-2024-DQ-12353L-1400X715-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-2015-2023-DB-12354-798X840-MEDALLON-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-2015-2023-DB-12354-798X840-MEDALLON-DERECHO.png",
     "brand": "FORD",
     "model": "TRANSIT",
     "submodels": [
@@ -1217,10 +1097,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "798X840"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-2015-2023-DB-12354-798X840-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-2015-2023-DB-12354-798X840-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-2015-2023-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-2015-2023-DB-12355-798X840-MEDALLON-IZQUIERDO.png",
     "brand": "FORD",
     "model": "TRANSIT",
     "submodels": [
@@ -1236,10 +1116,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "798X840"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-2015-2023-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-2015-2023-DB-12355-798X840-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-2015-2023-DD-12342-1383X731-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-2015-2023-DD-12342-1383X731-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FORD",
     "model": "TRANSIT",
     "submodels": [
@@ -1255,15 +1135,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1383X731"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-2015-2023-DD-12342-1383X731-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-2015-2023-DD-12342-1383X731-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-83.2-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-83HP2L-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.png",
     "brand": "FORD",
-    "model": "TRANSIT-83.2",
+    "model": "TRANSIT-83HP2L",
     "submodels": [
       "TRANSIT",
-      "83.2"
+      "83HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1275,15 +1155,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "798X840"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-83.2-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-83HP2L-2015-2024-DB-12354-798X840-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-83.2-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-83HP2L-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.png",
     "brand": "FORD",
-    "model": "TRANSIT-83.2",
+    "model": "TRANSIT-83HP2L",
     "submodels": [
       "TRANSIT",
-      "83.2"
+      "83HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1295,15 +1175,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "798X840"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-83.2-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-83HP2L-2015-2024-DB-12355-798X840-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-83.2-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-83HP2L-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FORD",
-    "model": "TRANSIT-83.2",
+    "model": "TRANSIT-83HP2L",
     "submodels": [
       "TRANSIT",
-      "83.2"
+      "83HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1315,15 +1195,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1375X742"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-83.2-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-83HP2L-2015-2024-DD-12342-1375X742-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-83.2-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-83HP2L-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "FORD",
-    "model": "TRANSIT-83.2",
+    "model": "TRANSIT-83HP2L",
     "submodels": [
       "TRANSIT",
-      "83.2"
+      "83HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1335,15 +1215,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1375X742"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-83.2-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-83HP2L-2015-2024-DD-12343-1375X742-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-83.2-2015-2024-DQ-12344-1375X742-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-83HP2L-2015-2024-DQ-12344-1375X742-COSTADO-TRASERO-DERECHO.png",
     "brand": "FORD",
-    "model": "TRANSIT-83.2",
+    "model": "TRANSIT-83HP2L",
     "submodels": [
       "TRANSIT",
-      "83.2"
+      "83HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1355,15 +1235,15 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1375X742"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-83.2-2015-2024-DQ-12344-1375X742-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-83HP2L-2015-2024-DQ-12344-1375X742-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-83.2-2015-2024-DQ-12345-1214X715-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-83HP2L-2015-2024-DQ-12345-1214X715-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "FORD",
-    "model": "TRANSIT-83.2",
+    "model": "TRANSIT-83HP2L",
     "submodels": [
       "TRANSIT",
-      "83.2"
+      "83HP2L"
     ],
     "startYear": 2015,
     "endYear": 2024,
@@ -1375,10 +1255,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1214X715"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-83.2-2015-2024-DQ-12345-1214X715-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-83HP2L-2015-2024-DQ-12345-1214X715-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-CORTA-2007-2014-DD-11536-1175X630-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-CORTA-2007-2014-DD-11536-1175X630-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FORD",
     "model": "TRANSIT-CORTA",
     "submodels": [
@@ -1395,10 +1275,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1175X630"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CORTA-2007-2014-DD-11536-1175X630-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CORTA-2007-2014-DD-11536-1175X630-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-CORTA-2007-2014-DD-11537-1185X630-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-CORTA-2007-2014-DD-11537-1185X630-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "FORD",
     "model": "TRANSIT-CORTA",
     "submodels": [
@@ -1415,10 +1295,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1185X630"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CORTA-2007-2014-DD-11537-1185X630-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CORTA-2007-2014-DD-11537-1185X630-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-CORTA-2007-2014-DQ-11540-1205X625-TRASERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-CORTA-2007-2014-DQ-11540-1205X625-TRASERA-DERECHA.png",
     "brand": "FORD",
     "model": "TRANSIT-CORTA",
     "submodels": [
@@ -1435,10 +1315,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1205X625"
     },
     "description": "TRASERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CORTA-2007-2014-DQ-11540-1205X625-TRASERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CORTA-2007-2014-DQ-11540-1205X625-TRASERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-CORTA-2007-2014-DQ-11541-1205X625-COSTADO-TRASERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-CORTA-2007-2014-DQ-11541-1205X625-COSTADO-TRASERA-IZQUIERDA.png",
     "brand": "FORD",
     "model": "TRANSIT-CORTA",
     "submodels": [
@@ -1455,10 +1335,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1205X625"
     },
     "description": "COSTADO-TRASERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CORTA-2007-2014-DQ-11541-1205X625-COSTADO-TRASERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CORTA-2007-2014-DQ-11541-1205X625-COSTADO-TRASERA-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-DB-12236-690X550-MEDALLON-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-DB-12236-690X550-MEDALLON-DERECHO.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM",
     "submodels": [
@@ -1475,10 +1355,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "690X550"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-DB-12236-690X550-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-DB-12236-690X550-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-DB-12237-690X550-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-DB-12237-690X550-MEDALLON-IZQUIERDO.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM",
     "submodels": [
@@ -1495,10 +1375,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "690X550"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-DB-12237-690X550-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-DB-12237-690X550-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-FD-28414-567X1199-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-FD-28414-567X1199-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM",
     "submodels": [
@@ -1515,10 +1395,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "567X1199"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-FD-28414-567X1199-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-FD-28414-567X1199-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-FD-28415-567X1199-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-FD-28415-567X1199-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM",
     "submodels": [
@@ -1535,10 +1415,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "567X1199"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-FD-28415-567X1199-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-FD-28415-567X1199-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-FQ-28416-1381X502-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-FQ-28416-1381X502-COSTADO-TRASERO-DERECHO.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM",
     "submodels": [
@@ -1555,10 +1435,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1381X502"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-FQ-28416-1381X502-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-FQ-28416-1381X502-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-FQ-28417-1381X502-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-2017-2021-FQ-28417-1381X502-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM",
     "submodels": [
@@ -1575,10 +1455,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1381X502"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-FQ-28417-1381X502-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-2017-2021-FQ-28417-1381X502-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-DB-12236-690X550-MEDALLON-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-DB-12236-690X550-MEDALLON-DERECHO.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM-TDI",
     "submodels": [
@@ -1596,10 +1476,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "690X550"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-DB-12236-690X550-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-DB-12236-690X550-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-DB-12237-690X550-MEDALLON-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-DB-12237-690X550-MEDALLON-IZQUIERDO.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM-TDI",
     "submodels": [
@@ -1617,10 +1497,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "690X550"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-DB-12237-690X550-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-DB-12237-690X550-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-FD-12230-1194X556-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-FD-12230-1194X556-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM-TDI",
     "submodels": [
@@ -1638,10 +1518,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1194X556"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-FD-12230-1194X556-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-FD-12230-1194X556-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-FD-12231-1144X556-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-FD-12231-1144X556-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM-TDI",
     "submodels": [
@@ -1659,10 +1539,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1144X556"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-FD-12231-1144X556-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-FD-12231-1144X556-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-FQ-20095-1013X495-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-FQ-20095-1013X495-COSTADO-TRASERO-DERECHO.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM-TDI",
     "submodels": [
@@ -1680,10 +1560,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1013X495"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-FQ-20095-1013X495-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-FQ-20095-1013X495-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-FQ-20096-1065X500-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "FORD-TRANSIT-CUSTOM-TDI-2016-2021-FQ-20096-1065X500-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "FORD",
     "model": "TRANSIT-CUSTOM-TDI",
     "submodels": [
@@ -1701,10 +1581,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1065X500"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-FQ-20096-1065X500-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-CUSTOM-TDI-2016-2021-FQ-20096-1065X500-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "FORD-TRANSIT-EXTENDIDA-2007-2014-DD-20069-1420X630-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-EXTENDIDA-2007-2014-DD-20069-1420X630-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FORD",
     "model": "TRANSIT-EXTENDIDA",
     "submodels": [
@@ -1721,10 +1601,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1420X630"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-EXTENDIDA-2007-2014-DD-20069-1420X630-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-EXTENDIDA-2007-2014-DD-20069-1420X630-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-EXTENDIDA-2007-2014-DD-20070-1420X630-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-EXTENDIDA-2007-2014-DD-20070-1420X630-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "FORD",
     "model": "TRANSIT-EXTENDIDA",
     "submodels": [
@@ -1741,10 +1621,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1420X630"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-EXTENDIDA-2007-2014-DD-20070-1420X630-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-EXTENDIDA-2007-2014-DD-20070-1420X630-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "FORD-TRANSIT-EXTENDIDA-2007-2014-DQ-20071-1310X575-TRASERA-DERECHA.PNG",
+    "filename": "FORD-TRANSIT-EXTENDIDA-2007-2014-DQ-20071-1310X575-TRASERA-DERECHA.png",
     "brand": "FORD",
     "model": "TRANSIT-EXTENDIDA",
     "submodels": [
@@ -1761,10 +1641,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1310X575"
     },
     "description": "TRASERA-DERECHA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-EXTENDIDA-2007-2014-DQ-20071-1310X575-TRASERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-EXTENDIDA-2007-2014-DQ-20071-1310X575-TRASERA-DERECHA.png"
   },
   {
-    "filename": "FORD-TRANSIT-EXTENDIDA-2007-2014-DQ-20072-1310X630-COSTADO-TRASERA-IZQUIERDA.PNG",
+    "filename": "FORD-TRANSIT-EXTENDIDA-2007-2014-DQ-20072-1310X630-COSTADO-TRASERA-IZQUIERDA.png",
     "brand": "FORD",
     "model": "TRANSIT-EXTENDIDA",
     "submodels": [
@@ -1781,10 +1661,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1310X630"
     },
     "description": "COSTADO-TRASERA-IZQUIERDA",
-    "imagePath": "/detail-glass/FORD-TRANSIT-EXTENDIDA-2007-2014-DQ-20072-1310X630-COSTADO-TRASERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/FORD-TRANSIT-EXTENDIDA-2007-2014-DQ-20072-1310X630-COSTADO-TRASERA-IZQUIERDA.png"
   },
   {
-    "filename": "FOTON-VIEW-CS2-2014-2024-FB-030030-0X0-MEDALLON.PNG",
+    "filename": "FOTON-VIEW-CS2-2014-2024-FB-030030-0X0-MEDALLON.png",
     "brand": "FOTON",
     "model": "VIEW-CS2",
     "submodels": [
@@ -1801,10 +1681,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "0X0"
     },
     "description": "MEDALLON",
-    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FB-030030-0X0-MEDALLON.PNG"
+    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FB-030030-0X0-MEDALLON.png"
   },
   {
-    "filename": "FOTON-VIEW-CS2-2014-2024-FD-30032-1310X552-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "FOTON-VIEW-CS2-2014-2024-FD-30032-1310X552-PUERTA-DELANTERA-DERECHA.png",
     "brand": "FOTON",
     "model": "VIEW-CS2",
     "submodels": [
@@ -1821,10 +1701,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1310X552"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FD-30032-1310X552-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FD-30032-1310X552-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "FOTON-VIEW-CS2-2014-2024-FD-30033-1310X552-PUERTA-TRASERA-IZQUIERDO.PNG",
+    "filename": "FOTON-VIEW-CS2-2014-2024-FD-30033-1310X552-PUERTA-TRASERA-IZQUIERDO.png",
     "brand": "FOTON",
     "model": "VIEW-CS2",
     "submodels": [
@@ -1841,10 +1721,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1310X552"
     },
     "description": "PUERTA-TRASERA-IZQUIERDO",
-    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FD-30033-1310X552-PUERTA-TRASERA-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FD-30033-1310X552-PUERTA-TRASERA-IZQUIERDO.png"
   },
   {
-    "filename": "FOTON-VIEW-CS2-2014-2024-FQ-30034-534X552-COSTADO-CENTRAL-DERECHO.PNG",
+    "filename": "FOTON-VIEW-CS2-2014-2024-FQ-30034-534X552-COSTADO-CENTRAL-DERECHO.png",
     "brand": "FOTON",
     "model": "VIEW-CS2",
     "submodels": [
@@ -1861,10 +1741,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "534X552"
     },
     "description": "COSTADO-CENTRAL-DERECHO",
-    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FQ-30034-534X552-COSTADO-CENTRAL-DERECHO.PNG"
+    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FQ-30034-534X552-COSTADO-CENTRAL-DERECHO.png"
   },
   {
-    "filename": "FOTON-VIEW-CS2-2014-2024-FQ-30034-534X552-COSTADO-CENTRAL-IZQUIERDO.PNG",
+    "filename": "FOTON-VIEW-CS2-2014-2024-FQ-30034-534X552-COSTADO-CENTRAL-IZQUIERDO.png",
     "brand": "FOTON",
     "model": "VIEW-CS2",
     "submodels": [
@@ -1881,10 +1761,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "534X552"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDO",
-    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FQ-30034-534X552-COSTADO-CENTRAL-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FQ-30034-534X552-COSTADO-CENTRAL-IZQUIERDO.png"
   },
   {
-    "filename": "FOTON-VIEW-CS2-2014-2024-FQ-30036-1366X552-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "FOTON-VIEW-CS2-2014-2024-FQ-30036-1366X552-COSTADO-TRASERO-DERECHO.png",
     "brand": "FOTON",
     "model": "VIEW-CS2",
     "submodels": [
@@ -1901,10 +1781,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1366X552"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FQ-30036-1366X552-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FQ-30036-1366X552-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "FOTON-VIEW-CS2-2014-2024-FQ-30037-1366X552-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "FOTON-VIEW-CS2-2014-2024-FQ-30037-1366X552-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "FOTON",
     "model": "VIEW-CS2",
     "submodels": [
@@ -1921,11 +1801,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1366X552"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FQ-30037-1366X552-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/FOTON-VIEW-CS2-2014-2024-FQ-30037-1366X552-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "HYUNDAY-SOLATI-H350-2024-2025-FD-20145-1382X733-PUERTA-DELANTERA-IZQUIERDO.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-SOLATI-H350-2024-2025-FD-20145-1382X733-PUERTA-DELANTERA-IZQUIERDO.png",
+    "brand": "HYUNDAI",
     "model": "SOLATI-H350",
     "submodels": [
       "SOLATI",
@@ -1941,11 +1821,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1382X733"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDO",
-    "imagePath": "/detail-glass/HYUNDAY-SOLATI-H350-2024-2025-FD-20145-1382X733-PUERTA-DELANTERA-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-SOLATI-H350-2024-2025-FD-20145-1382X733-PUERTA-DELANTERA-IZQUIERDO.png"
   },
   {
-    "filename": "HYUNDAY-SOLATI-H350-2024-2025-FD-20146-1382X733-COSTADO-TRASERO-IZQUIERDO.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-SOLATI-H350-2024-2025-FD-20146-1382X733-COSTADO-TRASERO-IZQUIERDO.png",
+    "brand": "HYUNDAI",
     "model": "SOLATI-H350",
     "submodels": [
       "SOLATI",
@@ -1961,11 +1841,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1382X733"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/HYUNDAY-SOLATI-H350-2024-2025-FD-20146-1382X733-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-SOLATI-H350-2024-2025-FD-20146-1382X733-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "HYUNDAY-SOLATI-H350-2024-2025-FQ-20147-1415X665-COSTADO-CENTRAL-IZQUIERDO.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-SOLATI-H350-2024-2025-FQ-20147-1415X665-COSTADO-CENTRAL-IZQUIERDO.png",
+    "brand": "HYUNDAI",
     "model": "SOLATI-H350",
     "submodels": [
       "SOLATI",
@@ -1981,11 +1861,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1415X665"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDO",
-    "imagePath": "/detail-glass/HYUNDAY-SOLATI-H350-2024-2025-FQ-20147-1415X665-COSTADO-CENTRAL-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-SOLATI-H350-2024-2025-FQ-20147-1415X665-COSTADO-CENTRAL-IZQUIERDO.png"
   },
   {
-    "filename": "HYUNDAY-SOLATI-H350-2024-2025-FQ-20148-1415X665-COSTADO-CENTRAL-IZQUIERDO.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-SOLATI-H350-2024-2025-FQ-20148-1415X665-COSTADO-CENTRAL-IZQUIERDO.png",
+    "brand": "HYUNDAI",
     "model": "SOLATI-H350",
     "submodels": [
       "SOLATI",
@@ -2001,11 +1881,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1415X665"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDO",
-    "imagePath": "/detail-glass/HYUNDAY-SOLATI-H350-2024-2025-FQ-20148-1415X665-COSTADO-CENTRAL-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-SOLATI-H350-2024-2025-FQ-20148-1415X665-COSTADO-CENTRAL-IZQUIERDO.png"
   },
   {
-    "filename": "HYUNDAY-SOLATI-H350-2024-2025-FQ-20149-580X733-COSTADO-TRASERO-IZQUIERDO.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-SOLATI-H350-2024-2025-FQ-20149-580X733-COSTADO-TRASERO-IZQUIERDO.png",
+    "brand": "HYUNDAI",
     "model": "SOLATI-H350",
     "submodels": [
       "SOLATI",
@@ -2021,11 +1901,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "580X733"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/HYUNDAY-SOLATI-H350-2024-2025-FQ-20149-580X733-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-SOLATI-H350-2024-2025-FQ-20149-580X733-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "HYUNDAY-SOLATI-H350-2024-2025-FQ-20150-580X665-PUERTA-DELANTERA-IZQUIERDO.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-SOLATI-H350-2024-2025-FQ-20150-580X665-PUERTA-DELANTERA-IZQUIERDO.png",
+    "brand": "HYUNDAI",
     "model": "SOLATI-H350",
     "submodels": [
       "SOLATI",
@@ -2041,11 +1921,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "580X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDO",
-    "imagePath": "/detail-glass/HYUNDAY-SOLATI-H350-2024-2025-FQ-20150-580X665-PUERTA-DELANTERA-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-SOLATI-H350-2024-2025-FQ-20150-580X665-PUERTA-DELANTERA-IZQUIERDO.png"
   },
   {
-    "filename": "HYUNDAY-STAREX-2023-2024-DQ-20035-947X412-TRASERA-IZQUIERDA.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-STAREX-2023-2024-DQ-20035-947X412-TRASERA-IZQUIERDA.png",
+    "brand": "HYUNDAI",
     "model": "STAREX",
     "submodels": [
       "STAREX"
@@ -2060,11 +1940,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "947X412"
     },
     "description": "TRASERA-IZQUIERDA",
-    "imagePath": "/detail-glass/HYUNDAY-STAREX-2023-2024-DQ-20035-947X412-TRASERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-STAREX-2023-2024-DQ-20035-947X412-TRASERA-IZQUIERDA.png"
   },
   {
-    "filename": "HYUNDAY-STAREX-2023-2024-FD-20032-1054X515-PUERTA-DELANTERA-DERECHA.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-STAREX-2023-2024-FD-20032-1054X515-PUERTA-DELANTERA-DERECHA.png",
+    "brand": "HYUNDAI",
     "model": "STAREX",
     "submodels": [
       "STAREX"
@@ -2079,11 +1959,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1054X515"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/HYUNDAY-STAREX-2023-2024-FD-20032-1054X515-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-STAREX-2023-2024-FD-20032-1054X515-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "HYUNDAY-STAREX-2023-2024-FD-20033-1054X515-PUERTA-DELANTERA-IZQUIERDA.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-STAREX-2023-2024-FD-20033-1054X515-PUERTA-DELANTERA-IZQUIERDA.png",
+    "brand": "HYUNDAI",
     "model": "STAREX",
     "submodels": [
       "STAREX"
@@ -2098,11 +1978,11 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1054X515"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/HYUNDAY-STAREX-2023-2024-FD-20033-1054X515-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-STAREX-2023-2024-FD-20033-1054X515-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "HYUNDAY-STAREX-2023-2024-FQ-20034-947X412-TRASERA-DERECHA.PNG",
-    "brand": "HYUNDAY",
+    "filename": "HYUNDAI-STAREX-2023-2024-FQ-20034-947X412-TRASERA-DERECHA.png",
+    "brand": "HYUNDAI",
     "model": "STAREX",
     "submodels": [
       "STAREX"
@@ -2117,10 +1997,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "947X412"
     },
     "description": "TRASERA-DERECHA",
-    "imagePath": "/detail-glass/HYUNDAY-STAREX-2023-2024-FQ-20034-947X412-TRASERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/HYUNDAI-STAREX-2023-2024-FQ-20034-947X412-TRASERA-DERECHA.png"
   },
   {
-    "filename": "JACK-SUNRAY-2023-2024-FB-20020-777X750-MEDALLON-DERECHO.PNG",
+    "filename": "JACK-SUNRAY-2023-2024-FB-20020-777X750-MEDALLON-DERECHO.png",
     "brand": "JACK",
     "model": "SUNRAY",
     "submodels": [
@@ -2136,10 +2016,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "777X750"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FB-20020-777X750-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FB-20020-777X750-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "JACK-SUNRAY-2023-2024-FB-20051-777X750-MEDALLON-IZQUIERDO.PNG",
+    "filename": "JACK-SUNRAY-2023-2024-FB-20051-777X750-MEDALLON-IZQUIERDO.png",
     "brand": "JACK",
     "model": "SUNRAY",
     "submodels": [
@@ -2155,10 +2035,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "777X750"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FB-20051-777X750-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FB-20051-777X750-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "JACK-SUNRAY-2023-2024-FD-20044-1085X670-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "JACK-SUNRAY-2023-2024-FD-20044-1085X670-PUERTA-DELANTERA-DERECHA.png",
     "brand": "JACK",
     "model": "SUNRAY",
     "submodels": [
@@ -2174,10 +2054,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1085X670"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FD-20044-1085X670-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FD-20044-1085X670-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "JACK-SUNRAY-2023-2024-FD-20045-1085X670-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "JACK-SUNRAY-2023-2024-FD-20045-1085X670-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "JACK",
     "model": "SUNRAY",
     "submodels": [
@@ -2193,10 +2073,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1085X670"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FD-20045-1085X670-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FD-20045-1085X670-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "JACK-SUNRAY-2023-2024-FQ-20046-1140X670-COSTADO-CENTRAL-DERECHO.PNG",
+    "filename": "JACK-SUNRAY-2023-2024-FQ-20046-1140X670-COSTADO-CENTRAL-DERECHO.png",
     "brand": "JACK",
     "model": "SUNRAY",
     "submodels": [
@@ -2212,10 +2092,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1140X670"
     },
     "description": "COSTADO-CENTRAL-DERECHO",
-    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FQ-20046-1140X670-COSTADO-CENTRAL-DERECHO.PNG"
+    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FQ-20046-1140X670-COSTADO-CENTRAL-DERECHO.png"
   },
   {
-    "filename": "JACK-SUNRAY-2023-2024-FQ-20047-1140X675-COSTADO-CENTRAL-DERECHO.PNG",
+    "filename": "JACK-SUNRAY-2023-2024-FQ-20047-1140X675-COSTADO-CENTRAL-DERECHO.png",
     "brand": "JACK",
     "model": "SUNRAY",
     "submodels": [
@@ -2231,10 +2111,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1140X675"
     },
     "description": "COSTADO-CENTRAL-DERECHO",
-    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FQ-20047-1140X675-COSTADO-CENTRAL-DERECHO.PNG"
+    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FQ-20047-1140X675-COSTADO-CENTRAL-DERECHO.png"
   },
   {
-    "filename": "JACK-SUNRAY-2023-2024-FQ-20048-1130X675-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "JACK-SUNRAY-2023-2024-FQ-20048-1130X675-COSTADO-TRASERO-DERECHO.png",
     "brand": "JACK",
     "model": "SUNRAY",
     "submodels": [
@@ -2250,10 +2130,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1130X675"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FQ-20048-1130X675-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FQ-20048-1130X675-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "JACK-SUNRAY-2023-2024-FQ-20049-1130X675-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "JACK-SUNRAY-2023-2024-FQ-20049-1130X675-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "JACK",
     "model": "SUNRAY",
     "submodels": [
@@ -2269,7 +2149,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1130X675"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FQ-20049-1130X675-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/JACK-SUNRAY-2023-2024-FQ-20049-1130X675-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
     "filename": "MERCEDES-SPRINTER-2008-2024-ACCH0009-DR-817X799-MEDALLON-DERECHO.png",
@@ -2348,7 +2228,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DB-11419-817X799-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2364,10 +2244,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1396X764"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-DERECHA.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2383,7 +2263,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1396X764"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-DERECHA.png"
   },
   {
     "filename": "MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-A.png",
@@ -2424,7 +2304,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-B.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2440,10 +2320,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1396X764"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DD-20052-1152X767-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DD-20052-1152X767-PUERTA-DELANTERA-DERECHA.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2459,10 +2339,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1152X767"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-20052-1152X767-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-20052-1152X767-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DD-20053-1152X767-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DD-20053-1152X767-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2478,10 +2358,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1152X767"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-20053-1152X767-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DD-20053-1152X767-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11414-1418X706-CENTRAL-DERECHA.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11414-1418X706-CENTRAL-DERECHA.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2497,10 +2377,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1418X706"
     },
     "description": "CENTRAL-DERECHA",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11414-1418X706-CENTRAL-DERECHA.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11414-1418X706-CENTRAL-DERECHA.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11414-1418X706-CENTRAL-DERECHO.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11414-1418X706-CENTRAL-DERECHO.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2516,7 +2396,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1418X706"
     },
     "description": "CENTRAL-DERECHO",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11414-1418X706-CENTRAL-DERECHO.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11414-1418X706-CENTRAL-DERECHO.png"
   },
   {
     "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11415-1418X764-CENTRAL-IZQUIERDA.png",
@@ -2557,7 +2437,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11415-1418X764-CENTRAL-IZQUIERDO.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-A.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-A.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2573,10 +2453,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1269X763"
     },
     "description": "COSTADO-TRASERO-DERECHO-A",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-A.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-B.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-B.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2592,7 +2472,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1269X763"
     },
     "description": "COSTADO-TRASERO-DERECHO-B",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-B.png"
   },
   {
     "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11417-1269X763-COSTADO-TRASERO-IZQUIERDO-A.png",
@@ -2633,45 +2513,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11417-1269X763-COSTADO-TRASERO-IZQUIERDO-B.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11859-1632X705-COSTADO-TRASERO-DERECHO-LARGA.PNG",
-    "brand": "MERCEDES",
-    "model": "SPRINTER",
-    "submodels": [
-      "SPRINTER"
-    ],
-    "startYear": 2008,
-    "endYear": 2024,
-    "windowCode": "DQ",
-    "windowNumber": "11859",
-    "size": {
-      "width": 1632,
-      "height": 705,
-      "raw": "1632X705"
-    },
-    "description": "COSTADO-TRASERO-DERECHO-LARGA",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11859-1632X705-COSTADO-TRASERO-DERECHO-LARGA.PNG"
-  },
-  {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-11860-1632X705-COSTADO-TRASERO-IZQUIERDO-LARGO.PNG",
-    "brand": "MERCEDES",
-    "model": "SPRINTER",
-    "submodels": [
-      "SPRINTER"
-    ],
-    "startYear": 2008,
-    "endYear": 2024,
-    "windowCode": "DQ",
-    "windowNumber": "11860",
-    "size": {
-      "width": 1632,
-      "height": 705,
-      "raw": "1632X705"
-    },
-    "description": "COSTADO-TRASERO-IZQUIERDO-LARGO",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-11860-1632X705-COSTADO-TRASERO-IZQUIERDO-LARGO.PNG"
-  },
-  {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-20054-1217X765-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-20054-1217X765-COSTADO-TRASERO-DERECHO.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2687,10 +2529,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1217X765"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-20054-1217X765-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-20054-1217X765-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-20055-1217X765-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "MERCEDES-SPRINTER-2008-2024-DQ-20055-1217X765-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "MERCEDES",
     "model": "SPRINTER",
     "submodels": [
@@ -2706,7 +2548,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1217X765"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-20055-1217X765-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-DQ-20055-1217X765-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
     "filename": "MERCEDES-SPRINTER-2008-2024-FB-28250-780X775-MEDALLON-DERECHO.png",
@@ -2747,7 +2589,47 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     "imagePath": "/detail-glass/MERCEDES-SPRINTER-2008-2024-FB-28251-780X775-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-DB-12565-666X829-MEDALLON-DERECHO.PNG",
+    "filename": "MERCEDES-SPRINTER-LARGA-2008-2024-DQ-11859-1632X705-COSTADO-TRASERO-DERECHO-LARGA.png",
+    "brand": "MERCEDES",
+    "model": "SPRINTER-LARGA",
+    "submodels": [
+      "SPRINTER",
+      "LARGA"
+    ],
+    "startYear": 2008,
+    "endYear": 2024,
+    "windowCode": "DQ",
+    "windowNumber": "11859",
+    "size": {
+      "width": 1632,
+      "height": 705,
+      "raw": "1632X705"
+    },
+    "description": "COSTADO-TRASERO-DERECHO-LARGA",
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-LARGA-2008-2024-DQ-11859-1632X705-COSTADO-TRASERO-DERECHO-LARGA.png"
+  },
+  {
+    "filename": "MERCEDES-SPRINTER-LARGA-2008-2024-DQ-11860-1632X705-COSTADO-TRASERO-IZQUIERDO-LARGA.png",
+    "brand": "MERCEDES",
+    "model": "SPRINTER-LARGA",
+    "submodels": [
+      "SPRINTER",
+      "LARGA"
+    ],
+    "startYear": 2008,
+    "endYear": 2024,
+    "windowCode": "DQ",
+    "windowNumber": "11860",
+    "size": {
+      "width": 1632,
+      "height": 705,
+      "raw": "1632X705"
+    },
+    "description": "COSTADO-TRASERO-IZQUIERDO-LARGA",
+    "imagePath": "/detail-glass/MERCEDES-SPRINTER-LARGA-2008-2024-DQ-11860-1632X705-COSTADO-TRASERO-IZQUIERDO-LARGA.png"
+  },
+  {
+    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-DB-12565-666X829-MEDALLON-DERECHO.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L2H2",
     "submodels": [
@@ -2764,10 +2646,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-DB-12565-666X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-DB-12565-666X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-DB-12566-666X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-DB-12566-666X829-MEDALLON-IZQUIERDO.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L2H2",
     "submodels": [
@@ -2784,10 +2666,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-DB-12566-666X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-DB-12566-666X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L2H2",
     "submodels": [
@@ -2804,10 +2686,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L2H2",
     "submodels": [
@@ -2824,10 +2706,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-FQ-20064-1543X585-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-FQ-20064-1543X585-COSTADO-TRASERO-DERECHO.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L2H2",
     "submodels": [
@@ -2844,10 +2726,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1543X585"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-FQ-20064-1543X585-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-FQ-20064-1543X585-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-FQ-20065-1543X665-COSTADO-IZQUIERDO.PNG",
+    "filename": "PEUGEOT-MANAGER-L2H2-2016-2020-FQ-20065-1543X665-COSTADO-IZQUIERDO.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L2H2",
     "submodels": [
@@ -2864,10 +2746,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1543X665"
     },
     "description": "COSTADO-IZQUIERDO",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-FQ-20065-1543X665-COSTADO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L2H2-2016-2020-FQ-20065-1543X665-COSTADO-IZQUIERDO.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-DB-12565-666X829-MEDALLON-DERECHO.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-DB-12565-666X829-MEDALLON-DERECHO.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -2884,10 +2766,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-DB-12565-666X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-DB-12565-666X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-DB-1566-666X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-DB-1566-666X829-MEDALLON-IZQUIERDO.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -2904,10 +2786,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-DB-1566-666X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-DB-1566-666X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -2924,10 +2806,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA-A",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -2944,10 +2826,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA-B",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -2964,10 +2846,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-A",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -2984,10 +2866,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-B",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -3004,10 +2886,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X585"
     },
     "description": "COSTADO-CENTRAL-DERECHO-A",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -3024,10 +2906,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X585"
     },
     "description": "COSTADO-CENTRAL-DERECHO-B",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -3044,10 +2926,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X665"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-A",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -3064,10 +2946,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X665"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-B",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-A.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-A.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -3084,10 +2966,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-DERECHO-A",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-A.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-B.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-B.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -3104,10 +2986,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-DERECHO-B",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-B.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -3124,10 +3006,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-A",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.png"
   },
   {
-    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.PNG",
+    "filename": "PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.png",
     "brand": "PEUGEOT",
     "model": "MANAGER-L4H2",
     "submodels": [
@@ -3144,10 +3026,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-B",
-    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-MANAGER-L4H2-2016-2020-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.png"
   },
   {
-    "filename": "PEUGEOT-PARTNER-2023-2024-DQ-20040-593X489-TRASERA-DERECHA.PNG",
+    "filename": "PEUGEOT-PARTNER-2023-2024-DQ-20040-593X489-TRASERA-DERECHA.png",
     "brand": "PEUGEOT",
     "model": "PARTNER",
     "submodels": [
@@ -3163,10 +3045,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "593X489"
     },
     "description": "TRASERA-DERECHA",
-    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-DQ-20040-593X489-TRASERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-DQ-20040-593X489-TRASERA-DERECHA.png"
   },
   {
-    "filename": "PEUGEOT-PARTNER-2023-2024-DQ-20041-593X489-TRASERA-IZQUIERDA.PNG",
+    "filename": "PEUGEOT-PARTNER-2023-2024-DQ-20041-593X489-TRASERA-IZQUIERDA.png",
     "brand": "PEUGEOT",
     "model": "PARTNER",
     "submodels": [
@@ -3182,10 +3064,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "593X489"
     },
     "description": "TRASERA-IZQUIERDA",
-    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-DQ-20041-593X489-TRASERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-DQ-20041-593X489-TRASERA-IZQUIERDA.png"
   },
   {
-    "filename": "PEUGEOT-PARTNER-2023-2024-FB-20042-554X506-MEDALLON-DERECHO.PNG",
+    "filename": "PEUGEOT-PARTNER-2023-2024-FB-20042-554X506-MEDALLON-DERECHO.png",
     "brand": "PEUGEOT",
     "model": "PARTNER",
     "submodels": [
@@ -3201,10 +3083,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "554X506"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FB-20042-554X506-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FB-20042-554X506-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "PEUGEOT-PARTNER-2023-2024-FB-20043-780X551-MEDALLON-IZQUIERDO.PNG",
+    "filename": "PEUGEOT-PARTNER-2023-2024-FB-20043-780X551-MEDALLON-IZQUIERDO.png",
     "brand": "PEUGEOT",
     "model": "PARTNER",
     "submodels": [
@@ -3220,10 +3102,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "780X551"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FB-20043-780X551-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FB-20043-780X551-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "PEUGEOT-PARTNER-2023-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "PEUGEOT-PARTNER-2023-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.png",
     "brand": "PEUGEOT",
     "model": "PARTNER",
     "submodels": [
@@ -3239,10 +3121,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "784X500"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "PEUGEOT-PARTNER-2023-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "PEUGEOT-PARTNER-2023-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "PEUGEOT",
     "model": "PARTNER",
     "submodels": [
@@ -3258,10 +3140,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "784X500"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-PARTNER-2023-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "PEUGEOT-RIFTER-2022-2024-DQ-20038-830X488-TRASERA-DERECHA.PNG",
+    "filename": "PEUGEOT-RIFTER-2022-2024-DQ-20038-830X488-TRASERA-DERECHA.png",
     "brand": "PEUGEOT",
     "model": "RIFTER",
     "submodels": [
@@ -3277,10 +3159,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "830X488"
     },
     "description": "TRASERA-DERECHA",
-    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-DQ-20038-830X488-TRASERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-DQ-20038-830X488-TRASERA-DERECHA.png"
   },
   {
-    "filename": "PEUGEOT-RIFTER-2022-2024-DQ-20039-830X488-TRASERA-IZQUIERDA.PNG",
+    "filename": "PEUGEOT-RIFTER-2022-2024-DQ-20039-830X488-TRASERA-IZQUIERDA.png",
     "brand": "PEUGEOT",
     "model": "RIFTER",
     "submodels": [
@@ -3296,10 +3178,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "830X488"
     },
     "description": "TRASERA-IZQUIERDA",
-    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-DQ-20039-830X488-TRASERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-DQ-20039-830X488-TRASERA-IZQUIERDA.png"
   },
   {
-    "filename": "PEUGEOT-RIFTER-2022-2024-FB-28409-580X1300-MEDALLON-CON-BARRENO-I-DF.PNG",
+    "filename": "PEUGEOT-RIFTER-2022-2024-FB-28409-580X1300-MEDALLON-CON-BARRENO-I-DF.png",
     "brand": "PEUGEOT",
     "model": "RIFTER",
     "submodels": [
@@ -3315,10 +3197,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "580X1300"
     },
     "description": "MEDALLON-CON-BARRENO-I-DF",
-    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-FB-28409-580X1300-MEDALLON-CON-BARRENO-I-DF.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-FB-28409-580X1300-MEDALLON-CON-BARRENO-I-DF.png"
   },
   {
-    "filename": "PEUGEOT-RIFTER-2022-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "PEUGEOT-RIFTER-2022-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.png",
     "brand": "PEUGEOT",
     "model": "RIFTER",
     "submodels": [
@@ -3334,10 +3216,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "784X500"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-FD-20036-784X500-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "PEUGEOT-RIFTER-2022-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "PEUGEOT-RIFTER-2022-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "PEUGEOT",
     "model": "RIFTER",
     "submodels": [
@@ -3353,10 +3235,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "784X500"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/PEUGEOT-RIFTER-2022-2024-FD-20037-784X500-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "RAM-PROMASTER-2019-2024-DB-12565-666X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "RAM-PROMASTER-2019-2024-DB-12565-666X829-MEDALLON-IZQUIERDO.png",
     "brand": "RAM",
     "model": "PROMASTER",
     "submodels": [
@@ -3372,10 +3254,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-DB-12565-666X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-DB-12565-666X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "RAM-PROMASTER-2019-2024-DB-12566-666X829-MEDALLON-DERECHO.PNG",
+    "filename": "RAM-PROMASTER-2019-2024-DB-12566-666X829-MEDALLON-DERECHO.png",
     "brand": "RAM",
     "model": "PROMASTER",
     "submodels": [
@@ -3391,10 +3273,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-DB-12566-666X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-DB-12566-666X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "RAM-PROMASTER-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "RAM-PROMASTER-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.png",
     "brand": "RAM",
     "model": "PROMASTER",
     "submodels": [
@@ -3410,10 +3292,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "RAM-PROMASTER1500-2019-2024-DB-12565-660X829-MEDALLON-DERECHO.PNG",
+    "filename": "RAM-PROMASTER1500-2019-2024-DB-12565-660X829-MEDALLON-DERECHO.png",
     "brand": "RAM",
     "model": "PROMASTER1500",
     "submodels": [
@@ -3429,10 +3311,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "660X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-DB-12565-660X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-DB-12565-660X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "RAM-PROMASTER1500-2019-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "RAM-PROMASTER1500-2019-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.png",
     "brand": "RAM",
     "model": "PROMASTER1500",
     "submodels": [
@@ -3448,10 +3330,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "660X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-DB-12566-660X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "RAM-PROMASTER1500-2019-2024-FD-20060-1230X665-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "RAM-PROMASTER1500-2019-2024-FD-20060-1230X665-PUERTA-DELANTERA-DERECHA.png",
     "brand": "RAM",
     "model": "PROMASTER1500",
     "submodels": [
@@ -3467,10 +3349,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1230X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FD-20060-1230X665-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FD-20060-1230X665-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "RAM-PROMASTER1500-2019-2024-FD-20061-1267X665-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "RAM-PROMASTER1500-2019-2024-FD-20061-1267X665-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "RAM",
     "model": "PROMASTER1500",
     "submodels": [
@@ -3486,10 +3368,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1267X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FD-20061-1267X665-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FD-20061-1267X665-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "RAM-PROMASTER1500-2019-2024-FQ-20062-1260X580-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "RAM-PROMASTER1500-2019-2024-FQ-20062-1260X580-COSTADO-TRASERO-DERECHO.png",
     "brand": "RAM",
     "model": "PROMASTER1500",
     "submodels": [
@@ -3505,10 +3387,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1260X580"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FQ-20062-1260X580-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FQ-20062-1260X580-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "RAM-PROMASTER1500-2019-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "RAM-PROMASTER1500-2019-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "RAM",
     "model": "PROMASTER1500",
     "submodels": [
@@ -3524,10 +3406,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1260X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER1500-2019-2024-FQ-20063-1260X665-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "RAM-PROMASTER2500-2019-2024-DB-12565-6606X829-MEDALLON-DERECHO.PNG",
+    "filename": "RAM-PROMASTER2500-2019-2024-DB-12565-6606X829-MEDALLON-DERECHO.png",
     "brand": "RAM",
     "model": "PROMASTER2500",
     "submodels": [
@@ -3543,10 +3425,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "6606X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-DB-12565-6606X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-DB-12565-6606X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "RAM-PROMASTER2500-2019-2024-DB-12566-6606X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "RAM-PROMASTER2500-2019-2024-DB-12566-6606X829-MEDALLON-IZQUIERDO.png",
     "brand": "RAM",
     "model": "PROMASTER2500",
     "submodels": [
@@ -3562,10 +3444,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "6606X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-DB-12566-6606X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-DB-12566-6606X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "RAM-PROMASTER2500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "RAM-PROMASTER2500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.png",
     "brand": "RAM",
     "model": "PROMASTER2500",
     "submodels": [
@@ -3581,10 +3463,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "RAM-PROMASTER2500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "RAM-PROMASTER2500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "RAM",
     "model": "PROMASTER2500",
     "submodels": [
@@ -3600,10 +3482,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "RAM-PROMASTER2500-2019-2024-FQ-20064-1543X585-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "RAM-PROMASTER2500-2019-2024-FQ-20064-1543X585-COSTADO-TRASERO-DERECHO.png",
     "brand": "RAM",
     "model": "PROMASTER2500",
     "submodels": [
@@ -3619,10 +3501,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1543X585"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-FQ-20064-1543X585-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-FQ-20064-1543X585-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "RAM-PROMASTER2500-2019-2024-FQ-20065-1543X665-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "RAM-PROMASTER2500-2019-2024-FQ-20065-1543X665-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "RAM",
     "model": "PROMASTER2500",
     "submodels": [
@@ -3638,10 +3520,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1543X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-FQ-20065-1543X665-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER2500-2019-2024-FQ-20065-1543X665-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-DB-12565-666X829-MEDALLON-DERECHO.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-DB-12565-666X829-MEDALLON-DERECHO.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3657,10 +3539,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-DB-12565-666X829-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-DB-12565-666X829-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-DB-12566-666X829-MEDALLON-IZQUIERDO.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-DB-12566-666X829-MEDALLON-IZQUIERDO.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3676,10 +3558,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "666X829"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-DB-12566-666X829-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-DB-12566-666X829-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3695,10 +3577,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA-A",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-A.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3714,10 +3596,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-DERECHA-B",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FD-20022-1400X665-PUERTA-DELANTERA-DERECHA-B.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3733,10 +3615,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-A",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-A.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3752,10 +3634,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1400X665"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-B",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FD-20023-1400X665-PUERTA-DELANTERA-IZQUIERDA-B.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3771,10 +3653,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X585"
     },
     "description": "COSTADO-CENTRAL-DERECHO-A",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-A.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3790,10 +3672,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X585"
     },
     "description": "COSTADO-CENTRAL-DERECHO-B",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20024-1350X585-COSTADO-CENTRAL-DERECHO-B.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3809,10 +3691,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X665"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-A",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-A.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3828,10 +3710,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1350X665"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-B",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20025-1350X665-COSTADO-CENTRAL-IZQUIERDA-B.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-A.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-A.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3847,10 +3729,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-DERECHO-A",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-A.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-B.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-B.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3866,10 +3748,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-DERECHO-B",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20026-1135X665-COSTADO-TRASERO-DERECHO-B.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3885,10 +3767,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-A",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-A.png"
   },
   {
-    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.PNG",
+    "filename": "RAM-PROMASTER3500-2019-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.png",
     "brand": "RAM",
     "model": "PROMASTER3500",
     "submodels": [
@@ -3904,10 +3786,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1135X665"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-B",
-    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.PNG"
+    "imagePath": "/detail-glass/RAM-PROMASTER3500-2019-2024-FQ-20027-1135X665-COSTADO-TRASERO-IZQUIERDO-B.png"
   },
   {
-    "filename": "RENAULT-KANGOO-2023-2024-FB-20075-790X476-MEDALLON-IZQUIERDO.PNG",
+    "filename": "RENAULT-KANGOO-2023-2024-FB-20075-790X476-MEDALLON-IZQUIERDO.png",
     "brand": "RENAULT",
     "model": "KANGOO",
     "submodels": [
@@ -3923,10 +3805,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "790X476"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FB-20075-790X476-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FB-20075-790X476-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "RENAULT-KANGOO-2023-2024-FD-20074-528X476-MEDALLON-DERECHO.PNG",
+    "filename": "RENAULT-KANGOO-2023-2024-FD-20074-528X476-MEDALLON-DERECHO.png",
     "brand": "RENAULT",
     "model": "KANGOO",
     "submodels": [
@@ -3942,10 +3824,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "528X476"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FD-20074-528X476-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FD-20074-528X476-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "RENAULT-KANGOO-2023-2024-FD-20076-860X517-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "RENAULT-KANGOO-2023-2024-FD-20076-860X517-PUERTA-DELANTERA-DERECHA.png",
     "brand": "RENAULT",
     "model": "KANGOO",
     "submodels": [
@@ -3961,10 +3843,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "860X517"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FD-20076-860X517-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FD-20076-860X517-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "RENAULT-KANGOO-2023-2024-FD-20077-860X517-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "RENAULT-KANGOO-2023-2024-FD-20077-860X517-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "RENAULT",
     "model": "KANGOO",
     "submodels": [
@@ -3980,10 +3862,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "860X517"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FD-20077-860X517-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FD-20077-860X517-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "RENAULT-KANGOO-2023-2024-FQ-20078-480X630-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "RENAULT-KANGOO-2023-2024-FQ-20078-480X630-COSTADO-TRASERO-DERECHO.png",
     "brand": "RENAULT",
     "model": "KANGOO",
     "submodels": [
@@ -3999,10 +3881,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "480X630"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FQ-20078-480X630-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FQ-20078-480X630-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "RENAULT-KANGOO-2023-2024-FQ-20079-480X630-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "RENAULT-KANGOO-2023-2024-FQ-20079-480X630-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "RENAULT",
     "model": "KANGOO",
     "submodels": [
@@ -4018,7 +3900,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "480X630"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FQ-20079-480X630-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/RENAULT-KANGOO-2023-2024-FQ-20079-480X630-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
     "filename": "TOYOTA-HIACE-2011-2019-FD-27096-1311X564-PUERTA-DELANTERA-IZQUIERDA-TIPO-ORIGINAL.png",
@@ -4249,7 +4131,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
     "imagePath": "/detail-glass/TOYOTA-HIACE-2011-2019-FQ-27102-1370X565-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "VW-CADDYVAN-2015-2019-DQ-20021-1048X543-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "VW-CADDYVAN-2015-2019-DQ-20021-1048X543-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "VW",
     "model": "CADDYVAN",
     "submodels": [
@@ -4265,10 +4147,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1048X543"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-DQ-20021-1048X543-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-DQ-20021-1048X543-COSTADO-TRASERO-IZQUIERDO.png"
   },
   {
-    "filename": "VW-CADDYVAN-2015-2019-FB-27624-591X506-MEDALLON-DERECHO.PNG",
+    "filename": "VW-CADDYVAN-2015-2019-FB-27624-591X506-MEDALLON-DERECHO.png",
     "brand": "VW",
     "model": "CADDYVAN",
     "submodels": [
@@ -4284,10 +4166,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "591X506"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FB-27624-591X506-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FB-27624-591X506-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "VW-CADDYVAN-2015-2019-FB-27625-756X597-MEDALLON-IZQUIERDO.PNG",
+    "filename": "VW-CADDYVAN-2015-2019-FB-27625-756X597-MEDALLON-IZQUIERDO.png",
     "brand": "VW",
     "model": "CADDYVAN",
     "submodels": [
@@ -4303,10 +4185,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "756X597"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FB-27625-756X597-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FB-27625-756X597-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "VW-CADDYVAN-2015-2019-FD-20018-705X547-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "VW-CADDYVAN-2015-2019-FD-20018-705X547-PUERTA-DELANTERA-DERECHA.png",
     "brand": "VW",
     "model": "CADDYVAN",
     "submodels": [
@@ -4322,10 +4204,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "705X547"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FD-20018-705X547-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FD-20018-705X547-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "VW-CADDYVAN-2015-2019-FD-20019-705X547-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "VW-CADDYVAN-2015-2019-FD-20019-705X547-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "VW",
     "model": "CADDYVAN",
     "submodels": [
@@ -4341,10 +4223,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "705X547"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FD-20019-705X547-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FD-20019-705X547-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "VW-CADDYVAN-2015-2019-FQ-20020-1048X543-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "VW-CADDYVAN-2015-2019-FQ-20020-1048X543-COSTADO-TRASERO-DERECHO.png",
     "brand": "VW",
     "model": "CADDYVAN",
     "submodels": [
@@ -4360,14 +4242,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1048X543"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FQ-20020-1048X543-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/VW-CADDYVAN-2015-2019-FQ-20020-1048X543-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DB-11418-817X799-MEDALLON-DERECHO.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DB-11418-817X799-MEDALLON-DERECHO.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4379,14 +4261,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "817X799"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DB-11418-817X799-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DB-11418-817X799-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DB-11419-817X799-MEDALLON-IZQUIERDO.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DB-11419-817X799-MEDALLON-IZQUIERDO.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4398,14 +4280,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "817X799"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DB-11419-817X799-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DB-11419-817X799-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA-A.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4417,14 +4299,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1396X764"
     },
     "description": "PUERTA-DELANTERA-DERECHA-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA-B.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4436,14 +4318,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1396X764"
     },
     "description": "PUERTA-DELANTERA-DERECHA-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DD-11396-1396X764-PUERTA-DELANTERA-DERECHA-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-A.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4455,14 +4337,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1396X764"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-B.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4474,14 +4356,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1396X764"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DD-11397-1396X764-PUERTA-DELANTERA-IZQUIERDA-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DQ-11414-1418X706-COSTADO-CENTRAL-DERECHA-B.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DQ-11414-1418X706-COSTADO-CENTRAL-DERECHA-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4493,14 +4375,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1418X706"
     },
     "description": "COSTADO-CENTRAL-DERECHA-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DQ-11414-1418X706-COSTADO-CENTRAL-DERECHA-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DQ-11414-1418X706-COSTADO-CENTRAL-DERECHA-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DQ-11415-1418X764-COSTADO-CENTRAL-IZQUIERDA-A.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DQ-11415-1418X764-COSTADO-CENTRAL-IZQUIERDA-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4512,14 +4394,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1418X764"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DQ-11415-1418X764-COSTADO-CENTRAL-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DQ-11415-1418X764-COSTADO-CENTRAL-IZQUIERDA-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DQ-11415-1418X764-COSTADO-CENTRAL-IZQUIERDA-B.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DQ-11415-1418X764-COSTADO-CENTRAL-IZQUIERDA-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4531,14 +4413,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1418X764"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DQ-11415-1418X764-COSTADO-CENTRAL-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DQ-11415-1418X764-COSTADO-CENTRAL-IZQUIERDA-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-A.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4550,14 +4432,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1269X763"
     },
     "description": "COSTADO-TRASERO-DERECHO-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-B.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4569,14 +4451,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1269X763"
     },
     "description": "COSTADO-TRASERO-DERECHO-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DQ-11416-1269X763-COSTADO-TRASERO-DERECHO-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DQ-11417-169X763-COSTADO-TRASERO-IZQUIERDO-A.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DQ-11417-169X763-COSTADO-TRASERO-IZQUIERDO-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4588,14 +4470,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "169X763"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DQ-11417-169X763-COSTADO-TRASERO-IZQUIERDO-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DQ-11417-169X763-COSTADO-TRASERO-IZQUIERDO-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DQ-11417-169X763-COSTADO-TRASERO-IZQUIERDO-B.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DQ-11417-169X763-COSTADO-TRASERO-IZQUIERDO-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4607,14 +4489,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "169X763"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DQ-11417-169X763-COSTADO-TRASERO-IZQUIERDO-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DQ-11417-169X763-COSTADO-TRASERO-IZQUIERDO-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2011-2018-DQ-1414-1418X706-COSTADO-CENTRAL-DERECHA-A.PNG",
+    "filename": "VW-CRAFTER5-2011-2018-DQ-1414-1418X706-COSTADO-CENTRAL-DERECHA-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2011,
     "endYear": 2018,
@@ -4626,14 +4508,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1418X706"
     },
     "description": "COSTADO-CENTRAL-DERECHA-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2011-2018-DQ-1414-1418X706-COSTADO-CENTRAL-DERECHA-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2011-2018-DQ-1414-1418X706-COSTADO-CENTRAL-DERECHA-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-DQ-20014-1456X639-COSTADO-CENTRAL-DERECHO-A.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-DQ-20014-1456X639-COSTADO-CENTRAL-DERECHO-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4645,14 +4527,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1456X639"
     },
     "description": "COSTADO-CENTRAL-DERECHO-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-DQ-20014-1456X639-COSTADO-CENTRAL-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-DQ-20014-1456X639-COSTADO-CENTRAL-DERECHO-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-DQ-20014-1456X639-COSTADO-CENTRAL-DERECHO-B.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-DQ-20014-1456X639-COSTADO-CENTRAL-DERECHO-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4664,14 +4546,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1456X639"
     },
     "description": "COSTADO-CENTRAL-DERECHO-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-DQ-20014-1456X639-COSTADO-CENTRAL-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-DQ-20014-1456X639-COSTADO-CENTRAL-DERECHO-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-DQ-20015-1454X705-COSTADO-CENTRAL-IZQUIERDA-A.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-DQ-20015-1454X705-COSTADO-CENTRAL-IZQUIERDA-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4683,14 +4565,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1454X705"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-DQ-20015-1454X705-COSTADO-CENTRAL-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-DQ-20015-1454X705-COSTADO-CENTRAL-IZQUIERDA-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-DQ-20015-1454X705-COSTADO-CENTRAL-IZQUIERDA-B.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-DQ-20015-1454X705-COSTADO-CENTRAL-IZQUIERDA-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4702,14 +4584,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1454X705"
     },
     "description": "COSTADO-CENTRAL-IZQUIERDA-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-DQ-20015-1454X705-COSTADO-CENTRAL-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-DQ-20015-1454X705-COSTADO-CENTRAL-IZQUIERDA-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FB-20262-660X882-MEDALLON-DERECHO.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FB-20262-660X882-MEDALLON-DERECHO.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4721,14 +4603,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "660X882"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FB-20262-660X882-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FB-20262-660X882-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FB-20263-660X882-MEDALLON-IZQUIERDO.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FB-20263-660X882-MEDALLON-IZQUIERDO.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4740,14 +4622,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "660X882"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FB-20263-660X882-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FB-20263-660X882-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FD-20012-1487X710-PUERTA-DELANTERA-DERECHA-A.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FD-20012-1487X710-PUERTA-DELANTERA-DERECHA-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4759,14 +4641,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1487X710"
     },
     "description": "PUERTA-DELANTERA-DERECHA-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FD-20012-1487X710-PUERTA-DELANTERA-DERECHA-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FD-20012-1487X710-PUERTA-DELANTERA-DERECHA-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FD-20012-1487X710-PUERTA-DELANTERA-DERECHA-B.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FD-20012-1487X710-PUERTA-DELANTERA-DERECHA-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4778,14 +4660,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1487X710"
     },
     "description": "PUERTA-DELANTERA-DERECHA-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FD-20012-1487X710-PUERTA-DELANTERA-DERECHA-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FD-20012-1487X710-PUERTA-DELANTERA-DERECHA-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FD-20013-1487X710-PUERTA-DELANTERA-IZQUIERDA-A.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FD-20013-1487X710-PUERTA-DELANTERA-IZQUIERDA-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4797,14 +4679,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1487X710"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FD-20013-1487X710-PUERTA-DELANTERA-IZQUIERDA-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FD-20013-1487X710-PUERTA-DELANTERA-IZQUIERDA-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FD-20013-1487X710-PUERTA-DELANTERA-IZQUIERDA-B.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FD-20013-1487X710-PUERTA-DELANTERA-IZQUIERDA-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4816,14 +4698,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1487X710"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FD-20013-1487X710-PUERTA-DELANTERA-IZQUIERDA-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FD-20013-1487X710-PUERTA-DELANTERA-IZQUIERDA-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FQ-20016-885X683-COSTADO-TRASERO-DERECHO-A.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FQ-20016-885X683-COSTADO-TRASERO-DERECHO-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4835,14 +4717,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "885X683"
     },
     "description": "COSTADO-TRASERO-DERECHO-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FQ-20016-885X683-COSTADO-TRASERO-DERECHO-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FQ-20016-885X683-COSTADO-TRASERO-DERECHO-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FQ-20016-885X683-COSTADO-TRASERO-DERECHO-B.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FQ-20016-885X683-COSTADO-TRASERO-DERECHO-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4854,14 +4736,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "885X683"
     },
     "description": "COSTADO-TRASERO-DERECHO-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FQ-20016-885X683-COSTADO-TRASERO-DERECHO-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FQ-20016-885X683-COSTADO-TRASERO-DERECHO-B.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FQ-20017-885X683-COSTADO-TRASERO-IZQUIERDO-A.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FQ-20017-885X683-COSTADO-TRASERO-IZQUIERDO-A.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4873,14 +4755,14 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "885X683"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-A",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FQ-20017-885X683-COSTADO-TRASERO-IZQUIERDO-A.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FQ-20017-885X683-COSTADO-TRASERO-IZQUIERDO-A.png"
   },
   {
-    "filename": "VW-CRAFTER5.0-2019-2024-FQ-20017-885X683-COSTADO-TRASERO-IZQUIERDO-B.PNG",
+    "filename": "VW-CRAFTER5-2019-2024-FQ-20017-885X683-COSTADO-TRASERO-IZQUIERDO-B.png",
     "brand": "VW",
-    "model": "CRAFTER5.0",
+    "model": "CRAFTER5",
     "submodels": [
-      "CRAFTER5.0"
+      "CRAFTER5"
     ],
     "startYear": 2019,
     "endYear": 2024,
@@ -4892,10 +4774,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "885X683"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO-B",
-    "imagePath": "/detail-glass/VW-CRAFTER5.0-2019-2024-FQ-20017-885X683-COSTADO-TRASERO-IZQUIERDO-B.PNG"
+    "imagePath": "/detail-glass/VW-CRAFTER5-2019-2024-FQ-20017-885X683-COSTADO-TRASERO-IZQUIERDO-B.png"
   },
   {
-    "filename": "VW-EUROVANDIESEL-2010-2018-FB-24877-1537X560-MEDALLON.PNG",
+    "filename": "VW-EUROVANDIESEL-2010-2018-FB-24877-1537X560-MEDALLON.png",
     "brand": "VW",
     "model": "EUROVANDIESEL",
     "submodels": [
@@ -4911,10 +4793,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1537X560"
     },
     "description": "MEDALLON",
-    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FB-24877-1537X560-MEDALLON.PNG"
+    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FB-24877-1537X560-MEDALLON.png"
   },
   {
-    "filename": "VW-EUROVANDIESEL-2010-2018-FB-24879-725X577-MEDALLON-IZQUIERDO.PNG",
+    "filename": "VW-EUROVANDIESEL-2010-2018-FB-24879-725X577-MEDALLON-IZQUIERDO.png",
     "brand": "VW",
     "model": "EUROVANDIESEL",
     "submodels": [
@@ -4930,10 +4812,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "725X577"
     },
     "description": "MEDALLON-IZQUIERDO",
-    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FB-24879-725X577-MEDALLON-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FB-24879-725X577-MEDALLON-IZQUIERDO.png"
   },
   {
-    "filename": "VW-EUROVANDIESEL-2010-2018-FB-24880-725X577-MEDALLON-DERECHO.PNG",
+    "filename": "VW-EUROVANDIESEL-2010-2018-FB-24880-725X577-MEDALLON-DERECHO.png",
     "brand": "VW",
     "model": "EUROVANDIESEL",
     "submodels": [
@@ -4949,10 +4831,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "725X577"
     },
     "description": "MEDALLON-DERECHO",
-    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FB-24880-725X577-MEDALLON-DERECHO.PNG"
+    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FB-24880-725X577-MEDALLON-DERECHO.png"
   },
   {
-    "filename": "VW-EUROVANDIESEL-2010-2018-FD-05038-1122X580-PUERTA-DELANTERA-DERECHA.PNG",
+    "filename": "VW-EUROVANDIESEL-2010-2018-FD-05038-1122X580-PUERTA-DELANTERA-DERECHA.png",
     "brand": "VW",
     "model": "EUROVANDIESEL",
     "submodels": [
@@ -4968,10 +4850,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1122X580"
     },
     "description": "PUERTA-DELANTERA-DERECHA",
-    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FD-05038-1122X580-PUERTA-DELANTERA-DERECHA.PNG"
+    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FD-05038-1122X580-PUERTA-DELANTERA-DERECHA.png"
   },
   {
-    "filename": "VW-EUROVANDIESEL-2010-2018-FD-05043-1122X580-PUERTA-DELANTERA-IZQUIERDA.PNG",
+    "filename": "VW-EUROVANDIESEL-2010-2018-FD-05043-1122X580-PUERTA-DELANTERA-IZQUIERDA.png",
     "brand": "VW",
     "model": "EUROVANDIESEL",
     "submodels": [
@@ -4987,10 +4869,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1122X580"
     },
     "description": "PUERTA-DELANTERA-IZQUIERDA",
-    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FD-05043-1122X580-PUERTA-DELANTERA-IZQUIERDA.PNG"
+    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FD-05043-1122X580-PUERTA-DELANTERA-IZQUIERDA.png"
   },
   {
-    "filename": "VW-EUROVANDIESEL-2010-2018-FD-24875-161X571-COSTADO-TRASERO-DERECHO.PNG",
+    "filename": "VW-EUROVANDIESEL-2010-2018-FD-24875-161X571-COSTADO-TRASERO-DERECHO.png",
     "brand": "VW",
     "model": "EUROVANDIESEL",
     "submodels": [
@@ -5006,10 +4888,10 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "161X571"
     },
     "description": "COSTADO-TRASERO-DERECHO",
-    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FD-24875-161X571-COSTADO-TRASERO-DERECHO.PNG"
+    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FD-24875-161X571-COSTADO-TRASERO-DERECHO.png"
   },
   {
-    "filename": "VW-EUROVANDIESEL-2010-2018-FQ-24876-1261X571-COSTADO-TRASERO-IZQUIERDO.PNG",
+    "filename": "VW-EUROVANDIESEL-2010-2018-FQ-24876-1261X571-COSTADO-TRASERO-IZQUIERDO.png",
     "brand": "VW",
     "model": "EUROVANDIESEL",
     "submodels": [
@@ -5025,7 +4907,7 @@ export const vehicleWindowImages: VehicleWindowImage[] = [
       "raw": "1261X571"
     },
     "description": "COSTADO-TRASERO-IZQUIERDO",
-    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FQ-24876-1261X571-COSTADO-TRASERO-IZQUIERDO.PNG"
+    "imagePath": "/detail-glass/VW-EUROVANDIESEL-2010-2018-FQ-24876-1261X571-COSTADO-TRASERO-IZQUIERDO.png"
   }
 ];
 
