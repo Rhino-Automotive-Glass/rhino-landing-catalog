@@ -7,6 +7,7 @@ interface ImageDetail {
   src: string
   clave: string
   dimensiones: string
+  descripcion: string
 }
 
 interface ImageCarouselModalProps {
@@ -26,7 +27,7 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
   const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
   // Parse filename to extract clave and dimensiones
-  const parseFilename = (filename: string): { clave: string; dimensiones: string } => {
+  const parseFilename = (filename: string): { clave: string; dimensiones: string; descripcion: string } => {
     // Remove .png extension
     const nameWithoutExt = filename.replace('.png', '')
     
@@ -43,7 +44,7 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
     }
     
     if (yearEndIndex === -1) {
-      return { clave: '', dimensiones: '' }
+      return { clave: '', dimensiones: '', descripcion: '' }
     }
     
     // Get parts after year range
@@ -58,13 +59,21 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
       const dimensionesMatch = nameWithoutExt.match(/[A-Z]{2}-\d{5}-(\d{3,4})[xX](\d{3,4})/i)
       const dimensiones = dimensionesMatch ? `${dimensionesMatch[1]}x${dimensionesMatch[2]}` : ''
 
-      return { clave, dimensiones }
+      // Description is everything after the size segment
+      const descripcionParts = afterYears.slice(3)
+      const descripcionRaw = descripcionParts.length ? descripcionParts.join(' ') : ''
+      const descripcionLower = descripcionRaw.toLowerCase()
+      const descripcion = descripcionLower
+        ? descripcionLower.charAt(0).toUpperCase() + descripcionLower.slice(1)
+        : ''
+
+      return { clave, dimensiones, descripcion }
     }
 
     // If we cannot parse expected segments, attempt dimensiones best-effort on full name
     const fallbackMatch = nameWithoutExt.match(/(\d{3,4})[xX](\d{3,4})/)
     const fallbackDim = fallbackMatch ? `${fallbackMatch[1]}x${fallbackMatch[2]}` : ''
-    return { clave: '', dimensiones: fallbackDim }
+    return { clave: '', dimensiones: fallbackDim, descripcion: '' }
   }
 
   // Fetch matching images when modal opens
@@ -100,11 +109,12 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
         
         // Parse each matching image
         const imageDetails: ImageDetail[] = matchingImages.map(filename => {
-          const { clave, dimensiones } = parseFilename(filename)
+          const { clave, dimensiones, descripcion } = parseFilename(filename)
           return {
             src: `/detail-glass/${filename}`,
             clave,
-            dimensiones
+            dimensiones,
+            descripcion,
           }
         })
         
@@ -205,7 +215,7 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
             <div className="space-y-4">
               {/* Main Image Container */}
               <div className="relative bg-gray-100 rounded-lg overflow-hidden">
-                <div className="aspect-video flex items-center justify-center">
+                <div className="aspect-video flex items-center justify-center min-w-[500px] min-h-[500px] max-w-[500px] max-h-[500px]">
                   <img
                     src={images[currentIndex].src}
                     alt={`Cristal ${currentIndex + 1}`}
@@ -249,6 +259,12 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
                     <span className="font-medium text-gray-700">Dimensiones:</span>
                     <span className="ml-2 text-gray-900">
                       {images[currentIndex].dimensiones || 'N/A'}
+                    </span>
+                  </div>
+                  <div className="col-span-2">
+                    <span className="font-medium text-gray-700">Descripción:</span>
+                    <span className="ml-2 text-gray-900">
+                      {images[currentIndex].descripcion || 'N/A'}
                     </span>
                   </div>
                 </div>
