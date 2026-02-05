@@ -5,8 +5,6 @@ import Image from "next/image";
 import { Star } from 'lucide-react';
 import { CTAButton } from './CTAButton';
 
-const STROKE_COLORS = ['#ffffff', '#fb923c', '#60a5fa', '#fbbf24', '#93c5fd'];
-
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -33,16 +31,16 @@ export function Hero() {
             <h1 className="animate-slide-up" style={{ animationDelay: '0.25s' }}>
               <span className="sr-only">Vidrio para Vans, Autobuses y más</span>
               <svg viewBox="0 0 1000 180" className="w-full max-w-4xl mx-auto" aria-hidden="true">
-                {STROKE_COLORS.map((color, i) => (
-                  <text key={`s1-${i}`} x="500" y="75" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif"
-                    style={{ fill: 'none', stroke: color, strokeWidth: 5, strokeDasharray: '6% 29%', animation: 'strokeFlow 5.5s linear infinite', animationDelay: `${-(i + 1)}s` }}
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <text key={`s1-${n}`} x="500" y="75" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif"
+                    style={{ fill: 'none', stroke: '#fb923c', strokeWidth: 5, strokeDasharray: '6% 29%', animation: 'strokeFlow 5.5s linear infinite', animationDelay: `-${n}s` }}
                   >Vidrio para</text>
                 ))}
-                <text x="500" y="75" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif" fill="white">Vidrio para</text>
+                <text x="500" y="75" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif" fill="#ffffff">Vidrio para</text>
 
-                {STROKE_COLORS.map((color, i) => (
-                  <text key={`s2-${i}`} x="500" y="152" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif"
-                    style={{ fill: 'none', stroke: color, strokeWidth: 5, strokeDasharray: '6% 29%', animation: 'strokeFlow 5.5s linear infinite', animationDelay: `${-(i + 1)}s` }}
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <text key={`s2-${n}`} x="500" y="152" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif"
+                    style={{ fill: 'none', stroke: '#ffffff', strokeWidth: 5, strokeDasharray: '6% 29%', animation: 'strokeFlow 5.5s linear infinite', animationDelay: `-${n}s` }}
                   >Vans, Autobuses y más…</text>
                 ))}
                 <text x="500" y="152" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif" fill="#fb923c">Vans, Autobuses y más…</text>
