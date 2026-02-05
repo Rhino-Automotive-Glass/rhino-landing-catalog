@@ -77,10 +77,8 @@ export default function RootLayout({
     <html lang="es" className={inter.variable}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" href="/rhino-logo.png" />
+        <link rel="apple-touch-icon" href="/rhino-logo.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
@@ -102,7 +100,7 @@ export default function RootLayout({
               "telephone": "+525527488329",
               "email": "info@rhinoautoglass.mx",
               "image": "https://rhinoautoglass.mx/parabrisas-medallones-van-camioneta-autobuses.webp",
-              "logo": "https://rhinoautoglass.mx/favicon.ico",
+              "logo": "https://rhinoautoglass.mx/rhino-logo.png",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Calzada Acozac 13",
