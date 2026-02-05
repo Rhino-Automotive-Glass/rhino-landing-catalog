@@ -42,25 +42,82 @@ body {
 
 /* Custom component classes */
 @layer components {
-  /* Button variants */
+  /* Button base */
   .btn {
-    @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center rounded-full font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none overflow-hidden relative;
+    transition: letter-spacing 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
   }
-  
+
+  .btn:hover {
+    letter-spacing: 3px;
+  }
+
+  /* Light sweep */
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg) translateX(0);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+  }
+
+  .btn:hover::before {
+    transform: skewX(45deg) translateX(200px);
+  }
+
+  /* Primary — blue glow */
   .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 shadow-sm;
+    @apply bg-primary-500/70 backdrop-blur-sm text-white focus:ring-primary-500;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.25);
   }
-  
+
+  .btn-primary:hover {
+    background-color: rgba(59, 130, 246, 0.85);
+    box-shadow: 0 0 5px #3b82f6, 0 0 15px #3b82f6, 0 0 30px #3b82f6, 0 0 60px #3b82f6;
+  }
+
+  /* Secondary — soft white glow */
   .btn-secondary {
-    @apply bg-secondary-100 text-secondary-900 hover:bg-secondary-200 focus:ring-secondary-500 border border-secondary-300;
+    @apply bg-white/60 backdrop-blur-sm text-secondary-800 focus:ring-secondary-500;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.15);
   }
-  
+
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 5px #60a5fa, 0 0 15px #60a5fa, 0 0 30px #60a5fa;
+  }
+
+  /* Accent — orange glow */
   .btn-accent {
-    @apply bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500 shadow-sm;
+    @apply bg-accent-500/80 backdrop-blur-sm text-white focus:ring-accent-500;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(249, 115, 22, 0.25);
   }
-  
+
+  .btn-accent:hover {
+    background-color: rgba(249, 115, 22, 0.95);
+    box-shadow: 0 0 5px #f97316, 0 0 15px #f97316, 0 0 30px #f97316, 0 0 60px #f97316;
+  }
+
+  /* Ghost — reveals glass on hover */
   .btn-ghost {
-    @apply bg-transparent text-secondary-700 hover:bg-secondary-100 focus:ring-secondary-500;
+    @apply bg-transparent text-secondary-700 border-transparent focus:ring-secondary-500;
+  }
+
+  .btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   }
   
   /* Size variants */
