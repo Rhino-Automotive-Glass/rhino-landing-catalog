@@ -133,11 +133,10 @@ export function WindshieldCatalog() {
 
   return (
     <section id="catalogo" className="section-padding relative overflow-hidden">
-      {/* Glass background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-slate-50 to-orange-50" />
-      <div className="absolute -top-40 -left-40 w-[550px] h-[550px] bg-primary-300/55 rounded-full blur-3xl" />
-      <div className="absolute -bottom-40 -right-40 w-[550px] h-[550px] bg-accent-300/45 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-200/40 rounded-full blur-3xl" />
+      {/* Glass background blobs */}
+      <div className="absolute -top-40 -left-40 w-[550px] h-[550px] bg-primary-300/35 rounded-full blur-3xl" />
+      <div className="absolute -bottom-40 -right-40 w-[550px] h-[550px] bg-accent-300/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-200/25 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto container-padding">
         {/* Header */}
@@ -322,9 +321,9 @@ export function WindshieldCatalog() {
                       // Grid View
                       <div
                         key={item.id}
-                        className="card card-hover overflow-hidden group cursor-pointer"
+                        className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl ring-1 ring-white/20 ring-inset overflow-hidden group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-white/60"
                       >
-                        <div className="aspect-[7/3] overflow-hidden bg-secondary-100">
+                        <div className="aspect-[7/3] overflow-hidden bg-white/30 relative">
                           <img
                             src={item.image}
                             alt={item.title}
@@ -333,14 +332,14 @@ export function WindshieldCatalog() {
                         </div>
                         <div className="p-5">
                           <div className="flex items-center justify-between mb-3">
-                            <span className="inline-block bg-primary-100 text-primary-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            <span className="inline-block bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 text-primary-800 text-xs font-semibold px-3 py-1 rounded-full">
                               {item.manufacturer}
                             </span>
                           </div>
                           <h4 className="text-sm font-medium text-secondary-900 line-clamp-2 leading-relaxed">
                             {item.title}
                           </h4>
-                          <div className="mt-4 pt-4 border-t border-secondary-100">
+                          <div className="mt-4 pt-4 border-t border-white/50">
                             <button
                               onClick={() => handleViewDetails(item)}
                               className="btn btn-sm btn-primary w-full"
@@ -354,10 +353,10 @@ export function WindshieldCatalog() {
                       // List View
                       <div
                         key={item.id}
-                        className="card p-6 hover:shadow-md transition-shadow cursor-pointer"
+                        className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl ring-1 ring-white/20 ring-inset p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-white/60"
                       >
                         <div className="flex items-center space-x-6">
-                          <div className="w-24 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-secondary-100">
+                          <div className="w-24 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-white/30">
                             <img
                               src={item.image}
                               alt={item.title}
@@ -370,7 +369,7 @@ export function WindshieldCatalog() {
                                 <h4 className="text-base font-medium text-secondary-900 mb-1">
                                   {item.title}
                                 </h4>
-                                <span className="inline-block bg-primary-100 text-primary-800 text-xs font-semibold px-2 py-1 rounded">
+                                <span className="inline-block bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 text-primary-800 text-xs font-semibold px-2 py-1 rounded">
                                   {item.manufacturer}
                                 </span>
                               </div>

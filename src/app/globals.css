@@ -72,14 +72,14 @@ body {
 
   /* Primary — blue glow */
   .btn-primary {
-    @apply bg-primary-500/70 backdrop-blur-sm text-white focus:ring-primary-500;
+    @apply bg-primary-600/80 backdrop-blur-sm text-white focus:ring-primary-500;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.3);
   }
 
   .btn-primary:hover {
-    background-color: rgba(59, 130, 246, 0.85);
+    background-color: rgba(37, 99, 235, 0.92);
     box-shadow: 0 0 5px #3b82f6, 0 0 15px #3b82f6, 0 0 30px #3b82f6, 0 0 60px #3b82f6;
   }
 
