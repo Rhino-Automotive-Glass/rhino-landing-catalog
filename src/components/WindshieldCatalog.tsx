@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { passengerSideGlassData } from '@/config/vehicles'
-import { Search, Filter, Grid3X3, List } from 'lucide-react'
+import { Search, Filter, Grid3X3, List, X } from 'lucide-react'
 import { ImageCarouselModal } from './ImageCarouselModal'
 
 // Types
@@ -147,7 +147,7 @@ export function WindshieldCatalog() {
         </div>
 
         {/* Search and Filters */}
-        <div className="mb-8 space-y-4">
+        <div className="mb-4 space-y-3">
           <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
             {/* Search Bar */}
             <div className="relative flex-1 max-w-md">
@@ -166,8 +166,8 @@ export function WindshieldCatalog() {
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-md transition-colors ${
-                  viewMode === 'grid' 
-                    ? 'bg-primary-600 text-white' 
+                  viewMode === 'grid'
+                    ? 'bg-primary-600 text-white'
                     : 'text-secondary-600 hover:bg-secondary-100'
                 }`}
               >
@@ -176,8 +176,8 @@ export function WindshieldCatalog() {
               <button
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded-md transition-colors ${
-                  viewMode === 'list' 
-                    ? 'bg-primary-600 text-white' 
+                  viewMode === 'list'
+                    ? 'bg-primary-600 text-white'
                     : 'text-secondary-600 hover:bg-secondary-100'
                 }`}
               >
@@ -185,11 +185,56 @@ export function WindshieldCatalog() {
               </button>
             </div>
           </div>
+
+          {/* Mobile brand pills — horizontal scroll, hidden on lg+ */}
+          <div className="lg:hidden">
+            {/* Active filter chip (shows when a brand is selected) */}
+            {selectedManufacturer !== 'Todos' && (
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs text-secondary-500">Marca:</span>
+                <span className="inline-flex items-center gap-1 bg-primary-100 text-primary-800 text-xs font-semibold px-2.5 py-1 rounded-full">
+                  {selectedManufacturer}
+                  <button onClick={() => setSelectedManufacturer('Todos')} className="text-primary-600 hover:text-primary-800">
+                    <X className="w-3 h-3" />
+                  </button>
+                </span>
+              </div>
+            )}
+
+            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+              <button
+                onClick={() => setSelectedManufacturer('Todos')}
+                className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+                  selectedManufacturer === 'Todos'
+                    ? 'bg-primary-600 text-white border-primary-600'
+                    : 'bg-white text-secondary-700 border-secondary-300'
+                }`}
+              >
+                Todas
+              </button>
+              {manufacturers.map(manufacturer => (
+                <button
+                  key={manufacturer}
+                  onClick={() => setSelectedManufacturer(manufacturer)}
+                  className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+                    selectedManufacturer === manufacturer
+                      ? 'bg-primary-600 text-white border-primary-600'
+                      : 'bg-white text-secondary-700 border-secondary-300'
+                  }`}
+                >
+                  {manufacturer}
+                  <span className={`ml-1.5 text-xs ${selectedManufacturer === manufacturer ? 'text-white/70' : 'text-secondary-400'}`}>
+                    {manufacturerCounts[manufacturer]}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left Sidebar Filter */}
-          <div className="lg:w-72 flex-shrink-0">
+          {/* Left Sidebar Filter — desktop only */}
+          <div className="hidden lg:block lg:w-72 flex-shrink-0">
             <div className="card p-6 sticky top-24">
               <div className="flex items-center space-x-2 mb-6">
                 <Filter className="w-5 h-5 text-secondary-600" />
@@ -197,7 +242,7 @@ export function WindshieldCatalog() {
                   Filtrar por Marca
                 </h3>
               </div>
-              
+
               <div className="space-y-2">
                 {/* All Manufacturers Option */}
                 <label className="flex items-center p-3 rounded-lg cursor-pointer hover:bg-secondary-50 transition-colors group">
