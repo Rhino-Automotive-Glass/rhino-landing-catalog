@@ -173,6 +173,12 @@ body {
   }
 }
 
+@keyframes strokeFlow {
+  to {
+    stroke-dashoffset: -35%;
+  }
+}
+
 /* Focus styles */
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;

@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Star } from 'lucide-react';
 import { CTAButton } from './CTAButton';
 
+const STROKE_COLORS = ['#ffffff', '#fb923c', '#60a5fa', '#fbbf24', '#93c5fd'];
+
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -28,9 +30,23 @@ export function Hero() {
           {/* Main Heading */}
           <div className="space-y-4">
             <p className="text-sm md:text-base font-semibold tracking-widest text-accent-400 uppercase animate-slide-up" style={{ animationDelay: '0.1s' }}>Rhino Automotive Glass</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="block animate-slide-up" style={{ animationDelay: '0.25s' }}>Cristales para</span>
-              <span className="block text-accent-400 animate-slide-up" style={{ animationDelay: '0.4s' }}>Vans y Autobuses</span>
+            <h1 className="animate-slide-up" style={{ animationDelay: '0.25s' }}>
+              <span className="sr-only">Vidrio para Vans, Autobuses y más</span>
+              <svg viewBox="0 0 1000 180" className="w-full max-w-4xl mx-auto" aria-hidden="true">
+                {STROKE_COLORS.map((color, i) => (
+                  <text key={`s1-${i}`} x="500" y="75" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif"
+                    style={{ fill: 'none', stroke: color, strokeWidth: 5, strokeDasharray: '6% 29%', animation: 'strokeFlow 5.5s linear infinite', animationDelay: `${-(i + 1)}s` }}
+                  >Vidrio para</text>
+                ))}
+                <text x="500" y="75" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif" fill="white">Vidrio para</text>
+
+                {STROKE_COLORS.map((color, i) => (
+                  <text key={`s2-${i}`} x="500" y="152" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif"
+                    style={{ fill: 'none', stroke: color, strokeWidth: 5, strokeDasharray: '6% 29%', animation: 'strokeFlow 5.5s linear infinite', animationDelay: `${-(i + 1)}s` }}
+                  >Vans, Autobuses y más…</text>
+                ))}
+                <text x="500" y="152" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif" fill="#fb923c">Vans, Autobuses y más…</text>
+              </svg>
             </h1>
 
             <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-blue-100 max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.55s' }}>
