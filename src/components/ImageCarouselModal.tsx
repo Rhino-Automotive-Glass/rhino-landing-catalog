@@ -215,11 +215,11 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
             <div className="space-y-4">
               {/* Main Image Container */}
               <div className="relative bg-gray-100 rounded-lg overflow-hidden">
-                <div className="aspect-video flex items-center justify-center min-w-[500px] min-h-[500px] max-w-[500px] max-h-[500px]">
+                <div className="w-full h-64 md:h-96 flex items-center justify-center">
                   <img
                     src={images[currentIndex].src}
                     alt={`Cristal ${currentIndex + 1}`}
-                    className="w-[150%] h-[150%] object-contain"
+                    className="max-w-full max-h-full object-contain"
                     onError={(e) => {
                     const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
