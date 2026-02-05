@@ -137,11 +137,12 @@ export function WindshieldCatalog() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
-            Catálogo de Parabrisas
+            Catálogo de Cristales para Vans y Autobuses
           </h2>
           <p className="text-lg text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-            Encuentra el parabrisas perfecto para tu vehículo. Somos fabricantes de la mayor variedad 
-            de cristales automotrices para todas las marcas y modelos.
+            Medallones, costados, parabrisas y ventanillas para las principales marcas de vans,
+            autobuses y vehículos comerciales. Ford Transit, Mercedes Sprinter, Volkswagen Crafter,
+            Nissan NV350, Toyota Hiace y más.
           </p>
         </div>
 

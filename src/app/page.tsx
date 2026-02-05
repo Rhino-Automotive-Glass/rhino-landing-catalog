@@ -29,9 +29,11 @@ export default function Home() {
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center font-bold text-lg">
-                  R
-                </div>
+                <img
+                  src="/rhino-logo.png"
+                  alt="Rhino Automotive Glass"
+                  className="w-10 h-10 object-contain"
+                />
                 <h3 className="text-xl font-bold">Rhino Automotive Glass</h3>
               </div>
               <p className="text-secondary-300 leading-relaxed">
@@ -44,11 +46,13 @@ export default function Home() {
             <div>
               <h4 className="font-semibold text-lg mb-4">Nuestros Servicios</h4>
               <ul className="space-y-2 text-secondary-300">
+                <li>• Cristales para vans y autobuses</li>
+                <li>• Medallones y costados</li>
                 <li>• Parabrisas</li>
-                <li>• Medallones</li>
                 <li>• Ventanillas laterales</li>
                 <li>• Cristales traseros</li>
-                <li>• Servicio a domicilio</li>
+                <li>• Cristales para flotillas</li>
+                <li>• Servicio a domicilio CDMX y EdoMex</li>
                 <li>• Instalación profesional</li>
               </ul>
             </div>
@@ -65,8 +69,8 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-medium text-white">Email</p>
-                  <a href="mailto:info@rhinoautomotive.com" className="hover:text-accent-400 transition-colors">
-                    info@rhinoautomotive.com
+                  <a href="mailto:info@rhinoautoglass.mx" className="hover:text-accent-400 transition-colors">
+                    info@rhinoautoglass.mx
                   </a>
                 </div>
                 <div>
@@ -79,7 +83,7 @@ export default function Home() {
           
           {/* Bottom Footer */}
           <div className="border-t border-secondary-700 mt-8 pt-8 text-center text-secondary-400">
-            <p>&copy; 2024 Rhino Automotive Glass. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Rhino Automotive Glass. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>

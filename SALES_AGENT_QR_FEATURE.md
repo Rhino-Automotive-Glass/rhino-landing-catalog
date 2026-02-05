@@ -45,7 +45,7 @@ Edit `/src/data/agents.ts` and update the agent objects with real information:
   id: "agent-1",
   name: "Your Agent Name",
   title: "Sales Position",
-  email: "agent@rhinoautomotive.com",
+  email: "agent@rhinoautoglass.mx",
   phone: "+52 55 1234 5678",
   photo: "/agents/your-agent.jpg",
   bio: "Your agent's bio here"

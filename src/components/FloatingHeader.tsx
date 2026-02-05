@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { CTAButton } from './CTAButton';
 
 interface FloatingHeaderProps {
@@ -36,16 +37,15 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Logo/Title */}
           <div className="flex items-center space-x-3">
-            <div className={`
-              w-10 h-10 rounded-lg flex items-center justify-center font-bold text-lg
-              transition-all duration-300
-              ${isScrolled 
-                ? 'bg-primary-600 text-white' 
-                : 'bg-white/20 text-white backdrop-blur-sm'}
-            `}>
-              R
-            </div>
-            <h1 
+            <Image
+              src="/rhino-logo.png"
+              alt="Rhino Automotive Glass"
+              width={40}
+              height={40}
+              className="object-contain"
+              priority
+            />
+            <h1
               className={`
                 text-xl md:text-2xl font-bold tracking-tight
                 transition-all duration-300

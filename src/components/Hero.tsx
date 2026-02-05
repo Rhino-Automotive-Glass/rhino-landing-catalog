@@ -10,9 +10,9 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image 
+        <Image
           src="/parabrisas-medallones-van-camioneta-autobuses.webp"
-          alt="Rhino Automotive Glass - Professional Service"
+          alt="Cristales automotrices para vans y autobuses - parabrisas medallones costados en Ciudad de México"
           fill
           className="object-cover object-center"
           priority
@@ -27,20 +27,21 @@ export function Hero() {
         <div className="space-y-8 animate-fade-in">
           {/* Main Heading */}
           <div className="space-y-4">
+            <p className="text-sm md:text-base font-semibold tracking-widest text-accent-400 uppercase">Rhino Automotive Glass</p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="block">RHINO</span>
-              <span className="block text-accent-400">AUTOMOTIVE GLASS</span>
+              <span className="block">Cristales para</span>
+              <span className="block text-accent-400">Vans y Autobuses</span>
             </h1>
-            
+
             <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-blue-100 max-w-3xl mx-auto">
-              MEDALLONES • COSTADOS • VENTANILLAS
+              MEDALLONES • COSTADOS • VENTANILLAS • PARABRISAS
             </h2>
           </div>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-blue-50 max-w-2xl mx-auto leading-relaxed">
-            Especialistas en cristales automotrices con más de 15 años de experiencia. 
-            Calidad garantizada y servicio profesional.
+            Especialistas en cristales automotrices para flotillas y vehículos comerciales
+            con más de 15 años de experiencia en CDMX y Estado de México.
           </p>
 
           {/* CTA Button */}

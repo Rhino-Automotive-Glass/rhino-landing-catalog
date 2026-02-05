@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a Rhino Automotive Glass</title>
+  <style>
+    /* Reset styles for email clients */
+    body, table, td, a {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table, td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    img {
+      -ms-interpolation-mode: bicubic;
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    body {
+      height: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+
+    /* Prevent iOS from auto-linking */
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
+
+  <!-- Main Container -->
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f8fafc;">
+    <tr>
+      <td style="padding: 40px 20px;">
+
+        <!-- Email Content Container -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);">
+
+          <!-- Header with Gradient Background -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%); padding: 40px 30px; text-align: center; border-radius: 12px 12px 0 0;">
+              <!-- Logo -->
+              <!-- <div style="margin-bottom: 20px;">
+                <div style="display: inline-block; width: 60px; height: 60px; background-color: #3b82f6; border-radius: 12px; line-height: 60px; text-align: center;">
+                  <span style="color: #ffffff; font-size: 32px; font-weight: bold; font-family: 'Inter', sans-serif;">R</span>
+                </div>
+              </div> -->
+
+              <!-- Company Name -->
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: bold; font-family: 'Inter', sans-serif; line-height: 1.2;">
+                🦏 RHINO 
+              </h1>
+              <h2 style="margin: 8px 0 0 0; color: #fdba74; font-size: 20px; font-weight: 600; font-family: 'Inter', sans-serif; line-height: 1.2;">
+                AUTOMOTIVE GLASS
+              </h2>
+            </td>
+          </tr>
+
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 40px 30px;">
+
+              <!-- Welcome Message -->
+              <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 24px; font-weight: 600; font-family: 'Inter', sans-serif; text-align: center;">
+                ¡Bienvenido! 👋
+              </h2>
+
+              <p style="margin: 0 0 20px 0; color: #475569; font-size: 16px; line-height: 1.6; font-family: 'Inter', sans-serif;">
+                Gracias por registrarte en <strong style="color: #1e40af;">La Plataforma de códigos de Rhino</strong>
+              </p>
+
+              <p style="margin: 0 0 30px 0; color: #475569; font-size: 16px; line-height: 1.6; font-family: 'Inter', sans-serif;">
+                Para completar tu registro y confirmar tu correo electrónico, por favor haz clic en el botón de abajo:
+              </p>
+
+              <!-- CTA Button -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="text-align: center; padding: 10px 0 30px 0;">
+                    <a href="{{ .ConfirmationURL }}" style="display: inline-block; padding: 16px 40px; background-color: #f97316; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: 600; font-family: 'Inter', sans-serif; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.3);">
+                      Confirmar mi cuenta
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Alternative Link -->
+              <div style="padding: 20px; background-color: #f1f5f9; border-radius: 8px; border-left: 4px solid #3b82f6; margin-bottom: 30px;">
+                <p style="margin: 0 0 10px 0; color: #475569; font-size: 14px; font-family: 'Inter', sans-serif;">
+                  <strong>Si el botón no funciona,</strong> copia y pega este enlace en tu navegador:
+                </p>
+                <p style="margin: 0; color: #2563eb; font-size: 13px; font-family: 'Inter', monospace; word-break: break-all;">
+                  {{ .ConfirmationURL }}
+                </p>
+              </div>
+
+              <!-- Services Section -->
+              <div style="border-top: 1px solid #e2e8f0; padding-top: 30px; margin-top: 30px;">
+                <h3 style="margin: 0 0 20px 0; color: #1e293b; font-size: 18px; font-weight: 600; font-family: 'Inter', sans-serif; text-align: center;">
+                  Nuestros Servicios
+                </h3>
+
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td width="50%" style="padding: 10px; vertical-align: top;">
+                      <div style="color: #64748b; font-size: 14px; font-family: 'Inter', sans-serif;">
+                        • Ventanillas laterales<br>
+                        • Ventanillas a medida<br>
+                      </div>
+                    </td>
+                    <td width="50%" style="padding: 10px; vertical-align: top;">
+                      <div style="color: #64748b; font-size: 14px; font-family: 'Inter', sans-serif;">
+                        • Ventanillas para vans y camiones<br>
+                        • Servicio a domicilio<br>
+                        • Instalación profesional
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- Trust Badge -->
+              <div style="text-align: center; padding: 20px 0; margin-top: 20px;">
+                <div style="display: inline-block; padding: 12px 24px; background-color: #dcfce7; border-radius: 8px; border: 1px solid #86efac;">
+                  <span style="color: #15803d; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif;">
+                    ⭐ Más de 15 años de experiencia
+                  </span>
+                </div>
+              </div>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #0f172a; padding: 30px; border-radius: 0 0 12px 12px;">
+
+              <!-- Contact Information -->
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="text-align: center; padding-bottom: 20px;">
+                    <h3 style="margin: 0 0 15px 0; color: #ffffff; font-size: 16px; font-weight: 600; font-family: 'Inter', sans-serif;">
+                      Contacto
+                    </h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">
+                    <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 14px; font-family: 'Inter', sans-serif;">
+                      <strong style="color: #ffffff;">Ventas:</strong>
+                      <a href="tel:+525527488329" style="color: #fdba74; text-decoration: none;">+52 55 2748 8329</a>
+                    </p>
+                    <p style="margin: 0 0 20px 0; color: #cbd5e1; font-size: 14px; font-family: 'Inter', sans-serif;">
+                      <strong style="color: #ffffff;">Horario:</strong> Lunes a Sábado: 8:00 AM - 6:00 PM
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Divider -->
+              <div style="border-top: 1px solid #334155; margin: 20px 0;"></div>
+
+              <!-- Copyright -->
+              <p style="margin: 0; text-align: center; color: #94a3b8; font-size: 12px; font-family: 'Inter', sans-serif;">
+                &copy; 2024 Rhino Automotive Glass. Todos los derechos reservados.
+              </p>
+
+              <!-- Security Notice -->
+              <p style="margin: 15px 0 0 0; text-align: center; color: #64748b; font-size: 11px; font-family: 'Inter', sans-serif; line-height: 1.4;">
+                Este correo fue enviado a {{ .Email }}. Si no solicitaste crear una cuenta, puedes ignorar este mensaje de forma segura.
+              </p>
+
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

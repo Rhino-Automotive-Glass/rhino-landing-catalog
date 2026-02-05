@@ -10,10 +10,10 @@ export function Location() {
     city: "Ixtapaluca",
     postalCode: "56530",
     phone: "+52 55 2748 8329",
-    email: "info@rhinoautomotive.com",
+    email: "info@rhinoautoglass.mx",
     coordinates: {
-      lat: 19.321183350618767,
-      lng: -98.89332009031185
+      lat: 19.3258975,
+      lng: -98.8882736
     }
   };
 
@@ -34,9 +34,7 @@ export function Location() {
   ];
 
   const handleGetDirections = () => {
-    const address = encodeURIComponent(`${businessInfo.address}, ${businessInfo.city}`);
-    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${address}`;
-    window.open(googleMapsUrl, '_blank');
+    window.open('https://maps.app.goo.gl/nazGPfcAyHNGmv3h9', '_blank');
   };
 
   const handleCallBusiness = () => {
@@ -52,8 +50,8 @@ export function Location() {
             Nuestra Ubicación
           </h2>
           <p className="text-lg text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-            Visítanos en nuestro taller especializado o solicita nuestro servicio a domicilio 
-            en toda la Ciudad de México.
+            Visítanos en nuestro taller en Ixtapaluca o solicita nuestro servicio a domicilio
+            en Ciudad de México y Estado de México.
           </p>
         </div>
 
@@ -244,7 +242,7 @@ export function Location() {
               <h3 className="text-xl font-semibold text-secondary-900 mb-4">
                 Áreas de Servicio
               </h3>
-              
+
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-secondary-700">Ciudad de México</span>
@@ -268,7 +266,8 @@ export function Location() {
 
               <div className="mt-4 p-3 bg-secondary-50 rounded-lg">
                 <p className="text-sm text-secondary-600">
-                  <strong>Servicio a domicilio disponible</strong> en toda la zona metropolitana. 
+                  <strong>Servicio a domicilio disponible</strong> en toda la zona metropolitana,
+                  incluyendo Ixtapaluca, Nezahualcóyotl, Chalco, Valle de Chalco, Texcoco y todas las delegaciones de la CDMX.
                   Consulta disponibilidad para tu área específica.
                 </p>
               </div>

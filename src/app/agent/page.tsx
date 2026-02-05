@@ -16,14 +16,16 @@ export async function generateMetadata({ searchParams }: AgentPageProps): Promis
     return {
       title: 'Agente no encontrado',
       description: 'El agente que buscas no existe.',
+      robots: { index: false },
     };
   }
 
   return {
-    title: `${agent.name} - ${agent.title}`,
-    description: agent.bio,
+    title: `${agent.name} - ${agent.title} | Rhino Automotive Glass`,
+    description: `${agent.bio} Contacta a ${agent.name} para cristales automotrices en Ciudad de México.`,
+    robots: { index: false },
     openGraph: {
-      title: `${agent.name} - ${agent.title}`,
+      title: `${agent.name} - ${agent.title} | Rhino Automotive Glass`,
       description: agent.bio,
       type: 'profile',
     },
@@ -96,6 +98,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
         <div className="max-w-4xl mx-auto px-4 py-4">
           <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
             <ArrowLeft className="w-4 h-4" />
+            <img src="/rhino-logo.png" alt="Rhino Automotive Glass" className="w-7 h-7 object-contain" />
             <span className="text-sm font-medium">Rhino Automotive Glass</span>
           </Link>
         </div>
@@ -193,7 +196,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
 
         {/* Footer */}
         <div className="text-center mt-8 text-gray-600 text-sm">
-          <p>© 2024 Rhino Automotive Glass - Todos los derechos reservados</p>
+          <p>© 2025 Rhino Automotive Glass - Todos los derechos reservados</p>
         </div>
       </div>
     </div>

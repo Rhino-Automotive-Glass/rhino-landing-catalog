@@ -72,7 +72,7 @@ Before printing business cards:
 
 1. **Set production URL** in Vercel/hosting:
    ```
-   NEXT_PUBLIC_BASE_URL=https://rhinoautomotive.com
+   NEXT_PUBLIC_BASE_URL=https://rhinoautoglass.mx
    ```
 
 2. **Test all URLs** work in production

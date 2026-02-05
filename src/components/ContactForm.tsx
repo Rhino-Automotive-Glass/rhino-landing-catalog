@@ -127,7 +127,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Email</h3>
-                  <p className="text-blue-100">info@rhinoautomotive.com</p>
+                  <p className="text-blue-100">info@rhinoautoglass.mx</p>
                   <p className="text-sm text-blue-200">Respuesta en 24 horas</p>
                 </div>
               </div>
