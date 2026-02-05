@@ -258,120 +258,122 @@ export function WindshieldCatalog() {
               </div>
             </div>
 
-            {/* Product Grid/List */}
-            {filteredProducts.length > 0 ? (
-              <div className={`${
-                viewMode === 'grid' 
-                  ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
-                  : 'space-y-4'
-              }`}>
-                {filteredProducts.map((item) => (
-                  viewMode === 'grid' ? (
-                    // Grid View
-                    <div
-                      key={item.id}
-                      className="card card-hover overflow-hidden group cursor-pointer"
-                    >
-                      <div className="aspect-[7/3] overflow-hidden bg-secondary-100">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      <div className="p-5">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="inline-block bg-primary-100 text-primary-800 text-xs font-semibold px-3 py-1 rounded-full">
-                            {item.manufacturer}
-                          </span>
-                        </div>
-                        <h4 className="text-sm font-medium text-secondary-900 line-clamp-2 leading-relaxed">
-                          {item.title}
-                        </h4>
-                        <div className="mt-4 pt-4 border-t border-secondary-100">
-                          <button 
-                            onClick={() => handleViewDetails(item)}
-                            className="btn btn-sm btn-primary w-full"
-                          >
-                            Ver Detalles
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    // List View
-                    <div
-                      key={item.id}
-                      className="card p-6 hover:shadow-md transition-shadow cursor-pointer"
-                    >
-                      <div className="flex items-center space-x-6">
-                        <div className="w-24 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-secondary-100">
+            {/* Product Grid/List — fixed-height scroll so the page doesn't jump on filter */}
+            <div className="h-[520px] md:h-[640px] lg:h-[720px] overflow-y-auto pr-2">
+              {filteredProducts.length > 0 ? (
+                <div className={`${
+                  viewMode === 'grid'
+                    ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
+                    : 'space-y-4'
+                }`}>
+                  {filteredProducts.map((item) => (
+                    viewMode === 'grid' ? (
+                      // Grid View
+                      <div
+                        key={item.id}
+                        className="card card-hover overflow-hidden group cursor-pointer"
+                      >
+                        <div className="aspect-[7/3] overflow-hidden bg-secondary-100">
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between">
-                            <div>
-                              <h4 className="text-base font-medium text-secondary-900 mb-1">
-                                {item.title}
-                              </h4>
-                              <span className="inline-block bg-primary-100 text-primary-800 text-xs font-semibold px-2 py-1 rounded">
-                                {item.manufacturer}
-                              </span>
-                            </div>
-                            <button 
+                        <div className="p-5">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="inline-block bg-primary-100 text-primary-800 text-xs font-semibold px-3 py-1 rounded-full">
+                              {item.manufacturer}
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-medium text-secondary-900 line-clamp-2 leading-relaxed">
+                            {item.title}
+                          </h4>
+                          <div className="mt-4 pt-4 border-t border-secondary-100">
+                            <button
                               onClick={() => handleViewDetails(item)}
-                              className="btn btn-sm btn-primary ml-4"
+                              className="btn btn-sm btn-primary w-full"
                             >
                               Ver Detalles
                             </button>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  )
-                ))}
-              </div>
-            ) : (
-              /* Empty State */
-              <div className="text-center py-16">
-                <div className="max-w-md mx-auto">
-                  <div className="mx-auto w-24 h-24 bg-secondary-100 rounded-full flex items-center justify-center mb-6">
-                    <Search className="w-12 h-12 text-secondary-400" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-secondary-900 mb-3">
-                    No se encontraron productos
-                  </h3>
-                  <p className="text-secondary-600 mb-6 leading-relaxed">
-                    {searchTerm 
-                      ? `No hay productos que coincidan con "${searchTerm}"`
-                      : 'No hay productos que coincidan con los filtros seleccionados.'}
-                  </p>
-                  <div className="space-x-3">
-                    {searchTerm && (
-                      <button
-                        onClick={() => setSearchTerm('')}
-                        className="btn btn-secondary btn-md"
+                    ) : (
+                      // List View
+                      <div
+                        key={item.id}
+                        className="card p-6 hover:shadow-md transition-shadow cursor-pointer"
                       >
-                        Limpiar búsqueda
+                        <div className="flex items-center space-x-6">
+                          <div className="w-24 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-secondary-100">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between">
+                              <div>
+                                <h4 className="text-base font-medium text-secondary-900 mb-1">
+                                  {item.title}
+                                </h4>
+                                <span className="inline-block bg-primary-100 text-primary-800 text-xs font-semibold px-2 py-1 rounded">
+                                  {item.manufacturer}
+                                </span>
+                              </div>
+                              <button
+                                onClick={() => handleViewDetails(item)}
+                                className="btn btn-sm btn-primary ml-4"
+                              >
+                                Ver Detalles
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  ))}
+                </div>
+              ) : (
+                /* Empty State */
+                <div className="flex items-center justify-center h-full">
+                  <div className="max-w-md mx-auto text-center">
+                    <div className="mx-auto w-24 h-24 bg-secondary-100 rounded-full flex items-center justify-center mb-6">
+                      <Search className="w-12 h-12 text-secondary-400" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-secondary-900 mb-3">
+                      No se encontraron productos
+                    </h3>
+                    <p className="text-secondary-600 mb-6 leading-relaxed">
+                      {searchTerm
+                        ? `No hay productos que coincidan con "${searchTerm}"`
+                        : 'No hay productos que coincidan con los filtros seleccionados.'}
+                    </p>
+                    <div className="space-x-3">
+                      {searchTerm && (
+                        <button
+                          onClick={() => setSearchTerm('')}
+                          className="btn btn-secondary btn-md"
+                        >
+                          Limpiar búsqueda
+                        </button>
+                      )}
+                      <button
+                        onClick={() => {
+                          setSelectedManufacturer('Todos')
+                          setSearchTerm('')
+                        }}
+                        className="btn btn-primary btn-md"
+                      >
+                        Ver todos los productos
                       </button>
-                    )}
-                    <button
-                      onClick={() => {
-                        setSelectedManufacturer('Todos')
-                        setSearchTerm('')
-                      }}
-                      className="btn btn-primary btn-md"
-                    >
-                      Ver todos los productos
-                    </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
