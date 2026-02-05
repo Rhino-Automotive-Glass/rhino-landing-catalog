@@ -44,10 +44,11 @@ export function Location() {
   return (
     <section className="section-padding relative overflow-hidden">
       {/* Glass background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
-      <div className="absolute -top-40 right-0 w-[450px] h-[450px] bg-primary-200/30 rounded-full blur-3xl" />
-      <div className="absolute -bottom-40 -left-20 w-[450px] h-[450px] bg-success-200/25 rounded-full blur-3xl" />
-      <div className="absolute top-1/3 left-1/2 w-[350px] h-[350px] bg-accent-200/20 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50" />
+      <div className="absolute -top-20 right-0 w-[550px] h-[550px] bg-primary-300/55 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 -left-10 w-[550px] h-[550px] bg-accent-300/45 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 left-1/2 w-[450px] h-[450px] bg-accent-300/35 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-primary-200/40 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto container-padding">
         {/* Header */}
@@ -65,9 +66,9 @@ export function Location() {
           {/* Left Column - Business Info */}
           <div className="space-y-8">
             {/* Address Card */}
-            <div className="card p-6">
+            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
               <div className="flex items-start space-x-4 mb-6">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-primary-600" />
                 </div>
                 <div className="flex-1">
@@ -101,9 +102,9 @@ export function Location() {
             </div>
 
             {/* Business Hours */}
-            <div className="card p-6">
+            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-accent-100/60 backdrop-blur-sm border border-accent-200/50 rounded-lg flex items-center justify-center">
                   <Clock className="w-6 h-6 text-accent-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-900">
@@ -115,7 +116,7 @@ export function Location() {
                 {businessHours.map((schedule, index) => (
                   <div
                     key={index}
-                    className="flex justify-between items-center py-2 border-b border-secondary-100 last:border-b-0"
+                    className="flex justify-between items-center py-2 border-b border-white/50 last:border-b-0"
                   >
                     <span className="font-medium text-secondary-700">{schedule.day}</span>
                     <span 
@@ -140,7 +141,7 @@ export function Location() {
             </div>
 
             {/* Services Available */}
-            <div className="card p-6">
+            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
               <h3 className="text-xl font-semibold text-secondary-900 mb-6">
                 Modalidades de Servicio
               </h3>
@@ -148,8 +149,8 @@ export function Location() {
               <div className="space-y-4">
                 {services.map((service, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-success-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <service.icon className="w-5 h-5 text-success-600" />
+                    <div className="w-10 h-10 bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <service.icon className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-secondary-900 mb-1">
@@ -168,12 +169,12 @@ export function Location() {
           {/* Right Column - Map */}
           <div className="space-y-6">
             {/* Map Container */}
-            <div className="card overflow-hidden">
-              <div className="aspect-[4/3] bg-white/60 backdrop-blur-sm relative">
+            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset overflow-hidden">
+              <div className="aspect-[4/3] relative">
                 {/* Placeholder for map - replace with actual map integration */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center space-y-4">
-                    <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto">
+                    <div className="w-16 h-16 bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 rounded-full flex items-center justify-center mx-auto">
                       <MapPin className="w-8 h-8 text-primary-600" />
                     </div>
                     <div>
@@ -196,7 +197,7 @@ export function Location() {
             </div>
 
             {/* Contact Info Summary */}
-            <div className="card p-6">
+            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
               <h3 className="text-xl font-semibold text-secondary-900 mb-4">
                 Información de Contacto
               </h3>
@@ -244,7 +245,7 @@ export function Location() {
             </div>
 
             {/* Service Areas */}
-            <div className="card p-6">
+            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
               <h3 className="text-xl font-semibold text-secondary-900 mb-4">
                 Áreas de Servicio
               </h3>
@@ -252,19 +253,19 @@ export function Location() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-secondary-700">Ciudad de México</span>
-                  <span className="text-sm bg-success-100 text-success-800 px-2 py-1 rounded-full">
+                  <span className="text-sm bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 text-primary-800 px-2 py-1 rounded-full">
                     Área Principal
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-secondary-700">Estado de México</span>
-                  <span className="text-sm bg-warning-100 text-warning-800 px-2 py-1 rounded-full">
+                  <span className="text-sm bg-warning-100/60 backdrop-blur-sm border border-warning-200/50 text-warning-800 px-2 py-1 rounded-full">
                     Con cita previa
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-secondary-700">Zona Metropolitana</span>
-                  <span className="text-sm bg-primary-100 text-primary-800 px-2 py-1 rounded-full">
+                  <span className="text-sm bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 text-primary-800 px-2 py-1 rounded-full">
                     Disponible
                   </span>
                 </div>

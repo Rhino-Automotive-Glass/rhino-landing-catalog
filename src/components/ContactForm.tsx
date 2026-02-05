@@ -94,8 +94,13 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contacto" className="section-padding hero-bg">
-      <div className="max-w-7xl mx-auto container-padding">
+    <section id="contacto" className="section-padding hero-bg relative overflow-hidden">
+      {/* Accent blobs so backdrop-blur on the form card has color to diffuse */}
+      <div className="absolute -top-28 -right-28 w-[420px] h-[420px] bg-accent-500/20 rounded-full blur-3xl" />
+      <div className="absolute -bottom-36 -left-28 w-[380px] h-[380px] bg-primary-400/25 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[300px] h-[300px] bg-accent-400/15 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto container-padding relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Contact Info */}
           <div className="text-white space-y-8">
@@ -160,7 +165,7 @@ export function ContactForm() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-white/90 backdrop-blur-xl border border-white/30 rounded-xl shadow-glass p-8">
+          <div className="bg-white/65 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-8">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-secondary-900 mb-2">
                 Solicita tu Cotización
@@ -198,7 +203,7 @@ export function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border rounded-lg focus-ring transition-colors ${
-                    errors.name ? 'border-red-500 bg-red-50' : 'border-secondary-300 bg-white'
+                    errors.name ? 'border-red-500 bg-red-50' : 'border-white/50 bg-white/60 backdrop-blur-sm'
                   }`}
                   placeholder="Tu nombre completo"
                 />
@@ -219,7 +224,7 @@ export function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border rounded-lg focus-ring transition-colors ${
-                    errors.email ? 'border-red-500 bg-red-50' : 'border-secondary-300 bg-white'
+                    errors.email ? 'border-red-500 bg-red-50' : 'border-white/50 bg-white/60 backdrop-blur-sm'
                   }`}
                   placeholder="tu@email.com"
                 />
@@ -240,7 +245,7 @@ export function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border rounded-lg focus-ring transition-colors ${
-                    errors.phone ? 'border-red-500 bg-red-50' : 'border-secondary-300 bg-white'
+                    errors.phone ? 'border-red-500 bg-red-50' : 'border-white/50 bg-white/60 backdrop-blur-sm'
                   }`}
                   placeholder="+52 55 1234 5678"
                 />
@@ -261,7 +266,7 @@ export function ContactForm() {
                   value={formData.vehicle}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border rounded-lg focus-ring transition-colors ${
-                    errors.vehicle ? 'border-red-500 bg-red-50' : 'border-secondary-300 bg-white'
+                    errors.vehicle ? 'border-red-500 bg-red-50' : 'border-white/50 bg-white/60 backdrop-blur-sm'
                   }`}
                   placeholder="Ej: Honda Civic 2020, Ford Focus 2018"
                 />
@@ -282,7 +287,7 @@ export function ContactForm() {
                   value={formData.message}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border rounded-lg focus-ring transition-colors resize-none ${
-                    errors.message ? 'border-red-500 bg-red-50' : 'border-secondary-300 bg-white'
+                    errors.message ? 'border-red-500 bg-red-50' : 'border-white/50 bg-white/60 backdrop-blur-sm'
                   }`}
                   placeholder="Describe qué tipo de servicio necesitas (medallón, costado, ventana lateral, etc.)"
                 />

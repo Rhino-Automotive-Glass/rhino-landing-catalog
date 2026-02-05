@@ -135,9 +135,9 @@ export function WindshieldCatalog() {
     <section id="catalogo" className="section-padding relative overflow-hidden">
       {/* Glass background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-slate-50 to-orange-50" />
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary-200/40 rounded-full blur-3xl" />
-      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-accent-200/30 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-100/30 rounded-full blur-3xl" />
+      <div className="absolute -top-40 -left-40 w-[550px] h-[550px] bg-primary-300/55 rounded-full blur-3xl" />
+      <div className="absolute -bottom-40 -right-40 w-[550px] h-[550px] bg-accent-300/45 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-200/40 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto container-padding">
         {/* Header */}
@@ -241,7 +241,7 @@ export function WindshieldCatalog() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Sidebar Filter — desktop only */}
           <div className="hidden lg:block lg:w-72 flex-shrink-0">
-            <div className="card p-6 sticky top-24">
+            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6 sticky top-24">
               <div className="flex items-center space-x-2 mb-6">
                 <Filter className="w-5 h-5 text-secondary-600" />
                 <h3 className="font-semibold text-secondary-900">
@@ -251,7 +251,7 @@ export function WindshieldCatalog() {
 
               <div className="space-y-2">
                 {/* All Manufacturers Option */}
-                <label className="flex items-center p-3 rounded-lg cursor-pointer hover:bg-secondary-50 transition-colors group">
+                <label className="flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/40 transition-colors group">
                   <input
                     type="radio"
                     name="manufacturer"
