@@ -169,20 +169,20 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black bg-opacity-75 transition-opacity"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       />
       
       {/* Modal Content */}
-      <div className="relative w-full h-full md:w-auto md:h-auto md:max-w-4xl md:max-h-[90vh] bg-white md:rounded-lg overflow-hidden">
+      <div className="relative w-full h-full md:w-auto md:h-auto md:max-w-4xl md:max-h-[90vh] bg-white/95 backdrop-blur-2xl md:rounded-xl border border-white/40 shadow-glass overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200">
+        <div className="flex items-center justify-between p-4 border-b border-white/40">
           <h2 className="text-lg font-semibold text-gray-900 truncate">
             {vehicleTitle}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-white/40 rounded-full transition-colors"
           >
             <X className="w-5 h-5 text-gray-500" />
           </button>
@@ -247,7 +247,7 @@ export function ImageCarouselModal({ isOpen, onClose, vehicleModel, vehicleTitle
               </div>
 
               {/* Image Information */}
-              <div className="bg-gray-50 rounded-lg p-4">
+              <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
                     <span className="font-medium text-gray-700">Clave:</span>

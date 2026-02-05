@@ -25,7 +25,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-secondary-900 text-white py-12">
         <div className="max-w-7xl mx-auto container-padding">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 bg-white/5 rounded-2xl p-6">
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">

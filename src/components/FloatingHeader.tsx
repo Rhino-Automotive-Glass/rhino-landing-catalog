@@ -26,11 +26,9 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
       className={`
         fixed top-0 left-0 right-0 z-50
         transition-all duration-300 ease-in-out
-        ${isScrolled 
-          ? 'bg-white/95 backdrop-blur-md py-3 border-b border-secondary-200' 
-          : 'hidden md:block bg-transparent py-4 border-none'}
-          ? 'bg-white/95 backdrop-blur-md py-3 border-b border-secondary-200' 
-          : 'bg-transparent py-4'}
+        ${isScrolled
+          ? 'bg-white/80 backdrop-blur-xl py-3 border-b border-white/60 shadow-sm'
+          : 'hidden md:block bg-transparent py-4'}
       `}
     >
       <div className="max-w-7xl mx-auto container-padding">

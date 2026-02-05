@@ -132,8 +132,14 @@ export function WindshieldCatalog() {
   }, [selectedManufacturer, searchTerm])
 
   return (
-    <section id="catalogo" className="section-padding bg-secondary-50">
-      <div className="max-w-7xl mx-auto container-padding">
+    <section id="catalogo" className="section-padding relative overflow-hidden">
+      {/* Glass background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-slate-50 to-orange-50" />
+      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary-200/40 rounded-full blur-3xl" />
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-accent-200/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-100/30 rounded-full blur-3xl" />
+
+      <div className="relative z-10 max-w-7xl mx-auto container-padding">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
@@ -157,12 +163,12 @@ export function WindshieldCatalog() {
                 placeholder="Buscar por modelo o marca..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus-ring bg-white"
+                className="w-full pl-10 pr-4 py-3 border border-white/50 rounded-lg focus-ring bg-white/70 backdrop-blur-md"
               />
             </div>
 
             {/* View Toggle */}
-            <div className="flex items-center space-x-2 bg-white rounded-lg border border-secondary-300 p-1">
+            <div className="flex items-center space-x-2 bg-white/70 backdrop-blur-md rounded-lg border border-white/50 p-1">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-md transition-colors ${
@@ -207,7 +213,7 @@ export function WindshieldCatalog() {
                 className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
                   selectedManufacturer === 'Todos'
                     ? 'bg-primary-600 text-white border-primary-600'
-                    : 'bg-white text-secondary-700 border-secondary-300'
+                    : 'bg-white/70 backdrop-blur-sm text-secondary-700 border-white/50'
                 }`}
               >
                 Todas
@@ -219,7 +225,7 @@ export function WindshieldCatalog() {
                   className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
                     selectedManufacturer === manufacturer
                       ? 'bg-primary-600 text-white border-primary-600'
-                      : 'bg-white text-secondary-700 border-secondary-300'
+                      : 'bg-white/70 backdrop-blur-sm text-secondary-700 border-white/50'
                   }`}
                 >
                   {manufacturer}
@@ -257,7 +263,7 @@ export function WindshieldCatalog() {
                   <span className="ml-3 text-sm font-medium text-secondary-700 flex-1 group-hover:text-secondary-900">
                     Todas las marcas
                   </span>
-                  <span className="bg-secondary-100 text-secondary-600 text-xs px-2 py-1 rounded-full font-medium">
+                  <span className="bg-white/50 text-secondary-600 text-xs px-2 py-1 rounded-full font-medium">
                     {manufacturerCounts['Todos']}
                   </span>
                 </label>
@@ -266,7 +272,7 @@ export function WindshieldCatalog() {
                 {manufacturers.map(manufacturer => (
                   <label
                     key={manufacturer}
-                    className="flex items-center p-3 rounded-lg cursor-pointer hover:bg-secondary-50 transition-colors group"
+                    className="flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/40 transition-colors group"
                   >
                     <input
                       type="radio"
@@ -279,7 +285,7 @@ export function WindshieldCatalog() {
                     <span className="ml-3 text-sm font-medium text-secondary-700 flex-1 group-hover:text-secondary-900">
                       {manufacturer}
                     </span>
-                    <span className="bg-secondary-100 text-secondary-600 text-xs px-2 py-1 rounded-full font-medium">
+                    <span className="bg-white/50 text-secondary-600 text-xs px-2 py-1 rounded-full font-medium">
                       {manufacturerCounts[manufacturer]}
                     </span>
                   </label>
@@ -385,7 +391,7 @@ export function WindshieldCatalog() {
                 /* Empty State */
                 <div className="flex items-center justify-center h-full">
                   <div className="max-w-md mx-auto text-center">
-                    <div className="mx-auto w-24 h-24 bg-secondary-100 rounded-full flex items-center justify-center mb-6">
+                    <div className="mx-auto w-24 h-24 bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
                       <Search className="w-12 h-12 text-secondary-400" />
                     </div>
                     <h3 className="text-xl font-semibold text-secondary-900 mb-3">

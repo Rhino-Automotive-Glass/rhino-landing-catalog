@@ -40,7 +40,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
   if (!agentId) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+        <div className="max-w-md w-full bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-white/40 p-8 text-center">
           <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <User className="w-8 h-8 text-red-600" />
           </div>
@@ -68,7 +68,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
   if (!agent) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+        <div className="max-w-md w-full bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-white/40 p-8 text-center">
           <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <User className="w-8 h-8 text-red-600" />
           </div>
@@ -94,7 +94,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-50">
       {/* Header with branding */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white/80 backdrop-blur-xl border-b border-white/60">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
             <ArrowLeft className="w-4 h-4" />
@@ -106,7 +106,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
 
       {/* Main content */}
       <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-xl border border-white/40 overflow-hidden">
           {/* Header section with gradient */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-8 sm:px-8 sm:py-12">
             <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -146,7 +146,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
               {/* Phone */}
               <a
                 href={`tel:${agent.phone}`}
-                className="flex items-center gap-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 rounded-xl transition-all duration-200 group border border-green-200"
+                className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md hover:bg-white/80 rounded-xl transition-all duration-200 group border border-white/40"
               >
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Phone className="w-6 h-6 text-white" />
@@ -160,7 +160,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
               {/* Email */}
               <a
                 href={`mailto:${agent.email}`}
-                className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 rounded-xl transition-all duration-200 group border border-blue-200"
+                className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md hover:bg-white/80 rounded-xl transition-all duration-200 group border border-white/40"
               >
                 <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6 text-white" />

@@ -42,8 +42,14 @@ export function Location() {
   };
 
   return (
-    <section className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto container-padding">
+    <section className="section-padding relative overflow-hidden">
+      {/* Glass background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
+      <div className="absolute -top-40 right-0 w-[450px] h-[450px] bg-primary-200/30 rounded-full blur-3xl" />
+      <div className="absolute -bottom-40 -left-20 w-[450px] h-[450px] bg-success-200/25 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 left-1/2 w-[350px] h-[350px] bg-accent-200/20 rounded-full blur-3xl" />
+
+      <div className="relative z-10 max-w-7xl mx-auto container-padding">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
@@ -125,7 +131,7 @@ export function Location() {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-primary-50 rounded-lg">
+              <div className="mt-6 p-4 bg-white/60 border border-primary-200/50 rounded-lg">
                 <p className="text-sm text-primary-800">
                   <strong>Nota:</strong> También ofrecemos servicio a domicilio con cita previa. 
                   Contáctanos para agendar tu visita.
@@ -163,7 +169,7 @@ export function Location() {
           <div className="space-y-6">
             {/* Map Container */}
             <div className="card overflow-hidden">
-              <div className="aspect-[4/3] bg-secondary-100 relative">
+              <div className="aspect-[4/3] bg-white/60 backdrop-blur-sm relative">
                 {/* Placeholder for map - replace with actual map integration */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center space-y-4">
@@ -264,7 +270,7 @@ export function Location() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-secondary-50 rounded-lg">
+              <div className="mt-4 p-3 bg-white/60 rounded-lg">
                 <p className="text-sm text-secondary-600">
                   <strong>Servicio a domicilio disponible</strong> en toda la zona metropolitana,
                   incluyendo Ixtapaluca, Nezahualcóyotl, Chalco, Valle de Chalco, Texcoco y todas las delegaciones de la CDMX.

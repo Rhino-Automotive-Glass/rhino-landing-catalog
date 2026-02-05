@@ -82,11 +82,11 @@ body {
   
   /* Card styles */
   .card {
-    @apply bg-white rounded-xl border border-secondary-200 shadow-soft;
+    @apply bg-white/80 backdrop-blur-md rounded-xl border border-white/60 shadow-soft;
   }
-  
+
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:bg-white/95;
   }
   
   /* Glass morphism effect */

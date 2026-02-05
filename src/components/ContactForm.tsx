@@ -111,7 +111,7 @@ export function ContactForm() {
             {/* Contact Details */}
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="w-6 h-6 text-accent-400" />
                 </div>
                 <div>
@@ -122,7 +122,7 @@ export function ContactForm() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-6 h-6 text-accent-400" />
                 </div>
                 <div>
@@ -133,7 +133,7 @@ export function ContactForm() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-accent-400" />
                 </div>
                 <div>
@@ -160,7 +160,7 @@ export function ContactForm() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="card p-8">
+          <div className="bg-white/90 backdrop-blur-xl border border-white/30 rounded-xl shadow-glass p-8">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-secondary-900 mb-2">
                 Solicita tu Cotización
