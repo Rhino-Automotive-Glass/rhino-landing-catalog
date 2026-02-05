@@ -13,11 +13,12 @@ export const metadata: Metadata = {
     default: 'Rhino Automotive Glass - Cristales para Vans y Autobuses en CDMX',
     template: '%s | Rhino Automotive Glass'
   },
-  description: 'Cristales automotrices para vans, autobuses y flotillas en Ciudad de México y Estado de México. Parabrisas, medallones, costados y ventanillas. Servicio a domicilio y garantía de calidad.',
+  description: 'Vidrio automotriz para vans, autobuses y flotillas en Ciudad de México y Estado de México. Medallones, costados y ventanillas. Servicio a domicilio y garantía de calidad.',
   keywords: [
     'cristales automotrices', 'cristales para vans', 'cristales autobuses',
-    'parabrisas vans', 'medallones vans', 'costados vans',
-    'cristales flotillas', 'parabrisas autobuses',
+    'vidrio automotriz', 'vidrio para vans', 'vidrio autobuses',
+    'medallones vans', 'costados vans',
+    'cristales flotillas', 'vidrio flotillas',
     'cristales Ciudad de México', 'cristales Estado de México',
     'servicio a domicilio cristales', 'instalación profesional cristales',
     'cristales Ixtapaluca', 'cristales zona metropolitana',
@@ -40,14 +41,14 @@ export const metadata: Metadata = {
     locale: 'es_MX',
     url: 'https://rhinoautoglass.mx',
     title: 'Rhino Automotive Glass - Cristales para Vans y Autobuses en CDMX',
-    description: 'Cristales automotrices para vans, autobuses y flotillas en Ciudad de México y Estado de México. Parabrisas, medallones, costados y ventanillas con garantía.',
+    description: 'Vidrio automotriz para vans, autobuses y flotillas en Ciudad de México y Estado de México. Medallones, costados y ventanillas con garantía.',
     siteName: 'Rhino Automotive Glass',
     images: [{ url: 'https://rhinoautoglass.mx/parabrisas-medallones-van-camioneta-autobuses.webp', width: 1200, height: 630, alt: 'Cristales automotrices para vans y autobuses - Rhino Automotive Glass' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rhino Automotive Glass - Cristales para Vans y Autobuses en CDMX',
-    description: 'Cristales automotrices para vans, autobuses y flotillas en CDMX y Estado de México. Medallones, parabrisas, costados con garantía.',
+    description: 'Vidrio automotriz para vans y autobuses en CDMX y Estado de México. Medallones, costados y ventanillas con garantía.',
     images: ['https://rhinoautoglass.mx/parabrisas-medallones-van-camioneta-autobuses.webp'],
   },
   robots: {
@@ -146,10 +147,9 @@ export default function RootLayout({
                 "ratingCount": "5000"
               },
               "services": [
-                "Cristales para vans",
+                "Vidrios para vans",
                 "Cristales para autobuses",
-                "Cristales para flotillas",
-                "Parabrisas",
+                "Vidrio para flotillas",
                 "Medallones",
                 "Costados",
                 "Ventanillas laterales",

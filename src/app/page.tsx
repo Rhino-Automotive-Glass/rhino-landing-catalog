@@ -37,7 +37,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold">Rhino Automotive Glass</h3>
               </div>
               <p className="text-secondary-300 leading-relaxed">
-                Especialistas en cristales automotrices con más de 15 años de experiencia. 
+                Especialistas en vidrio automotriz con más de 15 años de experiencia.
                 Calidad garantizada y servicio profesional en Ciudad de México.
               </p>
             </div>
@@ -46,12 +46,11 @@ export default function Home() {
             <div>
               <h4 className="font-semibold text-lg mb-4">Nuestros Servicios</h4>
               <ul className="space-y-2 text-secondary-300">
-                <li>• Cristales para vans y autobuses</li>
+                <li>• Vidrios para vans y autobuses</li>
                 <li>• Medallones y costados</li>
-                <li>• Parabrisas</li>
                 <li>• Ventanillas laterales</li>
                 <li>• Cristales traseros</li>
-                <li>• Cristales para flotillas</li>
+                <li>• Vidrio para flotillas</li>
                 <li>• Servicio a domicilio CDMX y EdoMex</li>
                 <li>• Instalación profesional</li>
               </ul>

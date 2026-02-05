@@ -104,7 +104,7 @@ export function ContactForm() {
                 Contáctanos
               </h2>
               <p className="text-xl text-blue-100 leading-relaxed">
-                ¿Necesitas un presupuesto? Estamos aquí para ayudarte con todos tus cristales automotrices.
+                ¿Necesitas un presupuesto? Estamos aquí para ayudarte con todo tu vidrio automotriz.
               </p>
             </div>
 
@@ -284,7 +284,7 @@ export function ContactForm() {
                   className={`w-full px-4 py-3 border rounded-lg focus-ring transition-colors resize-none ${
                     errors.message ? 'border-red-500 bg-red-50' : 'border-secondary-300 bg-white'
                   }`}
-                  placeholder="Describe qué tipo de servicio necesitas (parabrisas, medallón, ventana lateral, etc.)"
+                  placeholder="Describe qué tipo de servicio necesitas (medallón, costado, ventana lateral, etc.)"
                 />
                 {errors.message && (
                   <p className="mt-2 text-sm text-red-600">{errors.message}</p>

@@ -12,7 +12,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/parabrisas-medallones-van-camioneta-autobuses.webp"
-          alt="Cristales automotrices para vans y autobuses - parabrisas medallones costados en Ciudad de México"
+          alt="Vidrio automotriz para vans y autobuses - medallones costados en Ciudad de México"
           fill
           className="object-cover object-center"
           priority
@@ -24,29 +24,29 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto container-padding text-center text-white">
-        <div className="space-y-8 animate-fade-in">
+        <div className="space-y-8">
           {/* Main Heading */}
           <div className="space-y-4">
-            <p className="text-sm md:text-base font-semibold tracking-widest text-accent-400 uppercase">Rhino Automotive Glass</p>
+            <p className="text-sm md:text-base font-semibold tracking-widest text-accent-400 uppercase animate-slide-up" style={{ animationDelay: '0.1s' }}>Rhino Automotive Glass</p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="block">Cristales para</span>
-              <span className="block text-accent-400">Vans y Autobuses</span>
+              <span className="block animate-slide-up" style={{ animationDelay: '0.25s' }}>Cristales para</span>
+              <span className="block text-accent-400 animate-slide-up" style={{ animationDelay: '0.4s' }}>Vans y Autobuses</span>
             </h1>
 
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-blue-100 max-w-3xl mx-auto">
-              MEDALLONES • COSTADOS • VENTANILLAS • PARABRISAS
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-blue-100 max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.55s' }}>
+              MEDALLONES • COSTADOS • VENTANILLAS
             </h2>
           </div>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-blue-50 max-w-2xl mx-auto leading-relaxed">
-            Especialistas en cristales automotrices para flotillas y vehículos comerciales
+          <p className="text-lg md:text-xl text-blue-50 max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.75s' }}>
+            Especialistas en vidrio automotriz para flotillas y vehículos comerciales
             con más de 15 años de experiencia en CDMX y Estado de México.
           </p>
 
           {/* CTA Button */}
-          <div className="flex justify-center pt-4">
-            <CTAButton 
+          <div className="flex justify-center pt-4 animate-fade-in" style={{ animationDelay: '0.95s' }}>
+            <CTAButton
               label="Cotizar Ahora"
               page_location="tel:+525527488329"
               button_name="Hero_CTA"
@@ -55,13 +55,13 @@ export function Hero() {
           </div>
 
           {/* Social Proof */}
-          <div className="pt-8 space-y-4">
+          <div className="pt-8 space-y-4 animate-fade-in" style={{ animationDelay: '1.15s' }}>
             <div className="flex items-center justify-center space-x-2">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className="w-5 h-5 text-warning-400 fill-current" 
+                  <Star
+                    key={i}
+                    className="w-5 h-5 text-warning-400 fill-current"
                   />
                 ))}
               </div>

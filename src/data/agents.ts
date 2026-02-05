@@ -16,7 +16,7 @@ export const salesAgents: SalesAgent[] = [
     email: "juan.perez@rhinoautoglass.mx",
     phone: "+52 55 1234 5678",
     photo: "/agents/juan-perez.jpg", // Add agent photos to /public/agents/
-    bio: "Especialista en cristales automotrices con más de 10 años de experiencia. Experto en parabrisas y medallones."
+    bio: "Especialista en vidrio automotriz con más de 10 años de experiencia. Experto en medallones y costados."
   },
   {
     id: "agent-2",
@@ -43,7 +43,7 @@ export const salesAgents: SalesAgent[] = [
     email: "ana.martinez@rhinoautoglass.mx",
     phone: "+52 55 4567 8901",
     photo: "/agents/ana-martinez.jpg",
-    bio: "Especialista en cristales para flotillas y empresas. Soluciones personalizadas para tu negocio."
+    bio: "Especialista en vidrio para flotillas y empresas. Soluciones personalizadas para tu negocio."
   },
   {
     id: "agent-5",

@@ -22,7 +22,7 @@ export async function generateMetadata({ searchParams }: AgentPageProps): Promis
 
   return {
     title: `${agent.name} - ${agent.title} | Rhino Automotive Glass`,
-    description: `${agent.bio} Contacta a ${agent.name} para cristales automotrices en Ciudad de México.`,
+    description: `${agent.bio} Contacta a ${agent.name} para vidrio automotriz en Ciudad de México.`,
     robots: { index: false },
     openGraph: {
       title: `${agent.name} - ${agent.title} | Rhino Automotive Glass`,
@@ -176,7 +176,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
             <div className="mt-10 pt-8 border-t border-gray-200">
               <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-6 text-center">
                 <h3 className="text-xl font-bold text-white mb-2">
-                  ¿Necesitas cristales automotrices?
+                  ¿Necesitas vidrio automotriz?
                 </h3>
                 <p className="text-blue-100 mb-4">
                   Contáctame para recibir la mejor atención y servicio profesional

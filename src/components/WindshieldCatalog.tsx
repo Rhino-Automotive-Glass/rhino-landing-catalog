@@ -140,7 +140,7 @@ export function WindshieldCatalog() {
             Catálogo de Cristales para Vans y Autobuses
           </h2>
           <p className="text-lg text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-            Medallones, costados, parabrisas y ventanillas para las principales marcas de vans,
+            Medallones, costados y ventanillas para las principales marcas de vans,
             autobuses y vehículos comerciales. Ford Transit, Mercedes Sprinter, Volkswagen Crafter,
             Nissan NV350, Toyota Hiace y más.
           </p>
