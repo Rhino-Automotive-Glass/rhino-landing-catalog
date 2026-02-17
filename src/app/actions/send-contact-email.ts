@@ -21,12 +21,8 @@ export type ContactFormState = {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// NOTE: While using Resend sandbox (onboarding@resend.dev), you can only send
-// to your own verified email. Once you verify a domain at resend.com/domains,
-// change this to the final recipient and update FROM_EMAIL to use your domain.
-const RECEIVING_EMAIL = 'bersoriano@me.com';
-// Change this to your verified Resend sender domain:
-const FROM_EMAIL = 'Contact Form <onboarding@resend.dev>';
+const RECEIVING_EMAIL = 'bsorianodev@gmail.com';
+const FROM_EMAIL = 'Contact Form <hello@rhinoautoglass.mx>';
 
 export async function sendContactEmail(
   _prevState: ContactFormState,
