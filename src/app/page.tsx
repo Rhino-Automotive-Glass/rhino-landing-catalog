@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Floating Header */}
-      <FloatingHeader title="RHINO AUTOMOTIVE GLASS" />
+      <FloatingHeader title="RHINO AUTOMOTIVE GLASS MEXICO" />
       
       {/* Hero Section */}
       <Hero />
@@ -82,7 +82,7 @@ export default function Home() {
           
           {/* Bottom Footer */}
           <div className="border-t border-secondary-700 mt-8 pt-8 text-center text-secondary-400">
-            <p>&copy; 2025 Rhino Automotive Glass. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Rhino Automotive Glass Mexico. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>

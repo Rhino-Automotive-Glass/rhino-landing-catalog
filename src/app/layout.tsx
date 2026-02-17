@@ -31,6 +31,10 @@ export const metadata: Metadata = {
   publisher: 'Rhino Automotive Glass',
   alternates: {
     canonical: 'https://rhinoautoglass.mx',
+    languages: {
+      'es-MX': 'https://rhinoautoglass.mx',
+      'x-default': 'https://rhinoautoglass.mx',
+    },
   },
   formatDetection: {
     email: false,
@@ -78,6 +82,11 @@ export default function RootLayout({
     <html lang="es" className={inter.variable}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="geo.region" content="MX-MEX" />
+        <meta name="geo.placename" content="Ciudad de México" />
+        <meta name="geo.position" content="19.3258975;-98.8882736" />
+        <meta name="ICBM" content="19.3258975, -98.8882736" />
+        <meta name="content-language" content="es-MX" />
         <link rel="icon" type="image/png" href="/rhino-logo.png" />
         <link rel="apple-touch-icon" href="/rhino-logo.png" />
         <link rel="manifest" href="/site.webmanifest" />
@@ -97,6 +106,11 @@ export default function RootLayout({
               "@type": "AutoBodyShop",
               "name": "Rhino Automotive Glass",
               "description": "Especialistas en cristales automotrices para vans, autobuses y flotillas con más de 15 años de experiencia en Ciudad de México y Estado de México.",
+              "areaServed": {
+                "@type": "Country",
+                "name": "México"
+              },
+              "availableLanguage": "es",
               "url": "https://rhinoautoglass.mx",
               "telephone": "+525527488329",
               "email": "info@rhinoautoglass.mx",

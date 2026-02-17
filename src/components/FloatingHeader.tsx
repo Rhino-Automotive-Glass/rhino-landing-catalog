@@ -37,7 +37,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
           <div className="flex items-center space-x-3">
             <Image
               src="/rhino-logo.png"
-              alt="Rhino Automotive Glass"
+              alt="Rhino Automotive Glass Mexico"
               width={40}
               height={40}
               className="object-contain"
