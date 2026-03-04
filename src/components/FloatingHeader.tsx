@@ -27,7 +27,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
         fixed top-0 left-0 right-0 z-50
         transition-all duration-300 ease-in-out
         ${isScrolled
-          ? 'bg-white/80 backdrop-blur-xl py-3 border-b border-white/60 shadow-sm'
+          ? 'bg-secondary-800/80 backdrop-blur-xl py-3 border-b border-secondary-700/60 shadow-sm'
           : 'hidden md:block bg-transparent py-4'}
       `}
     >
@@ -47,7 +47,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
               className={`
                 text-xl md:text-2xl font-bold tracking-tight
                 transition-all duration-300
-                ${isScrolled ? 'text-secondary-900' : 'text-white'}
+                ${isScrolled ? 'text-white' : 'text-white'}
               `}
             >
               {title}
@@ -62,7 +62,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
                 href="#catalogo" 
                 className={`
                   text-sm font-medium transition-colors duration-300 hover:text-accent-500
-                  ${isScrolled ? 'text-secondary-600' : 'text-blue-100'}
+                  ${isScrolled ? 'text-secondary-200' : 'text-blue-100'}
                 `}
               >
                 Catálogo
@@ -71,7 +71,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
                 href="#contacto" 
                 className={`
                   text-sm font-medium transition-colors duration-300 hover:text-accent-500
-                  ${isScrolled ? 'text-secondary-600' : 'text-blue-100'}
+                  ${isScrolled ? 'text-secondary-200' : 'text-blue-100'}
                 `}
               >
                 Contacto

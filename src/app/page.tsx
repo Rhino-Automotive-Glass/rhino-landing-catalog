@@ -1,6 +1,7 @@
 import { WindshieldCatalog } from '@/components'
 import { FloatingHeader } from '@/components'
 import { Hero } from '@/components'
+// import { ThreeSixtyViewer } from '@/components'
 import { ContactForm } from '@/components'
 import { Location } from '@/components'
 
@@ -12,7 +13,46 @@ export default function Home() {
       
       {/* Hero Section */}
       <Hero />
-      
+
+      {/* 360 Vehicle Viewer — commented out until real images are ready */}
+      {/* <ThreeSixtyViewer /> */}
+
+      {/* Video Section */}
+      <section className="bg-gradient-to-b from-gray-300 via-gray-500 to-gray-300 flex items-center justify-center max-h-[42vh] overflow-hidden">
+        <img
+          src="/ventana-van.jpg"
+          alt="Ventana de van"
+          className="hidden md:block max-h-[42vh] w-auto object-cover"
+        />
+        <div className="relative inline-block">
+          <video
+            className="max-h-[42vh] w-auto"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/mb.mp4" type="video/mp4" />
+          </video>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+            <div className="text-center text-white px-6">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                Vidrio Automotriz a tu Medida
+              </h2>
+              <p className="mt-4 text-lg md:text-2xl font-medium text-blue-100 tracking-wide">
+                COSTADOS &bull; MEDALLONES &bull; VENTANAS
+              </p>
+            </div>
+          </div>
+        </div>
+        <img
+          src="/van-medallon.jpg"
+          alt="Medallón de van"
+          className="hidden md:block max-h-[42vh] w-auto object-cover"
+        />
+      </section>
+
       {/* Catalog Section */}
       <WindshieldCatalog />
       
