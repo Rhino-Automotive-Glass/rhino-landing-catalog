@@ -19,7 +19,7 @@ export function Hero() {
           quality={90}
         />
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 via-primary-800/70 to-primary-700/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/75 via-primary-950/65 to-primary-950/50" />
       </div>
 
       {/* Content */}
