@@ -27,23 +27,12 @@ export function Hero() {
         <div className="space-y-8">
           {/* Main Heading */}
           <div className="space-y-4">
-            <p className="text-sm md:text-base font-semibold tracking-widest text-accent-400 uppercase animate-slide-up" style={{ animationDelay: '0.1s' }}>Rhino Automotive Glass</p>
+            <p className="text-sm md:text-base font-semibold tracking-widest text-white uppercase animate-slide-up" style={{ animationDelay: '0.1s' }}>Rhino Automotive Glass</p>
             <h1 className="animate-slide-up" style={{ animationDelay: '0.25s' }}>
               <span className="sr-only">Vidrio para Vans, Autobuses y más</span>
               <svg viewBox="0 0 1000 180" className="w-full max-w-4xl mx-auto" aria-hidden="true">
-                {[1, 2, 3, 4, 5].map((n) => (
-                  <text key={`s1-${n}`} x="500" y="75" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif"
-                    style={{ fill: 'none', stroke: '#fb923c', strokeWidth: 5, strokeDasharray: '6% 29%', animation: 'strokeFlow 5.5s linear infinite', animationDelay: `-${n}s` }}
-                  >Vidrio para</text>
-                ))}
                 <text x="500" y="75" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif" fill="#ffffff">Vidrio para</text>
-
-                {[1, 2, 3, 4, 5].map((n) => (
-                  <text key={`s2-${n}`} x="500" y="152" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif"
-                    style={{ fill: 'none', stroke: '#ffffff', strokeWidth: 5, strokeDasharray: '6% 29%', animation: 'strokeFlow 5.5s linear infinite', animationDelay: `-${n}s` }}
-                  >Vans, Autobuses y más…</text>
-                ))}
-                <text x="500" y="152" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif" fill="#fb923c">Vans, Autobuses y más…</text>
+                <text x="500" y="152" textAnchor="middle" fontSize="78" fontWeight="700" fontFamily="Inter, sans-serif" fill="#ffffff">Vans, Autobuses y más…</text>
               </svg>
             </h1>
 
