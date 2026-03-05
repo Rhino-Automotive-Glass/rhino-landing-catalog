@@ -21,7 +21,7 @@ export function ContactForm() {
   }, [state.success]);
 
   return (
-    <section id="contacto" className="section-padding hero-bg relative overflow-hidden">
+    <section id="contacto" className="section-padding hero-bg relative overflow-hidden scroll-mt-20">
       {/* Accent blobs so backdrop-blur on the form card has color to diffuse */}
       <div className="absolute -top-28 -right-28 w-[420px] h-[420px] bg-accent-500/20 rounded-full blur-3xl" />
       <div className="absolute -bottom-36 -left-28 w-[380px] h-[380px] bg-primary-400/25 rounded-full blur-3xl" />

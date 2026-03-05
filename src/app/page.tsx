@@ -1,4 +1,4 @@
-import { WindshieldCatalog } from '@/components'
+import { ProductCatalog } from '@/components'
 import { FloatingHeader } from '@/components'
 import { Hero } from '@/components'
 // import { ThreeSixtyViewer } from '@/components'
@@ -21,7 +21,7 @@ export default function Home() {
       {/* <ThreeSixtyViewer /> */}
 
       {/* Catalog Section */}
-      <WindshieldCatalog />
+      <ProductCatalog />
 
       {/* Contact Section */}
       <ContactForm />
@@ -83,16 +83,18 @@ export default function Home() {
       <Location />
       
       {/* Footer */}
-      <footer className="bg-secondary-900 text-white py-12">
+      <footer role="contentinfo" className="bg-secondary-900 text-white py-12">
         <div className="max-w-7xl mx-auto container-padding">
           <div className="grid md:grid-cols-3 gap-8 bg-white/5 rounded-2xl p-6">
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <img
+                <Image
                   src="/rhino-logo.png"
                   alt="Rhino Automotive Glass"
-                  className="w-10 h-10 object-contain"
+                  width={40}
+                  height={40}
+                  className="object-contain"
                 />
                 <h3 className="text-xl font-bold">Rhino Automotive Glass</h3>
               </div>
@@ -122,13 +124,13 @@ export default function Home() {
               <div className="space-y-3 text-secondary-300">
                 <div>
                   <p className="font-medium text-white">Teléfono</p>
-                  <a href="tel:+525527488329" className="hover:text-accent-400 transition-colors">
+                  <a href="tel:+525527488329" aria-label="Llamar a Rhino Automotive Glass" className="hover:text-accent-400 transition-colors">
                     +52 55 2748 8329
                   </a>
                 </div>
                 <div>
                   <p className="font-medium text-white">Email</p>
-                  <a href="mailto:info@rhinoautoglass.mx" className="hover:text-accent-400 transition-colors">
+                  <a href="mailto:info@rhinoautoglass.mx" aria-label="Enviar email a Rhino Automotive Glass" className="hover:text-accent-400 transition-colors">
                     info@rhinoautoglass.mx
                   </a>
                 </div>

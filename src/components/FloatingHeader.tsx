@@ -47,7 +47,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
               className={`
                 text-xl md:text-2xl font-bold tracking-tight
                 transition-all duration-300
-                ${isScrolled ? 'text-white' : 'text-white'}
+                ${isScrolled ? 'text-white' : 'text-white/90'}
               `}
             >
               {title}
@@ -57,7 +57,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
           {/* Navigation & CTA */}
           <div className="flex items-center space-x-6">
             {/* Navigation Links (hidden on mobile) */}
-            <nav className="hidden lg:flex items-center space-x-6">
+            <nav aria-label="Navegacion principal" className="hidden lg:flex items-center space-x-6">
               <a 
                 href="#catalogo" 
                 className={`

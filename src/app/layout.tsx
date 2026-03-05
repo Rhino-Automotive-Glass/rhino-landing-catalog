@@ -96,6 +96,8 @@ export default function RootLayout({
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="dns-prefetch" href="https://maps.googleapis.com" />
         
         {/* JSON-LD structured data for SEO */}
         <script
@@ -113,6 +115,16 @@ export default function RootLayout({
               "availableLanguage": "es",
               "url": "https://rhinoautoglass.mx",
               "telephone": "+525527488329",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+525527488329",
+                "contactType": "customer service",
+                "areaServed": "MX",
+                "availableLanguage": "es"
+              },
+              "sameAs": [
+                "https://wa.me/525527488329"
+              ],
               "email": "info@rhinoautoglass.mx",
               "image": "https://rhinoautoglass.mx/parabrisas-medallones-van-camioneta-autobuses.webp",
               "logo": "https://rhinoautoglass.mx/rhino-logo.png",
