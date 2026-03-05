@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackEvent } from '@/lib/gtm';
 
 interface CTAButtonProps {
   label: string;
@@ -20,11 +21,12 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
   size = 'md'
 }) => {
   const handleClick = () => {
-    // Analytics tracking could be added here using button_name
-    if (button_name) {
-      // Example: trackEvent('button_click', { button_name });
-    }
-    
+    trackEvent('cta_click', {
+      button_name: button_name || label,
+      button_label: label,
+      destination: page_location,
+    });
+
     if (page_location.startsWith('tel:') || page_location.startsWith('mailto:')) {
       window.location.href = page_location;
     } else {

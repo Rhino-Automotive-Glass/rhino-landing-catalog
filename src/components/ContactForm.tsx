@@ -2,6 +2,7 @@
 
 import React, { useActionState, useRef, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, XCircle } from 'lucide-react';
+import { trackEvent } from '@/lib/gtm';
 import { sendContactEmail, type ContactFormState } from '@/app/actions/send-contact-email';
 
 const initialState: ContactFormState = {
@@ -83,6 +84,7 @@ export function ContactForm() {
               </p>
               <a
                 href="tel:+525527488329"
+                onClick={() => trackEvent('cta_click', { button_name: 'Contact_Call_Now', button_label: 'Llamar Ahora', destination: 'tel:+525527488329' })}
                 className="btn btn-accent btn-lg inline-flex items-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
@@ -117,7 +119,7 @@ export function ContactForm() {
               </div>
             )}
 
-            <form ref={formRef} action={formAction} className="space-y-6">
+            <form ref={formRef} action={(formData) => { trackEvent('form_submit', { button_name: 'Contact_Form_Submit' }); formAction(formData); }} className="space-y-6">
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">

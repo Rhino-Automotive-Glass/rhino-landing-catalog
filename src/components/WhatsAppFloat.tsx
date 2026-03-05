@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { trackEvent } from '@/lib/gtm';
 
 const WHATSAPP_NUMBER = '525527488329';
 const DEFAULT_MESSAGE = 'Hola, me interesa cotizar cristales automotrices para mi vehiculo.';
@@ -23,6 +24,7 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Enviar mensaje por WhatsApp"
+      onClick={() => trackEvent('whatsapp_click', { button_name: 'WhatsApp_Float', destination: url })}
       className={`
         fixed bottom-6 right-6 z-50
         w-16 h-16 rounded-full

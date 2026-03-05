@@ -1,3 +1,5 @@
+'use client';
+
 import { ProductCatalog } from '@/components'
 import { FloatingHeader } from '@/components'
 import { Hero } from '@/components'
@@ -7,6 +9,7 @@ import { Location } from '@/components'
 import { WhatsAppFloat } from '@/components'
 import { BackToTop } from '@/components'
 import Image from 'next/image'
+import { trackEvent } from '@/lib/gtm'
 
 export default function Home() {
   return (
@@ -124,19 +127,19 @@ export default function Home() {
               <div className="space-y-3 text-secondary-300">
                 <div>
                   <p className="font-medium text-white">Teléfono</p>
-                  <a href="tel:+525527488329" aria-label="Llamar a Rhino Automotive Glass" className="hover:text-accent-400 transition-colors">
+                  <a href="tel:+525527488329" aria-label="Llamar a Rhino Automotive Glass" onClick={() => trackEvent('cta_click', { button_name: 'Footer_Phone', destination: 'tel:+525527488329' })} className="hover:text-accent-400 transition-colors">
                     +52 55 2748 8329
                   </a>
                 </div>
                 <div>
                   <p className="font-medium text-white">Email</p>
-                  <a href="mailto:info@rhinoautoglass.mx" aria-label="Enviar email a Rhino Automotive Glass" className="hover:text-accent-400 transition-colors">
+                  <a href="mailto:info@rhinoautoglass.mx" aria-label="Enviar email a Rhino Automotive Glass" onClick={() => trackEvent('cta_click', { button_name: 'Footer_Email', destination: 'mailto:info@rhinoautoglass.mx' })} className="hover:text-accent-400 transition-colors">
                     info@rhinoautoglass.mx
                   </a>
                 </div>
                 <div>
                   <p className="font-medium text-white">WhatsApp</p>
-                  <a href="https://wa.me/525527488329" target="_blank" rel="noopener noreferrer" className="hover:text-accent-400 transition-colors">
+                  <a href="https://wa.me/525527488329" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_click', { button_name: 'Footer_WhatsApp', destination: 'https://wa.me/525527488329' })} className="hover:text-accent-400 transition-colors">
                     +52 55 2748 8329
                   </a>
                 </div>

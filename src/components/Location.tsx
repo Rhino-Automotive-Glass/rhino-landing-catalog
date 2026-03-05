@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { MapPin, Clock, Phone, Navigation, Car, Wrench } from 'lucide-react';
+import { trackEvent } from '@/lib/gtm';
 
 export function Location() {
   const businessInfo = {
@@ -34,10 +35,12 @@ export function Location() {
   ];
 
   const handleGetDirections = () => {
+    trackEvent('cta_click', { button_name: 'Location_Directions', button_label: 'Como Llegar', destination: 'google_maps' });
     window.open('https://maps.app.goo.gl/nazGPfcAyHNGmv3h9', '_blank');
   };
 
   const handleCallBusiness = () => {
+    trackEvent('cta_click', { button_name: 'Location_Call', button_label: 'Llamar', destination: `tel:${businessInfo.phone}` });
     window.location.href = `tel:${businessInfo.phone}`;
   };
 
