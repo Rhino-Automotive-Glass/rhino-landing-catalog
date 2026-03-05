@@ -29,7 +29,7 @@ export function Location() {
 
   const services = [
     { icon: Car, title: "Servicio a Domicilio", description: "Vamos hasta tu ubicación" },
-    { icon: Wrench, title: "Taller Especializado", description: "Instalación profesional" },
+    { icon: Wrench, title: "Fábrica Especializada", description: "Instalación profesional" },
     { icon: Clock, title: "Servicio Rápido", description: "Instalación en el mismo día" }
   ];
 
@@ -42,7 +42,7 @@ export function Location() {
   };
 
   return (
-    <section className="section-padding relative overflow-hidden">
+    <section id="ubicacion" className="section-padding relative overflow-hidden">
       {/* Glass background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50" />
       <div className="absolute -top-20 right-0 w-[550px] h-[550px] bg-primary-300/55 rounded-full blur-3xl" />
@@ -57,7 +57,7 @@ export function Location() {
             Nuestra Ubicación
           </h2>
           <p className="text-lg text-secondary-600 max-w-3xl mx-auto leading-relaxed">
-            Visítanos en nuestro taller en Ixtapaluca o solicita nuestro servicio a domicilio
+            Visítanos en nuestra Fábrica en Ixtapaluca o solicita nuestro servicio a domicilio
             en Ciudad de México y Estado de México.
           </p>
         </div>
@@ -73,7 +73,7 @@ export function Location() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-secondary-900 mb-2">
-                    Dirección del Taller
+                    Dirección de la Fábrica
                   </h3>
                   <div className="text-secondary-600 space-y-1">
                     <p className="font-medium">{businessInfo.name}</p>
@@ -171,28 +171,7 @@ export function Location() {
             {/* Map Container */}
             <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset overflow-hidden">
               <div className="aspect-[4/3] relative">
-                {/* Placeholder for map - replace with actual map integration */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 rounded-full flex items-center justify-center mx-auto">
-                      <MapPin className="w-8 h-8 text-primary-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-secondary-900 mb-2">
-                        Mapa Interactivo
-                      </h4>
-                      <p className="text-secondary-600 text-sm mb-4">
-                        Haz clic en Cómo Llegar para ver la ubicación en Google Maps
-                      </p>
-                      <button
-                        onClick={handleGetDirections}
-                        className="btn btn-primary btn-sm"
-                      >
-                        Ver en Google Maps
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.997781976562!2d-98.8908485239738!3d19.325902544078023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce1f045a96ae0d%3A0x20b9b93f8dc4ca4c!2sRHINO%20AUTOMOTIVE%20GLASS!5e0!3m2!1ses!2smx!4v1772728381391!5m2!1ses!2smx" width="600" height="450" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Ubicacion de Rhino Automotive Glass en Ixtapaluca"></iframe>
               </div>
             </div>
 

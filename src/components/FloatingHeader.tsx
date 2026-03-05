@@ -28,7 +28,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
         transition-all duration-300 ease-in-out
         ${isScrolled
           ? 'bg-secondary-800/80 backdrop-blur-xl py-3 border-b border-secondary-700/60 shadow-sm'
-          : 'hidden md:block bg-transparent py-4'}
+          : 'bg-secondary-900/60 backdrop-blur-md md:bg-transparent py-3 md:py-4'}
       `}
     >
       <div className="max-w-7xl mx-auto container-padding">
@@ -67,14 +67,23 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
               >
                 Catálogo
               </a>
-              <a 
-                href="#contacto" 
+              <a
+                href="#contacto"
                 className={`
                   text-sm font-medium transition-colors duration-300 hover:text-accent-500
                   ${isScrolled ? 'text-secondary-200' : 'text-blue-100'}
                 `}
               >
                 Contacto
+              </a>
+              <a
+                href="#ubicacion"
+                className={`
+                  text-sm font-medium transition-colors duration-300 hover:text-accent-500
+                  ${isScrolled ? 'text-secondary-200' : 'text-blue-100'}
+                `}
+              >
+                Ubicacion
               </a>
             </nav>
 

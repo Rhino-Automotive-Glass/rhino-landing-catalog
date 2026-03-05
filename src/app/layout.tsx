@@ -155,9 +155,9 @@ export default function RootLayout({
               ],
               "aggregateRating": {
                 "@type": "AggregateRating",
-                "ratingValue": "5.0",
+                "ratingValue": "4.9",
                 "bestRating": "5",
-                "ratingCount": "5000"
+                "ratingCount": "150"
               },
               "services": [
                 "Vidrios para vans",
@@ -169,6 +169,51 @@ export default function RootLayout({
                 "Cristales traseros",
                 "Servicio a domicilio",
                 "Instalación profesional"
+              ]
+            })
+          }}
+        />
+
+        {/* FAQ structured data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Que tipos de cristales automotrices ofrecen?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ofrecemos medallones, costados, ventanillas laterales y cristales traseros para vans, autobuses y vehiculos comerciales de marcas como Ford Transit, Mercedes Sprinter, Volkswagen Crafter, Nissan NV350, Toyota Hiace y mas."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Ofrecen servicio a domicilio en CDMX?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Si, ofrecemos servicio a domicilio en toda la Ciudad de Mexico, Estado de Mexico y zona metropolitana, incluyendo Ixtapaluca, Nezahualcoyotl, Chalco, Valle de Chalco y Texcoco."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Cual es el horario de atencion?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nuestro horario es de lunes a viernes de 8:00 AM a 6:00 PM y sabados de 8:00 AM a 4:00 PM. Tambien puedes contactarnos por WhatsApp al +52 55 2748 8329."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Tienen garantia en sus cristales?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Si, todos nuestros cristales cuentan con garantia de calidad. Contamos con mas de 15 anos de experiencia en vidrio automotriz y realizamos instalacion profesional."
+                  }
+                }
               ]
             })
           }}

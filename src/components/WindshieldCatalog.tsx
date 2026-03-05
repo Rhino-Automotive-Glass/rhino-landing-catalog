@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Image from 'next/image'
 import { passengerSideGlassData } from '@/config/vehicles'
 import { Search, Filter, Grid3X3, List, X } from 'lucide-react'
 import { ImageCarouselModal } from './ImageCarouselModal'
@@ -308,8 +309,8 @@ export function WindshieldCatalog() {
               </div>
             </div>
 
-            {/* Product Grid/List — fixed-height scroll so the page doesn't jump on filter */}
-            <div className="h-[520px] md:h-[640px] lg:h-[720px] overflow-y-auto pr-2">
+            {/* Product Grid/List */}
+            <div className="max-h-[720px] overflow-y-auto pr-2">
               {filteredProducts.length > 0 ? (
                 <div className={`${
                   viewMode === 'grid'
@@ -324,10 +325,13 @@ export function WindshieldCatalog() {
                         className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl ring-1 ring-white/20 ring-inset overflow-hidden group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-white/60"
                       >
                         <div className="aspect-[7/3] overflow-hidden bg-white/30 relative">
-                          <img
+                          <Image
                             src={item.image}
-                            alt={item.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            alt={`Cristal automotriz ${item.manufacturer} ${item.title}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                           />
                         </div>
                         <div className="p-5">
@@ -356,11 +360,14 @@ export function WindshieldCatalog() {
                         className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl ring-1 ring-white/20 ring-inset p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-white/60"
                       >
                         <div className="flex items-center space-x-6">
-                          <div className="w-24 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-white/30">
-                            <img
+                          <div className="w-24 h-16 flex-shrink-0 overflow-hidden rounded-lg bg-white/30 relative">
+                            <Image
                               src={item.image}
-                              alt={item.title}
-                              className="w-full h-full object-cover"
+                              alt={`Cristal automotriz ${item.manufacturer} ${item.title}`}
+                              fill
+                              className="object-cover"
+                              loading="lazy"
+                              sizes="96px"
                             />
                           </div>
                           <div className="flex-1 min-w-0">

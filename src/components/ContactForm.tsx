@@ -187,7 +187,7 @@ export function ContactForm() {
                   className={`w-full px-4 py-3 border rounded-lg focus-ring transition-colors ${
                     state.fieldErrors?.vehicle ? 'border-red-500 bg-red-50' : 'border-white/50 bg-white/60 backdrop-blur-sm'
                   }`}
-                  placeholder="Ej: Honda Civic 2020, Ford Focus 2018"
+                  placeholder="Ej: Ford Transit 2020, Foton View CS2 2024"
                 />
                 {state.fieldErrors?.vehicle && (
                   <p className="mt-2 text-sm text-red-600">{state.fieldErrors.vehicle}</p>

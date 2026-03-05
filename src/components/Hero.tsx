@@ -70,10 +70,10 @@ export function Hero() {
                   />
                 ))}
               </div>
-              <span className="text-blue-100 font-medium">5.0</span>
+              <span className="text-blue-100 font-medium">4.9</span>
             </div>
             <p className="text-blue-200 text-sm md:text-base">
-              Más de 5,000 clientes satisfechos
+              Mas de 150 clientes satisfechos
             </p>
           </div>
         </div>

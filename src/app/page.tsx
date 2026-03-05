@@ -4,6 +4,9 @@ import { Hero } from '@/components'
 // import { ThreeSixtyViewer } from '@/components'
 import { ContactForm } from '@/components'
 import { Location } from '@/components'
+import { WhatsAppFloat } from '@/components'
+import { BackToTop } from '@/components'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -17,13 +20,24 @@ export default function Home() {
       {/* 360 Vehicle Viewer — commented out until real images are ready */}
       {/* <ThreeSixtyViewer /> */}
 
+      {/* Catalog Section */}
+      <WindshieldCatalog />
+
+      {/* Contact Section */}
+      <ContactForm />
+
       {/* Video Section */}
       <section className="bg-gradient-to-b from-gray-300 via-gray-500 to-gray-300 flex items-center justify-center max-h-[42vh] overflow-hidden">
-        <img
-          src="/ventana-van.jpg"
-          alt="Ventana de van"
-          className="hidden md:block max-h-[42vh] w-auto object-cover"
-        />
+        <div className="hidden md:block relative max-h-[42vh] w-auto aspect-[3/4]">
+          <Image
+            src="/ventana-van.jpg"
+            alt="Ventana lateral de van - cristales automotrices Rhino"
+            fill
+            className="object-cover"
+            loading="lazy"
+            sizes="25vw"
+          />
+        </div>
         <div className="relative inline-block">
           <video
             className="max-h-[42vh] w-auto"
@@ -37,6 +51,13 @@ export default function Home() {
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
             <div className="text-center text-white px-6">
+              <Image
+                src="/rhino-logo.png"
+                alt="Rhino Automotive Glass"
+                width={80}
+                height={80}
+                className="mx-auto mb-4 drop-shadow-lg"
+              />
               <h2 className="text-3xl md:text-5xl font-bold leading-tight">
                 Vidrio Automotriz a tu Medida
               </h2>
@@ -46,18 +67,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img
-          src="/van-medallon.jpg"
-          alt="Medallón de van"
-          className="hidden md:block max-h-[42vh] w-auto object-cover"
-        />
+        <div className="hidden md:block relative max-h-[42vh] w-auto aspect-[3/4]">
+          <Image
+            src="/van-medallon.jpg"
+            alt="Medallon de van - vidrio trasero para vehiculos comerciales"
+            fill
+            className="object-cover"
+            loading="lazy"
+            sizes="25vw"
+          />
+        </div>
       </section>
-
-      {/* Catalog Section */}
-      <WindshieldCatalog />
-      
-      {/* Contact Section */}
-      <ContactForm />
       
       {/* Location Section */}
       <Location />
@@ -113,8 +133,14 @@ export default function Home() {
                   </a>
                 </div>
                 <div>
+                  <p className="font-medium text-white">WhatsApp</p>
+                  <a href="https://wa.me/525527488329" target="_blank" rel="noopener noreferrer" className="hover:text-accent-400 transition-colors">
+                    +52 55 2748 8329
+                  </a>
+                </div>
+                <div>
                   <p className="font-medium text-white">Horario</p>
-                  <p>Lunes a Sábado: 8:00 AM - 6:00 PM</p>
+                  <p>Lunes a Sabado: 8:00 AM - 6:00 PM</p>
                 </div>
               </div>
             </div>
@@ -122,10 +148,14 @@ export default function Home() {
           
           {/* Bottom Footer */}
           <div className="border-t border-secondary-700 mt-8 pt-8 text-center text-secondary-400">
-            <p>&copy; 2025 Rhino Automotive Glass Mexico. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Rhino Automotive Glass Mexico. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
+
+      {/* Floating elements */}
+      <WhatsAppFloat />
+      <BackToTop />
     </main>
   )
 }
