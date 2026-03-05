@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Search, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
 import type { ProductWithSource, PaginatedResponse } from '@/lib/types';
@@ -51,8 +51,9 @@ export function ProductCatalog() {
     setPage(1);
   }, [brandFilter, debouncedSearch]);
 
-  // Fetch products
-  const fetchProducts = useCallback(async () => {
+  // Fetch products with AbortController to cancel stale requests
+  useEffect(() => {
+    const controller = new AbortController();
     setLoading(true);
     const params = new URLSearchParams({
       page: String(page),
@@ -64,22 +65,23 @@ export function ProductCatalog() {
     if (debouncedSearch) {
       params.set('q', debouncedSearch);
     }
-    try {
-      const res = await fetch(`/api/products?${params}`);
-      const json: PaginatedResponse<ProductWithSource> = await res.json();
-      setProducts(json.data);
-      setTotalCount(json.count);
-    } catch {
-      setProducts([]);
-      setTotalCount(0);
-    } finally {
-      setLoading(false);
-    }
+    fetch(`/api/products?${params}`, { signal: controller.signal })
+      .then((res) => res.json())
+      .then((json: PaginatedResponse<ProductWithSource>) => {
+        setProducts(json.data);
+        setTotalCount(json.count);
+      })
+      .catch((err) => {
+        if (err.name !== 'AbortError') {
+          setProducts([]);
+          setTotalCount(0);
+        }
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
+      });
+    return () => controller.abort();
   }, [page, brandFilter, debouncedSearch]);
-
-  useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
 
