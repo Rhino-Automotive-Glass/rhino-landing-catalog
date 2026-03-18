@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
 import {
+  getProductSubModels,
   PRODUCT_WITH_SOURCE_BRAND_FILTER_SELECT,
   PRODUCT_WITH_SOURCE_SELECT,
   mapProductRow,
@@ -32,12 +33,15 @@ export async function GET(req: NextRequest) {
   const pageSize = Math.min(100, Math.max(1, Number(searchParams.get("pageSize") ?? 20)));
   const primaryBrandId = searchParams.get("primaryBrandId") ?? "";
   const brandId = searchParams.get("brandId") ?? "";
+  const subModel = searchParams.get("subModel") ?? "";
   const status = searchParams.get("status") ?? "";
   const search = searchParams.get("search") ?? "";
   const q = searchParams.get("q") ?? "";
 
   const from = (page - 1) * pageSize;
   const to = from + pageSize - 1;
+
+  const hasDerivedSubModelFilter = Boolean(subModel && subModel !== "all");
 
   let query = supabase
     .from("products")
@@ -47,8 +51,7 @@ export async function GET(req: NextRequest) {
         : PRODUCT_WITH_SOURCE_SELECT,
       { count: "exact" }
     )
-    .order("created_at", { ascending: false })
-    .range(from, to);
+    .order("created_at", { ascending: false });
 
   if (primaryBrandId && primaryBrandId !== "all") {
     query = query.eq("primary_brand_id", primaryBrandId);
@@ -72,14 +75,39 @@ export async function GET(req: NextRequest) {
     );
   }
 
+  if (!hasDerivedSubModelFilter) {
+    query = query.range(from, to);
+  }
+
   const { data, error, count } = await query;
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
+  const mappedProducts = (data ?? []).map((row) => mapProductRow(row));
+
+  if (hasDerivedSubModelFilter) {
+    const normalizedSubModel = subModel.trim().toLowerCase();
+    const filteredProducts = mappedProducts.filter((product) =>
+      getProductSubModels(product).some(
+        (candidate) => candidate.toLowerCase() === normalizedSubModel
+      )
+    );
+
+    const response = NextResponse.json({
+      data: filteredProducts.slice(from, to + 1),
+      count: filteredProducts.length,
+      page,
+      pageSize,
+    });
+    response.headers.set("X-RateLimit-Remaining", String(rl.remaining));
+    response.headers.set("X-RateLimit-Reset", String(rl.resetAt));
+    return response;
+  }
+
   const response = NextResponse.json({
-    data: (data ?? []).map((row) => mapProductRow(row)),
+    data: mappedProducts,
     count: count ?? 0,
     page,
     pageSize,

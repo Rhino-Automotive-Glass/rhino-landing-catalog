@@ -84,3 +84,7 @@ export type PaginatedResponse<T> = {
 export type BrandListResponse = {
   brands: Brand[];
 };
+
+export type SubModelListResponse = {
+  subModels: string[];
+};

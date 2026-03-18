@@ -164,5 +164,20 @@ export function mapProductRow(row: RawProductRow): ProductWithSource {
           created_at: "",
           updated_at: "",
         },
-  };
+      };
+}
+
+export function getProductSubModels(
+  product: Pick<ProductWithSource, "subModel" | "product_codes">
+): string[] {
+  const mirroredSubModels =
+    product.product_codes.compatibility_data.items
+      ?.map((item) => (typeof item.subModelo === "string" ? item.subModelo.trim() : ""))
+      .filter(Boolean) ?? [];
+
+  return Array.from(
+    new Set(
+      [product.subModel?.trim() ?? "", ...mirroredSubModels].filter(Boolean)
+    )
+  );
 }

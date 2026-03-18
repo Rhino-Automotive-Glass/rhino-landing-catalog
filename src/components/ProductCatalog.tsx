@@ -3,12 +3,20 @@
 import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowLeft, ChevronLeft, ChevronRight, Loader2, PackageSearch } from 'lucide-react';
+import {
+  ArrowLeft,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Loader2,
+  PackageSearch,
+} from 'lucide-react';
 import type {
   Brand,
   BrandListResponse,
   PaginatedResponse,
   ProductWithSource,
+  SubModelListResponse,
 } from '@/lib/types';
 
 const PAGE_SIZE = 16;
@@ -50,8 +58,11 @@ export function ProductCatalog() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const selectedBrandId = searchParams.get('brand') ?? '';
+  const selectedSubModel = searchParams.get('subModel') ?? '';
   const [brands, setBrands] = useState<Brand[]>([]);
   const [brandsLoading, setBrandsLoading] = useState(true);
+  const [subModels, setSubModels] = useState<string[]>([]);
+  const [subModelsLoading, setSubModelsLoading] = useState(false);
   const [products, setProducts] = useState<ProductWithSource[]>([]);
   const [productsLoading, setProductsLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -79,6 +90,44 @@ export function ProductCatalog() {
 
   useEffect(() => {
     setPage(1);
+  }, [selectedBrandId, selectedSubModel]);
+
+  useEffect(() => {
+    if (!selectedBrandId) {
+      setSubModels([]);
+      setSubModelsLoading(false);
+      return undefined;
+    }
+
+    const controller = new AbortController();
+    setSubModelsLoading(true);
+
+    fetch(`/api/products/submodels?brandId=${selectedBrandId}`, { signal: controller.signal })
+      .then(async (response) => {
+        const json = (await response.json()) as SubModelListResponse & { error?: string };
+
+        if (!response.ok) {
+          throw new Error(json.error ?? 'Failed to load submodels');
+        }
+
+        setSubModels(Array.isArray(json.subModels) ? json.subModels : []);
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === 'AbortError') {
+          return;
+        }
+
+        setSubModels([]);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) {
+          setSubModelsLoading(false);
+        }
+      });
+
+    return () => {
+      controller.abort();
+    };
   }, [selectedBrandId]);
 
   useEffect(() => {
@@ -99,6 +148,10 @@ export function ProductCatalog() {
       brandId: selectedBrandId,
     });
 
+    if (selectedSubModel) {
+      params.set('subModel', selectedSubModel);
+    }
+
     fetch(`/api/products?${params}`, { signal: controller.signal })
       .then(async (response) => {
         const json = (await response.json()) as PaginatedResponse<ProductWithSource> & {
@@ -113,6 +166,7 @@ export function ProductCatalog() {
           console.log('[ProductCatalog] Brand selection results', {
             brandId: selectedBrandId,
             brandName: selectedBrand?.name ?? null,
+            subModel: selectedSubModel || null,
             totalCount: typeof json.count === 'number' ? json.count : 0,
             products: Array.isArray(json.data) ? json.data : [],
           });
@@ -138,7 +192,7 @@ export function ProductCatalog() {
     return () => {
       controller.abort();
     };
-  }, [page, selectedBrand, selectedBrandId]);
+  }, [page, selectedBrand, selectedBrandId, selectedSubModel]);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
   const emptySlotCount = Math.max(0, PAGE_SIZE - products.length);
@@ -149,12 +203,27 @@ export function ProductCatalog() {
   function openBrand(brandId: string) {
     const params = new URLSearchParams(searchParams.toString());
     params.set('brand', brandId);
+    params.delete('subModel');
     router.push(`${pathname}?${params.toString()}#catalogo`);
   }
 
   function clearBrand() {
     const params = new URLSearchParams(searchParams.toString());
     params.delete('brand');
+    params.delete('subModel');
+    const query = params.toString();
+    router.push(query ? `${pathname}?${query}#catalogo` : `${pathname}#catalogo`);
+  }
+
+  function updateSubModelFilter(nextSubModel: string) {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (nextSubModel) {
+      params.set('subModel', nextSubModel);
+    } else {
+      params.delete('subModel');
+    }
+
     const query = params.toString();
     router.push(query ? `${pathname}?${query}#catalogo` : `${pathname}#catalogo`);
   }
@@ -251,6 +320,37 @@ export function ProductCatalog() {
                 </h3>
                 <p className="mt-1 text-secondary-600">
                   {totalCount} productos relacionados con esta marca
+                </p>
+              </div>
+
+              <div className="w-full sm:max-w-sm">
+                <label
+                  htmlFor="catalog-submodel-filter"
+                  className="mb-2 block text-sm font-medium text-secondary-700"
+                >
+                  Filtrar por submodelo
+                </label>
+                <div className="relative">
+                  <select
+                    id="catalog-submodel-filter"
+                    value={selectedSubModel}
+                    onChange={(event) => updateSubModelFilter(event.target.value)}
+                    disabled={subModelsLoading}
+                    className="w-full appearance-none rounded-full border border-white/50 bg-white/70 px-4 py-3 pr-11 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:cursor-wait disabled:opacity-70"
+                  >
+                    <option value="">Todos los submodelos</option>
+                    {subModels.map((subModel) => (
+                      <option key={subModel} value={subModel}>
+                        {subModel}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
+                </div>
+                <p className="mt-2 text-xs text-secondary-500">
+                  {subModelsLoading
+                    ? 'Cargando submodelos...'
+                    : `${subModels.length} submodelos disponibles`}
                 </p>
               </div>
             </div>
