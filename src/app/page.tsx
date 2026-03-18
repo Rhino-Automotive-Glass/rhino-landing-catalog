@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react'
 import { ProductCatalog } from '@/components'
 import { FloatingHeader } from '@/components'
 import { Hero } from '@/components'
@@ -10,6 +11,37 @@ import { WhatsAppFloat } from '@/components'
 import { BackToTop } from '@/components'
 import Image from 'next/image'
 import { trackEvent } from '@/lib/gtm'
+
+function ProductCatalogFallback() {
+  return (
+    <section id="catalogo" className="section-padding relative overflow-hidden scroll-mt-20">
+      <div className="relative z-10 mx-auto max-w-7xl container-padding">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-secondary-900 md:text-4xl">
+            Catálogo de Cristales para Vans y Autobuses
+          </h2>
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-secondary-600">
+            Cargando catálogo...
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
+          {Array.from({ length: 10 }).map((_, index) => (
+            <div
+              key={`catalog-brand-skeleton-${index}`}
+              className="rounded-2xl border border-white/40 bg-white/50 px-5 py-6 ring-1 ring-white/20 ring-inset backdrop-blur-2xl"
+            >
+              <div className="flex flex-col items-center">
+                <div className="mb-3 h-20 w-full animate-pulse rounded-xl bg-white/60" />
+                <div className="h-6 w-24 animate-pulse rounded-full bg-secondary-200/70" />
+                <div className="mt-2 h-4 w-20 animate-pulse rounded-full bg-secondary-200/50" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default function Home() {
   return (
@@ -24,7 +56,9 @@ export default function Home() {
       {/* <ThreeSixtyViewer /> */}
 
       {/* Catalog Section */}
-      <ProductCatalog />
+      <Suspense fallback={<ProductCatalogFallback />}>
+        <ProductCatalog />
+      </Suspense>
 
       {/* Contact Section */}
       <ContactForm />
