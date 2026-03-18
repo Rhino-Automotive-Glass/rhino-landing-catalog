@@ -1,6 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
+import type { BrandListResponse } from "@/lib/types";
+
+type RawBrand = {
+  id: string;
+  name: string;
+};
+
+function unwrapRelation<T>(value: T | T[] | null | undefined): T | null {
+  if (!value) return null;
+  return Array.isArray(value) ? value[0] ?? null : value;
+}
 
 export async function GET(req: NextRequest) {
   const ip =
@@ -22,33 +33,69 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const allBrands = new Set<string>();
-  let from = 0;
-  const batchSize = 1000;
+  const scope = req.nextUrl.searchParams.get("scope") ?? "all";
 
-  while (true) {
-    const { data, error } = await supabase
-      .from("products")
-      .select("brand")
-      .not("brand", "is", null)
-      .order("brand")
-      .range(from, from + batchSize - 1);
+  if (scope === "catalog") {
+    const brandCounts = new Map<string, RawBrand & { productCount: number }>();
+    let from = 0;
+    const batchSize = 1000;
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    while (true) {
+      const { data, error } = await supabase
+        .from("product_brands")
+        .select(`
+          product_id,
+          brand:brands!product_brands_brand_id_fkey (
+            id,
+            name
+          )
+        `)
+        .order("product_id", { ascending: true })
+        .range(from, from + batchSize - 1);
+
+      if (error) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
+      }
+
+      for (const row of data ?? []) {
+        const brand = unwrapRelation(row.brand as RawBrand | RawBrand[] | null);
+        if (!brand) continue;
+
+        const current = brandCounts.get(brand.id);
+        if (current) {
+          current.productCount += 1;
+        } else {
+          brandCounts.set(brand.id, {
+            ...brand,
+            productCount: 1,
+          });
+        }
+      }
+
+      if (!data || data.length < batchSize) break;
+      from += batchSize;
     }
 
-    for (const r of data ?? []) {
-      allBrands.add(r.brand as string);
-    }
-
-    if (!data || data.length < batchSize) break;
-    from += batchSize;
+    const response = NextResponse.json<BrandListResponse>({
+      brands: [...brandCounts.values()].sort((a, b) => a.name.localeCompare(b.name)),
+    });
+    response.headers.set("X-RateLimit-Remaining", String(rl.remaining));
+    response.headers.set("X-RateLimit-Reset", String(rl.resetAt));
+    return response;
   }
 
-  const brands = [...allBrands].sort();
+  const { data, error } = await supabase
+    .from("brands")
+    .select("id, name")
+    .order("name");
 
-  const response = NextResponse.json({ brands });
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  const response = NextResponse.json<BrandListResponse>({
+    brands: (data ?? []) as RawBrand[],
+  });
   response.headers.set("X-RateLimit-Remaining", String(rl.remaining));
   response.headers.set("X-RateLimit-Reset", String(rl.resetAt));
   return response;

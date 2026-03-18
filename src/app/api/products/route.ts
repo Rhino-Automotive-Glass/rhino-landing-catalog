@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
+import {
+  PRODUCT_WITH_SOURCE_BRAND_FILTER_SELECT,
+  PRODUCT_WITH_SOURCE_SELECT,
+  mapProductRow,
+} from "@/lib/product-query";
 
 export async function GET(req: NextRequest) {
   const ip =
@@ -25,6 +30,9 @@ export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const page = Math.max(1, Number(searchParams.get("page") ?? 1));
   const pageSize = Math.min(100, Math.max(1, Number(searchParams.get("pageSize") ?? 20)));
+  const primaryBrandId = searchParams.get("primaryBrandId") ?? "";
+  const brandId = searchParams.get("brandId") ?? "";
+  const status = searchParams.get("status") ?? "";
   const search = searchParams.get("search") ?? "";
   const q = searchParams.get("q") ?? "";
 
@@ -34,29 +42,33 @@ export async function GET(req: NextRequest) {
   let query = supabase
     .from("products")
     .select(
-      `
-      *,
-      product_codes!products_product_code_id_fkey (
-        id,
-        product_code_data,
-        description_data,
-        compatibility_data,
-        status,
-        verified
-      )
-    `,
+      brandId && brandId !== "all"
+        ? PRODUCT_WITH_SOURCE_BRAND_FILTER_SELECT
+        : PRODUCT_WITH_SOURCE_SELECT,
       { count: "exact" }
     )
     .order("created_at", { ascending: false })
     .range(from, to);
 
+  if (primaryBrandId && primaryBrandId !== "all") {
+    query = query.eq("primary_brand_id", primaryBrandId);
+  }
+
+  if (brandId && brandId !== "all") {
+    query = query.eq("product_brands.brand_id", brandId);
+  }
+
+  if (status && status !== "all") {
+    query = query.eq("status", status);
+  }
+
   if (search) {
-    query = query.ilike("brand", `%${search}%`);
+    query = query.or(`model.ilike.%${search}%,subModel.ilike.%${search}%`);
   }
 
   if (q) {
     query = query.or(
-      `brand.ilike.%${q}%,model.ilike.%${q}%,"subModel".ilike.%${q}%`
+      `model.ilike.%${q}%,subModel.ilike.%${q}%`
     );
   }
 
@@ -67,7 +79,7 @@ export async function GET(req: NextRequest) {
   }
 
   const response = NextResponse.json({
-    data: data ?? [],
+    data: (data ?? []).map((row) => mapProductRow(row)),
     count: count ?? 0,
     page,
     pageSize,
