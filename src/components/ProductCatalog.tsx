@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Loader2,
   PackageSearch,
+  X,
 } from 'lucide-react';
 import type {
   Brand,
@@ -51,6 +52,10 @@ function getProductTitle(product: ProductWithSource): string {
   return [product.model, product.subModel].filter(Boolean).join(' ') || 'Producto sin modelo';
 }
 
+function getProductPreviewTitle(product: ProductWithSource): string {
+  return product.product_codes?.description_data?.generated ?? getProductTitle(product);
+}
+
 export function ProductCatalog() {
   const router = useRouter();
   const pathname = usePathname();
@@ -65,6 +70,7 @@ export function ProductCatalog() {
   const [productsLoading, setProductsLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
+  const [previewProduct, setPreviewProduct] = useState<ProductWithSource | null>(null);
 
   const selectedBrand = useMemo(
     () => brands.find((brand) => brand.id === selectedBrandId) ?? null,
@@ -89,6 +95,19 @@ export function ProductCatalog() {
   useEffect(() => {
     setPage(1);
   }, [selectedBrandId, selectedSubModel]);
+
+  useEffect(() => {
+    if (!previewProduct) return undefined;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setPreviewProduct(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [previewProduct]);
 
   useEffect(() => {
     if (!selectedBrandId) {
@@ -384,9 +403,11 @@ export function ProductCatalog() {
                       const imageUrl = getProductImage(product);
 
                       return (
-                        <article
+                        <button
                           key={product.id}
-                          className="overflow-hidden rounded-2xl border border-white/40 bg-white/50 ring-1 ring-white/20 ring-inset backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:shadow-glass"
+                          type="button"
+                          onClick={() => setPreviewProduct(product)}
+                          className="overflow-hidden rounded-2xl border border-white/40 bg-white/50 text-left ring-1 ring-white/20 ring-inset backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:shadow-glass"
                         >
                           <div className="relative aspect-[10/5] overflow-hidden bg-white/30">
                             {imageUrl ? (
@@ -398,11 +419,11 @@ export function ProductCatalog() {
                             ) : (
                               <div className="flex h-full w-full items-center justify-center">
                                 <Image
-                                  src="/van.png"
+                                  src="/rhino-logo.png"
                                   alt="Sin imagen disponible"
                                   width={312}
                                   height={78}
-                                  className="object-contain opacity-60"
+                                  className="object-contain opacity-35 grayscale"
                                 />
                               </div>
                             )}
@@ -424,7 +445,7 @@ export function ProductCatalog() {
                               </p>
                             )}
                           </div>
-                        </article>
+                        </button>
                       );
                     })}
                     {Array.from({ length: emptySlotCount }).map((_, index) => (
@@ -482,6 +503,65 @@ export function ProductCatalog() {
               </>
             )}
           </>
+        )}
+
+        {previewProduct && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+            onClick={() => setPreviewProduct(null)}
+          >
+            <div
+              className="relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/40 bg-white/70 ring-1 ring-white/20 ring-inset backdrop-blur-2xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setPreviewProduct(null)}
+                className="absolute top-4 right-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-secondary-700 shadow-sm transition-colors hover:bg-white"
+                aria-label="Cerrar vista previa"
+              >
+                <X className="h-5 w-5" />
+              </button>
+
+              <div className="border-b border-white/40 px-6 py-4 pr-16">
+                <h4 className="truncate text-xl font-semibold text-secondary-900">
+                  {getProductPreviewTitle(previewProduct)}
+                </h4>
+                <p className="mt-1 truncate text-sm text-secondary-600">
+                  {previewProduct.product_codes?.product_code_data?.generated ?? 'Sin código generado'}
+                </p>
+              </div>
+
+              <div className="p-2 sm:p-3">
+                <div className="relative h-[72vh] min-h-[420px] overflow-hidden rounded-2xl bg-white/85">
+                  {getProductImage(previewProduct) ? (
+                    <Image
+                      src={getProductImage(previewProduct)!}
+                      alt={getProductPreviewTitle(previewProduct)}
+                      fill
+                      className="object-contain"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <Image
+                        src="/rhino-logo.png"
+                        alt="Sin imagen disponible"
+                        fill
+                        className="object-contain p-8 opacity-35 grayscale"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                {previewProduct.additional_brands.length > 0 && (
+                  <p className="mt-4 truncate text-sm text-secondary-600">
+                    También relacionado con:{' '}
+                    {previewProduct.additional_brands.map((brand) => brand.name).join(', ')}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </section>
