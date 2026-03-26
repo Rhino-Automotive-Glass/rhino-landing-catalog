@@ -505,65 +505,66 @@ export function ProductCatalog() {
           </>
         )}
 
-        {previewProduct && (
+      </div>
+
+      {previewProduct && (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-4"
+          onClick={() => setPreviewProduct(null)}
+        >
           <div
-            className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-4"
-            onClick={() => setPreviewProduct(null)}
+            className="relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/40 bg-white/70 ring-1 ring-white/20 ring-inset backdrop-blur-2xl"
+            onClick={(event) => event.stopPropagation()}
           >
-            <div
-              className="relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/40 bg-white/70 ring-1 ring-white/20 ring-inset backdrop-blur-2xl"
-              onClick={(event) => event.stopPropagation()}
+            <button
+              type="button"
+              onClick={() => setPreviewProduct(null)}
+              className="absolute top-4 right-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-secondary-900/85 text-white shadow-sm transition-colors hover:bg-secondary-900"
+              aria-label="Cerrar vista previa"
             >
-              <button
-                type="button"
-                onClick={() => setPreviewProduct(null)}
-                className="absolute top-4 right-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-secondary-900/85 text-white shadow-sm transition-colors hover:bg-secondary-900"
-                aria-label="Cerrar vista previa"
-              >
-                <X className="h-5 w-5" />
-              </button>
+              <X className="h-5 w-5" />
+            </button>
 
-              <div className="border-b border-white/40 px-6 py-4 pr-16">
-                <h4 className="line-clamp-2 text-xl leading-tight font-semibold text-secondary-900">
-                  {getProductPreviewTitle(previewProduct)}
-                </h4>
-                <p className="mt-1 truncate text-sm text-secondary-600">
-                  {previewProduct.product_codes?.product_code_data?.generated ?? 'Sin código generado'}
-                </p>
-              </div>
+            <div className="border-b border-white/40 px-6 py-4 pr-16">
+              <h4 className="line-clamp-2 text-xl leading-tight font-semibold text-secondary-900">
+                {getProductPreviewTitle(previewProduct)}
+              </h4>
+              <p className="mt-1 truncate text-sm text-secondary-600">
+                {previewProduct.product_codes?.product_code_data?.generated ?? 'Sin código generado'}
+              </p>
+            </div>
 
-              <div className="p-2 sm:p-3">
-                <div className="relative h-[72vh] min-h-[420px] overflow-hidden rounded-2xl bg-white/85">
-                  {getProductImage(previewProduct) ? (
+            <div className="p-2 sm:p-3">
+              <div className="relative h-[72vh] min-h-[420px] overflow-hidden rounded-2xl bg-white/85">
+                {getProductImage(previewProduct) ? (
+                  <Image
+                    src={getProductImage(previewProduct)!}
+                    alt={getProductPreviewTitle(previewProduct)}
+                    fill
+                    className="object-contain"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center">
                     <Image
-                      src={getProductImage(previewProduct)!}
-                      alt={getProductPreviewTitle(previewProduct)}
+                      src="/rhino-logo.png"
+                      alt="Sin imagen disponible"
                       fill
-                      className="object-contain"
+                      className="object-contain p-8 opacity-35 grayscale"
                     />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center">
-                      <Image
-                        src="/rhino-logo.png"
-                        alt="Sin imagen disponible"
-                        fill
-                        className="object-contain p-8 opacity-35 grayscale"
-                      />
-                    </div>
-                  )}
-                </div>
-
-                {previewProduct.additional_brands.length > 0 && (
-                  <p className="mt-4 truncate text-sm text-secondary-600">
-                    También relacionado con:{' '}
-                    {previewProduct.additional_brands.map((brand) => brand.name).join(', ')}
-                  </p>
+                  </div>
                 )}
               </div>
+
+              {previewProduct.additional_brands.length > 0 && (
+                <p className="mt-4 truncate text-sm text-secondary-600">
+                  También relacionado con:{' '}
+                  {previewProduct.additional_brands.map((brand) => brand.name).join(', ')}
+                </p>
+              )}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }
