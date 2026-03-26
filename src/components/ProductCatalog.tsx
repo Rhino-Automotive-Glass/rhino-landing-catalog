@@ -507,7 +507,7 @@ export function ProductCatalog() {
 
         {previewProduct && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-4"
             onClick={() => setPreviewProduct(null)}
           >
             <div
@@ -517,14 +517,14 @@ export function ProductCatalog() {
               <button
                 type="button"
                 onClick={() => setPreviewProduct(null)}
-                className="absolute top-4 right-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-secondary-700 shadow-sm transition-colors hover:bg-white"
+                className="absolute top-4 right-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-secondary-900/85 text-white shadow-sm transition-colors hover:bg-secondary-900"
                 aria-label="Cerrar vista previa"
               >
                 <X className="h-5 w-5" />
               </button>
 
               <div className="border-b border-white/40 px-6 py-4 pr-16">
-                <h4 className="truncate text-xl font-semibold text-secondary-900">
+                <h4 className="line-clamp-2 text-xl leading-tight font-semibold text-secondary-900">
                   {getProductPreviewTitle(previewProduct)}
                 </h4>
                 <p className="mt-1 truncate text-sm text-secondary-600">
