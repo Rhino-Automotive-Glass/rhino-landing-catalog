@@ -7,6 +7,7 @@ import {
   PRODUCT_WITH_SOURCE_SELECT,
   mapProductRow,
 } from "@/lib/product-query";
+import { matchesVisibilityStatus } from "@/lib/product-visibility";
 
 export async function GET(req: NextRequest) {
   const ip =
@@ -35,6 +36,8 @@ export async function GET(req: NextRequest) {
   const brandId = searchParams.get("brandId") ?? "";
   const subModel = searchParams.get("subModel") ?? "";
   const status = searchParams.get("status") ?? "";
+  const visibility = searchParams.get("visibility") ?? "visible";
+  const normalizedVisibility = visibility === "all" ? "all" : "visible";
   const search = searchParams.get("search") ?? "";
   const q = searchParams.get("q") ?? "";
 
@@ -42,6 +45,11 @@ export async function GET(req: NextRequest) {
   const to = from + pageSize - 1;
 
   const hasDerivedSubModelFilter = Boolean(subModel && subModel !== "all");
+  const shouldUseRawStatusFilter = Boolean(status && status !== "all" && status !== "hidden");
+  const requiresDerivedFiltering =
+    hasDerivedSubModelFilter ||
+    normalizedVisibility !== "all" ||
+    Boolean(status && status !== "all");
 
   let query = supabase
     .from("products")
@@ -61,7 +69,7 @@ export async function GET(req: NextRequest) {
     query = query.eq("product_brands.brand_id", brandId);
   }
 
-  if (status && status !== "all") {
+  if (shouldUseRawStatusFilter) {
     query = query.eq("status", status);
   }
 
@@ -75,7 +83,7 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  if (!hasDerivedSubModelFilter) {
+  if (!requiresDerivedFiltering) {
     query = query.range(from, to);
   }
 
@@ -86,10 +94,21 @@ export async function GET(req: NextRequest) {
   }
 
   const mappedProducts = (data ?? []).map((row) => mapProductRow(row));
+  let filteredProducts = mappedProducts;
+
+  if (normalizedVisibility === "visible") {
+    filteredProducts = filteredProducts.filter((product) => !product.is_hidden);
+  }
+
+  if (status && status !== "all") {
+    filteredProducts = filteredProducts.filter((product) =>
+      matchesVisibilityStatus(product.effective_status, status)
+    );
+  }
 
   if (hasDerivedSubModelFilter) {
     const normalizedSubModel = subModel.trim().toLowerCase();
-    const filteredProducts = mappedProducts.filter((product) =>
+    filteredProducts = filteredProducts.filter((product) =>
       getProductSubModels(product).some(
         (candidate) => candidate.toLowerCase() === normalizedSubModel
       )
@@ -106,8 +125,20 @@ export async function GET(req: NextRequest) {
     return response;
   }
 
+  if (requiresDerivedFiltering) {
+    const response = NextResponse.json({
+      data: filteredProducts.slice(from, to + 1),
+      count: filteredProducts.length,
+      page,
+      pageSize,
+    });
+    response.headers.set("X-RateLimit-Remaining", String(rl.remaining));
+    response.headers.set("X-RateLimit-Reset", String(rl.resetAt));
+    return response;
+  }
+
   const response = NextResponse.json({
-    data: mappedProducts,
+    data: filteredProducts,
     count: count ?? 0,
     page,
     pageSize,

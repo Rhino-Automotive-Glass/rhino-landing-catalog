@@ -1,4 +1,9 @@
-import type { Brand, ProductWithSource } from "@/lib/types";
+import type { Brand, ProductCode, ProductWithSource } from "@/lib/types";
+import {
+  getEffectiveProductStatus,
+  getProductHiddenReason,
+  isProductHidden,
+} from "@/lib/product-visibility";
 
 type RawBrand = {
   id: string;
@@ -7,15 +12,6 @@ type RawBrand = {
 
 type RawBrandRelation = {
   brand: RawBrand | RawBrand[] | null;
-};
-
-type RawProductCode = {
-  id: string;
-  product_code_data: ProductWithSource["product_codes"]["product_code_data"];
-  description_data: ProductWithSource["product_codes"]["description_data"];
-  compatibility_data: ProductWithSource["product_codes"]["compatibility_data"];
-  status: string | null;
-  verified: boolean;
 };
 
 type RawProductRow = {
@@ -30,7 +26,7 @@ type RawProductRow = {
   status: ProductWithSource["status"];
   created_at: string;
   updated_at: string;
-  product_codes: RawProductCode | RawProductCode[] | null;
+  product_codes: ProductCode | ProductCode[] | null;
   primary_brand: RawBrand | RawBrand[] | null;
   product_brands: RawBrandRelation[] | null;
 };
@@ -41,7 +37,10 @@ const PRODUCT_CODE_SELECT = `
   description_data,
   compatibility_data,
   status,
-  verified
+  verified,
+  notes,
+  created_at,
+  updated_at
 `;
 
 export const PRODUCT_WITH_SOURCE_SELECT = `
@@ -98,6 +97,33 @@ export const PRODUCT_WITH_SOURCE_BRAND_FILTER_SELECT = `
   )
 `;
 
+export const PRODUCT_WITH_SOURCE_INNER_SELECT = `
+  id,
+  product_code_id,
+  price,
+  stock,
+  primary_brand_id,
+  model,
+  subModel,
+  images,
+  status,
+  created_at,
+  updated_at,
+  primary_brand:brands!products_primary_brand_id_fkey (
+    id,
+    name
+  ),
+  product_brands:product_brands!product_brands_product_id_fkey (
+    brand:brands!product_brands_brand_id_fkey (
+      id,
+      name
+    )
+  ),
+  product_codes!products_product_code_id_fkey!inner (
+    ${PRODUCT_CODE_SELECT}
+  )
+`;
+
 function unwrapRelation<T>(value: T | T[] | null | undefined): T | null {
   if (!value) return null;
   return Array.isArray(value) ? value[0] ?? null : value;
@@ -116,6 +142,7 @@ function dedupeBrands(brands: Brand[]): Brand[] {
 export function mapProductRow(row: RawProductRow): ProductWithSource {
   const primaryBrand = unwrapRelation(row.primary_brand);
   const productCode = unwrapRelation(row.product_codes);
+  const hidden = isProductHidden(productCode);
   const additionalBrands = dedupeBrands(
     (row.product_brands ?? [])
       .map((item) => unwrapRelation(item.brand))
@@ -144,16 +171,14 @@ export function mapProductRow(row: RawProductRow): ProductWithSource {
     subModel: row.subModel,
     images: row.images,
     status: row.status,
+    effective_status: getEffectiveProductStatus(row.status, productCode),
+    is_hidden: hidden,
+    hidden_reason: getProductHiddenReason(productCode),
     created_at: row.created_at,
     updated_at: row.updated_at,
-    product_codes: productCode
-      ? {
-          ...productCode,
-          notes: null,
-          created_at: "",
-          updated_at: "",
-        }
-      : {
+    product_codes:
+      productCode ??
+      ({
           id: "",
           product_code_data: {},
           description_data: {},
@@ -163,7 +188,7 @@ export function mapProductRow(row: RawProductRow): ProductWithSource {
           notes: null,
           created_at: "",
           updated_at: "",
-        },
+        } as ProductCode),
       };
 }
 

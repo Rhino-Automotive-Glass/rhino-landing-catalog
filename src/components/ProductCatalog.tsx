@@ -40,9 +40,7 @@ const BRAND_LOGOS: Record<string, string> = {
 };
 
 function getProductImage(product: ProductWithSource): string | null {
-  const main = product.images?.main;
-  if (!main) return null;
-  return main.left || main.right || main.back || null;
+  return product.images?.[0] ?? null;
 }
 
 function getBrandLogo(brandName: string): string | null {
@@ -146,6 +144,7 @@ export function ProductCatalog() {
       page: String(page),
       pageSize: String(PAGE_SIZE),
       brandId: selectedBrandId,
+      visibility: 'visible',
     });
 
     if (selectedSubModel) {
@@ -160,16 +159,6 @@ export function ProductCatalog() {
 
         if (!response.ok) {
           throw new Error(json.error ?? 'Failed to load products');
-        }
-
-        if (page === 1) {
-          console.log('[ProductCatalog] Brand selection results', {
-            brandId: selectedBrandId,
-            brandName: selectedBrand?.name ?? null,
-            subModel: selectedSubModel || null,
-            totalCount: typeof json.count === 'number' ? json.count : 0,
-            products: Array.isArray(json.data) ? json.data : [],
-          });
         }
 
         setProducts(Array.isArray(json.data) ? json.data : []);
@@ -192,7 +181,7 @@ export function ProductCatalog() {
     return () => {
       controller.abort();
     };
-  }, [page, selectedBrand, selectedBrandId, selectedSubModel]);
+  }, [page, selectedBrandId, selectedSubModel]);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
   const emptySlotCount = Math.max(0, PAGE_SIZE - products.length);
