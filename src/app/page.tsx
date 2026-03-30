@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from 'react'
+import { Suspense, useRef } from 'react'
 import { ProductCatalog } from '@/components'
 import { FloatingHeader } from '@/components'
 import { Hero } from '@/components'
@@ -11,6 +11,7 @@ import { WhatsAppFloat } from '@/components'
 import { BackToTop } from '@/components'
 import Image from 'next/image'
 import { trackEvent } from '@/lib/gtm'
+import { useLandingAnimations } from '@/components/useLandingAnimations'
 
 function ProductCatalogFallback() {
   return (
@@ -44,8 +45,12 @@ function ProductCatalogFallback() {
 }
 
 export default function Home() {
+  const mainRef = useRef<HTMLElement>(null)
+
+  useLandingAnimations(mainRef)
+
   return (
-    <main className="min-h-screen">
+    <main ref={mainRef} className="min-h-screen">
       {/* Floating Header */}
       <FloatingHeader title="RHINO AUTOMOTIVE GLASS MEXICO" />
       
@@ -65,7 +70,7 @@ export default function Home() {
 
       {/* Video Section */}
       <section className="bg-gradient-to-b from-gray-300 via-gray-500 to-gray-300 flex items-center justify-center max-h-[42vh] overflow-hidden">
-        <div className="hidden md:block relative max-h-[42vh] w-auto aspect-[3/4]">
+        <div data-gsap="media-panel" className="hidden md:block relative max-h-[42vh] w-auto aspect-[3/4]">
           <Image
             src="/ventana-van.jpg"
             alt="Ventana lateral de van - cristales automotrices Rhino"
@@ -75,7 +80,7 @@ export default function Home() {
             sizes="25vw"
           />
         </div>
-        <div className="relative inline-block">
+        <div data-gsap="media-panel" className="relative inline-block">
           <video
             className="max-h-[42vh] w-auto"
             autoPlay
@@ -104,7 +109,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="hidden md:block relative max-h-[42vh] w-auto aspect-[3/4]">
+        <div data-gsap="media-panel" className="hidden md:block relative max-h-[42vh] w-auto aspect-[3/4]">
           <Image
             src="/van-medallon.jpg"
             alt="Medallon de van - vidrio trasero para vehiculos comerciales"
@@ -122,7 +127,7 @@ export default function Home() {
       {/* Footer */}
       <footer role="contentinfo" className="bg-secondary-900 text-white py-12">
         <div className="max-w-7xl mx-auto container-padding">
-          <div className="grid md:grid-cols-3 gap-8 bg-white/5 rounded-2xl p-6">
+          <div data-gsap="reveal-card" className="grid md:grid-cols-3 gap-8 bg-white/5 rounded-2xl p-6">
             {/* Company Info */}
             <div>
               <div className="flex items-center space-x-3 mb-4">

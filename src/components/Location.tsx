@@ -48,14 +48,14 @@ export function Location() {
     <section id="ubicacion" className="section-padding relative overflow-hidden scroll-mt-20">
       {/* Glass background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-orange-50" />
-      <div className="absolute -top-20 right-0 w-[550px] h-[550px] bg-primary-300/55 rounded-full blur-3xl" />
-      <div className="absolute -bottom-20 -left-10 w-[550px] h-[550px] bg-accent-300/45 rounded-full blur-3xl" />
-      <div className="absolute top-1/3 left-1/2 w-[450px] h-[450px] bg-accent-300/35 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-primary-200/40 rounded-full blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute -top-20 right-0 w-[550px] h-[550px] bg-primary-300/55 rounded-full blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute -bottom-20 -left-10 w-[550px] h-[550px] bg-accent-300/45 rounded-full blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute top-1/3 left-1/2 w-[450px] h-[450px] bg-accent-300/35 rounded-full blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-primary-200/40 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto container-padding">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div data-gsap="section-heading" className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
             Nuestra Ubicación
           </h2>
@@ -69,7 +69,10 @@ export function Location() {
           {/* Left Column - Business Info */}
           <div className="space-y-8">
             {/* Address Card */}
-            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
+            <div
+              data-gsap="reveal-card"
+              className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6"
+            >
               <div className="flex items-start space-x-4 mb-6">
                 <div className="w-12 h-12 bg-primary-100/60 backdrop-blur-sm border border-primary-200/50 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-primary-600" />
@@ -105,7 +108,10 @@ export function Location() {
             </div>
 
             {/* Business Hours */}
-            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
+            <div
+              data-gsap="reveal-card"
+              className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6"
+            >
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-accent-100/60 backdrop-blur-sm border border-accent-200/50 rounded-lg flex items-center justify-center">
                   <Clock className="w-6 h-6 text-accent-600" />
@@ -144,7 +150,10 @@ export function Location() {
             </div>
 
             {/* Services Available */}
-            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
+            <div
+              data-gsap="reveal-card"
+              className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6"
+            >
               <h3 className="text-xl font-semibold text-secondary-900 mb-6">
                 Modalidades de Servicio
               </h3>
@@ -172,7 +181,10 @@ export function Location() {
           {/* Right Column - Map */}
           <div className="space-y-6">
             {/* Map Container */}
-            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset overflow-hidden">
+            <div
+              data-gsap="reveal-card"
+              className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset overflow-hidden"
+            >
               <div className="aspect-[4/3] relative">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.997781976562!2d-98.8908485239738!3d19.325902544078023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce1f045a96ae0d%3A0x20b9b93f8dc4ca4c!2sRHINO%20AUTOMOTIVE%20GLASS!5e0!3m2!1ses!2smx!4v1772728381391!5m2!1ses!2smx"
@@ -187,7 +199,10 @@ export function Location() {
             </div>
 
             {/* Contact Info Summary */}
-            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
+            <div
+              data-gsap="reveal-card"
+              className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6"
+            >
               <h3 className="text-xl font-semibold text-secondary-900 mb-4">
                 Información de Contacto
               </h3>
@@ -235,7 +250,10 @@ export function Location() {
             </div>
 
             {/* Service Areas */}
-            <div className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6">
+            <div
+              data-gsap="reveal-card"
+              className="bg-white/50 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-6"
+            >
               <h3 className="text-xl font-semibold text-secondary-900 mb-4">
                 Áreas de Servicio
               </h3>

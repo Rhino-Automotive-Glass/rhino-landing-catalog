@@ -23,6 +23,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
 
   return (
     <header 
+      data-gsap="floating-header"
       className={`
         fixed top-0 left-0 right-0 z-50
         transition-all duration-300 ease-in-out

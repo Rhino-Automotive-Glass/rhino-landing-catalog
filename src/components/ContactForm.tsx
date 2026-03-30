@@ -24,15 +24,15 @@ export function ContactForm() {
   return (
     <section id="contacto" className="section-padding hero-bg relative overflow-hidden scroll-mt-20">
       {/* Accent blobs so backdrop-blur on the form card has color to diffuse */}
-      <div className="absolute -top-28 -right-28 w-[420px] h-[420px] bg-accent-500/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-36 -left-28 w-[380px] h-[380px] bg-primary-400/25 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[300px] h-[300px] bg-accent-400/15 rounded-full blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute -top-28 -right-28 w-[420px] h-[420px] bg-accent-500/20 rounded-full blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute -bottom-36 -left-28 w-[380px] h-[380px] bg-primary-400/25 rounded-full blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[300px] h-[300px] bg-accent-400/15 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto container-padding relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Contact Info */}
           <div className="text-white space-y-8">
-            <div>
+            <div data-gsap="section-heading">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Contáctanos
               </h2>
@@ -43,7 +43,7 @@ export function ContactForm() {
 
             {/* Contact Details */}
             <div className="space-y-6">
-              <div className="flex items-start space-x-4">
+              <div data-gsap="reveal-card" className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="w-6 h-6 text-accent-400" />
                 </div>
@@ -54,7 +54,7 @@ export function ContactForm() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div data-gsap="reveal-card" className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-6 h-6 text-accent-400" />
                 </div>
@@ -65,7 +65,7 @@ export function ContactForm() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div data-gsap="reveal-card" className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-white/15 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-accent-400" />
                 </div>
@@ -78,7 +78,7 @@ export function ContactForm() {
             </div>
 
             {/* Call to Action */}
-            <div className="pt-6 border-t border-white/20">
+            <div data-gsap="reveal-card" className="pt-6 border-t border-white/20">
               <p className="text-blue-100 mb-4">
                 ¿Necesitas atención inmediata? Llámanos directamente:
               </p>
@@ -94,7 +94,10 @@ export function ContactForm() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-white/65 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-8">
+          <div
+            data-gsap="reveal-card"
+            className="bg-white/65 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-glass ring-1 ring-white/20 ring-inset p-8"
+          >
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-secondary-900 mb-2">
                 Solicita tu Cotización

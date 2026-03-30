@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowLeft,
   ChevronDown,
@@ -57,6 +57,7 @@ function getProductPreviewTitle(product: ProductWithSource): string {
 }
 
 export function ProductCatalog() {
+  const sectionRef = useRef<HTMLElement>(null);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -207,6 +208,88 @@ export function ProductCatalog() {
   const showInitialProductSkeleton = productsLoading && products.length === 0;
   const showProductsGrid = products.length > 0;
   const showProductsOverlay = productsLoading && products.length > 0;
+  const brandAnimationKey = brands.map(({ id }) => id).join(',');
+  const productAnimationKey = products.map(({ id }) => id).join(',');
+
+  useEffect(() => {
+    if (!sectionRef.current) {
+      return undefined;
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return undefined;
+    }
+
+    const selector = selectedBrandId
+      ? '[data-gsap-catalog="product-card"]'
+      : '[data-gsap-catalog="brand-card"]';
+
+    if ((!selectedBrandId && brandsLoading) || (selectedBrandId ? productsLoading : false)) {
+      return undefined;
+    }
+
+    let isActive = true;
+    let dispose = () => {};
+
+    const animateItems = async () => {
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+        import('gsap'),
+        import('gsap/ScrollTrigger'),
+      ]);
+
+      if (!isActive || !sectionRef.current) {
+        return;
+      }
+
+      const section = sectionRef.current;
+      const items = section.querySelectorAll<HTMLElement>(selector);
+
+      if (items.length === 0) {
+        ScrollTrigger.refresh();
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const ctx = gsap.context(() => {
+        gsap.fromTo(
+          items,
+          {
+            y: 26,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.72,
+            ease: 'power3.out',
+            stagger: 0.06,
+            clearProps: 'transform,opacity',
+          }
+        );
+      }, section);
+
+      ScrollTrigger.refresh();
+
+      dispose = () => {
+        ctx.revert();
+      };
+    };
+
+    void animateItems();
+
+    return () => {
+      isActive = false;
+      dispose();
+    };
+  }, [
+    brandAnimationKey,
+    brandsLoading,
+    page,
+    productAnimationKey,
+    productsLoading,
+    selectedBrandId,
+  ]);
 
   function openBrand(brandId: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -237,13 +320,17 @@ export function ProductCatalog() {
   }
 
   return (
-    <section id="catalogo" className="section-padding relative overflow-hidden scroll-mt-20">
-      <div className="absolute -top-40 -left-40 h-[550px] w-[550px] rounded-full bg-primary-300/35 blur-3xl" />
-      <div className="absolute -bottom-40 -right-40 h-[550px] w-[550px] rounded-full bg-accent-300/30 blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-200/25 blur-3xl" />
+    <section
+      ref={sectionRef}
+      id="catalogo"
+      className="section-padding relative overflow-hidden scroll-mt-20"
+    >
+      <div data-gsap="parallax-blob" className="absolute -top-40 -left-40 h-[550px] w-[550px] rounded-full bg-primary-300/35 blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute -bottom-40 -right-40 h-[550px] w-[550px] rounded-full bg-accent-300/30 blur-3xl" />
+      <div data-gsap="parallax-blob" className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-200/25 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl container-padding">
-        <div className="mb-12 text-center">
+        <div data-gsap="section-heading" className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-secondary-900 md:text-4xl">
             Catálogo de Cristales para Vans y Autobuses
           </h2>
@@ -255,7 +342,7 @@ export function ProductCatalog() {
 
         {!selectedBrandId ? (
           <>
-            <div className="mb-8 text-center">
+            <div data-gsap="reveal-card" className="mb-8 text-center">
               <h3 className="text-2xl font-semibold text-secondary-900">
                 Explora por marca
               </h3>
@@ -282,6 +369,7 @@ export function ProductCatalog() {
                       key={brand.id}
                       type="button"
                       onClick={() => openBrand(brand.id)}
+                      data-gsap-catalog="brand-card"
                       className="rounded-2xl border border-white/40 bg-white/50 px-5 py-6 text-center ring-1 ring-white/20 ring-inset backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:shadow-glass"
                     >
                       <div className="flex flex-col items-center">
@@ -407,6 +495,7 @@ export function ProductCatalog() {
                           key={product.id}
                           type="button"
                           onClick={() => setPreviewProduct(product)}
+                          data-gsap-catalog="product-card"
                           className="overflow-hidden rounded-2xl border border-white/40 bg-white/50 text-left ring-1 ring-white/20 ring-inset backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:shadow-glass"
                         >
                           <div className="relative aspect-[10/5] overflow-hidden bg-white/30">
