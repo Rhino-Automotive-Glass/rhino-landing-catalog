@@ -3,6 +3,7 @@ import { supabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
 import {
   getProductSubModels,
+  matchesProductSearch,
   PRODUCT_WITH_SOURCE_BRAND_FILTER_SELECT,
   PRODUCT_WITH_SOURCE_SELECT,
   mapProductRow,
@@ -40,6 +41,7 @@ export async function GET(req: NextRequest) {
   const normalizedVisibility = visibility === "all" ? "all" : "visible";
   const search = searchParams.get("search") ?? "";
   const q = searchParams.get("q") ?? "";
+  const searchTerm = search || q;
 
   const from = (page - 1) * pageSize;
   const to = from + pageSize - 1;
@@ -49,7 +51,8 @@ export async function GET(req: NextRequest) {
   const requiresDerivedFiltering =
     hasDerivedSubModelFilter ||
     normalizedVisibility !== "all" ||
-    Boolean(status && status !== "all");
+    Boolean(status && status !== "all") ||
+    Boolean(searchTerm);
 
   let query = supabase
     .from("products")
@@ -71,16 +74,6 @@ export async function GET(req: NextRequest) {
 
   if (shouldUseRawStatusFilter) {
     query = query.eq("status", status);
-  }
-
-  if (search) {
-    query = query.or(`model.ilike.%${search}%,subModel.ilike.%${search}%`);
-  }
-
-  if (q) {
-    query = query.or(
-      `model.ilike.%${q}%,subModel.ilike.%${q}%`
-    );
   }
 
   if (!requiresDerivedFiltering) {
@@ -113,16 +106,12 @@ export async function GET(req: NextRequest) {
         (candidate) => candidate.toLowerCase() === normalizedSubModel
       )
     );
+  }
 
-    const response = NextResponse.json({
-      data: filteredProducts.slice(from, to + 1),
-      count: filteredProducts.length,
-      page,
-      pageSize,
-    });
-    response.headers.set("X-RateLimit-Remaining", String(rl.remaining));
-    response.headers.set("X-RateLimit-Reset", String(rl.resetAt));
-    return response;
+  if (searchTerm) {
+    filteredProducts = filteredProducts.filter((product) =>
+      matchesProductSearch(product, searchTerm)
+    );
   }
 
   if (requiresDerivedFiltering) {

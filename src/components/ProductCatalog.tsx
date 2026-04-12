@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { startTransition, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowLeft,
   ChevronDown,
@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Loader2,
   PackageSearch,
+  Search,
   X,
 } from 'lucide-react';
 import type {
@@ -63,12 +64,14 @@ export function ProductCatalog() {
   const searchParams = useSearchParams();
   const selectedBrandId = searchParams.get('brand') ?? '';
   const selectedSubModel = searchParams.get('subModel') ?? '';
+  const selectedSearch = searchParams.get('search') ?? '';
   const [brands, setBrands] = useState<Brand[]>([]);
   const [brandsLoading, setBrandsLoading] = useState(true);
   const [subModels, setSubModels] = useState<string[]>([]);
   const [subModelsLoading, setSubModelsLoading] = useState(false);
   const [products, setProducts] = useState<ProductWithSource[]>([]);
   const [productsLoading, setProductsLoading] = useState(false);
+  const [searchInput, setSearchInput] = useState(selectedSearch);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
   const [previewProduct, setPreviewProduct] = useState<ProductWithSource | null>(null);
@@ -77,6 +80,8 @@ export function ProductCatalog() {
     () => brands.find((brand) => brand.id === selectedBrandId) ?? null,
     [brands, selectedBrandId]
   );
+  const hasActiveSearch = selectedSearch.trim().length > 0;
+  const shouldShowProductResults = Boolean(selectedBrandId || hasActiveSearch);
 
   useEffect(() => {
     setBrandsLoading(true);
@@ -95,7 +100,11 @@ export function ProductCatalog() {
 
   useEffect(() => {
     setPage(1);
-  }, [selectedBrandId, selectedSubModel]);
+  }, [selectedBrandId, selectedSearch, selectedSubModel]);
+
+  useEffect(() => {
+    setSearchInput(selectedSearch);
+  }, [selectedSearch]);
 
   useEffect(() => {
     if (!previewProduct) return undefined;
@@ -149,7 +158,7 @@ export function ProductCatalog() {
   }, [selectedBrandId]);
 
   useEffect(() => {
-    if (!selectedBrandId) {
+    if (!shouldShowProductResults) {
       setProducts([]);
       setTotalCount(0);
       setProductsLoading(false);
@@ -163,12 +172,19 @@ export function ProductCatalog() {
     const params = new URLSearchParams({
       page: String(page),
       pageSize: String(PAGE_SIZE),
-      brandId: selectedBrandId,
       visibility: 'visible',
     });
 
-    if (selectedSubModel) {
+    if (selectedBrandId) {
+      params.set('brandId', selectedBrandId);
+    }
+
+    if (selectedBrandId && selectedSubModel) {
       params.set('subModel', selectedSubModel);
+    }
+
+    if (selectedSearch) {
+      params.set('search', selectedSearch);
     }
 
     fetch(`/api/products?${params}`, { signal: controller.signal })
@@ -201,7 +217,7 @@ export function ProductCatalog() {
     return () => {
       controller.abort();
     };
-  }, [page, selectedBrandId, selectedSubModel]);
+  }, [page, selectedBrandId, selectedSearch, selectedSubModel, shouldShowProductResults]);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
   const emptySlotCount = Math.max(0, PAGE_SIZE - products.length);
@@ -220,11 +236,11 @@ export function ProductCatalog() {
       return undefined;
     }
 
-    const selector = selectedBrandId
+    const selector = shouldShowProductResults
       ? '[data-gsap-catalog="product-card"]'
       : '[data-gsap-catalog="brand-card"]';
 
-    if ((!selectedBrandId && brandsLoading) || (selectedBrandId ? productsLoading : false)) {
+    if ((!shouldShowProductResults && brandsLoading) || (shouldShowProductResults && productsLoading)) {
       return undefined;
     }
 
@@ -288,7 +304,7 @@ export function ProductCatalog() {
     page,
     productAnimationKey,
     productsLoading,
-    selectedBrandId,
+    shouldShowProductResults,
   ]);
 
   function openBrand(brandId: string) {
@@ -319,6 +335,52 @@ export function ProductCatalog() {
     router.push(query ? `${pathname}?${query}#catalogo` : `${pathname}#catalogo`);
   }
 
+  useEffect(() => {
+    const normalizedSearchInput = searchInput.trim();
+    const normalizedSelectedSearch = selectedSearch.trim();
+
+    if (normalizedSearchInput === normalizedSelectedSearch) {
+      return undefined;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setPage(1);
+      setProducts([]);
+      setTotalCount(0);
+      setProductsLoading(true);
+
+      const params = new URLSearchParams(searchParams.toString());
+
+      if (normalizedSearchInput) {
+        params.set('search', normalizedSearchInput);
+      } else {
+        params.delete('search');
+      }
+
+      params.delete('q');
+
+      if (!selectedBrandId) {
+        params.delete('subModel');
+      }
+
+      const query = params.toString();
+
+      startTransition(() => {
+        router.replace(query ? `${pathname}?${query}#catalogo` : `${pathname}#catalogo`);
+      });
+    }, 250);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [pathname, router, searchInput, searchParams, selectedBrandId, selectedSearch]);
+
+  const searchHelperText = hasActiveSearch
+    ? selectedBrandId
+      ? `Mostrando resultados para "${selectedSearch}" en ${selectedBrand?.name ?? 'esta marca'}.`
+      : `Mostrando resultados para "${selectedSearch}" en todas las marcas.`
+    : 'Busca por código, descripción, modelo o submodelo.';
+
   return (
     <section
       ref={sectionRef}
@@ -344,22 +406,57 @@ export function ProductCatalog() {
           <>
             <div data-gsap="reveal-card" className="mb-8 text-center">
               <h3 className="text-2xl font-semibold text-secondary-900">
-                Explora por marca
+                {hasActiveSearch ? 'Buscar productos' : 'Explora por marca'}
               </h3>
               <p className="mt-2 text-secondary-600">
-                Selecciona una marca para ver todos los productos relacionados.
+                {hasActiveSearch
+                  ? `${totalCount} productos encontrados en todas las marcas.`
+                  : 'Selecciona una marca para ver todos los productos relacionados.'}
               </p>
             </div>
 
-            {brandsLoading ? (
+            <div data-gsap="reveal-card" className="mx-auto mb-8 w-full max-w-2xl">
+              <label
+                htmlFor="catalog-product-search"
+                className="mb-2 block text-center text-sm font-medium text-secondary-700"
+              >
+                Buscar productos
+              </label>
+              <div className="relative">
+                <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
+                <input
+                  id="catalog-product-search"
+                  type="text"
+                  value={searchInput}
+                  onChange={(event) => setSearchInput(event.target.value)}
+                  placeholder="Buscar por código, descripción, modelo o submodelo"
+                  className="w-full rounded-full border border-white/50 bg-white/70 px-5 py-3 pl-11 pr-12 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200"
+                />
+                {searchInput && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchInput('')}
+                    className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-secondary-500 transition-colors hover:bg-white hover:text-secondary-700"
+                    aria-label="Limpiar búsqueda"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+              <p className="mt-2 text-center text-xs text-secondary-500">
+                {searchHelperText}
+              </p>
+            </div>
+
+            {!shouldShowProductResults && brandsLoading ? (
               <div className="flex items-center justify-center py-20">
                 <Loader2 className="h-8 w-8 animate-spin text-primary-600" />
               </div>
-            ) : brands.length === 0 ? (
+            ) : !shouldShowProductResults && brands.length === 0 ? (
               <div className="flex items-center justify-center py-20 text-secondary-600">
                 No hay marcas disponibles.
               </div>
-            ) : (
+            ) : !shouldShowProductResults ? (
               <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
                 {brands.map((brand) => {
                   const logoSrc = getBrandLogo(brand.name);
@@ -397,61 +494,7 @@ export function ProductCatalog() {
                   );
                 })}
               </div>
-            )}
-          </>
-        ) : (
-          <>
-            <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <button
-                  type="button"
-                  onClick={clearBrand}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 transition-colors hover:text-primary-900"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                  Volver a marcas
-                </button>
-                <h3 className="mt-3 text-2xl font-semibold text-secondary-900">
-                  {selectedBrand?.name ?? 'Productos de la marca'}
-                </h3>
-                <p className="mt-1 text-secondary-600">
-                  {totalCount} productos relacionados con esta marca
-                </p>
-              </div>
-
-              <div className="w-full sm:max-w-sm">
-                <label
-                  htmlFor="catalog-submodel-filter"
-                  className="mb-2 block text-sm font-medium text-secondary-700"
-                >
-                  Filtrar por submodelo
-                </label>
-                <div className="relative">
-                  <select
-                    id="catalog-submodel-filter"
-                    value={selectedSubModel}
-                    onChange={(event) => updateSubModelFilter(event.target.value)}
-                    disabled={subModelsLoading}
-                    className="w-full appearance-none rounded-full border border-white/50 bg-white/70 px-4 py-3 pr-11 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:cursor-wait disabled:opacity-70"
-                  >
-                    <option value="">Todos los submodelos</option>
-                    {subModels.map((subModel) => (
-                      <option key={subModel} value={subModel}>
-                        {subModel}
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDown className="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
-                </div>
-                <p className="mt-2 text-xs text-secondary-500">
-                  {subModelsLoading
-                    ? 'Cargando submodelos...'
-                    : `${subModels.length} submodelos disponibles`}
-                </p>
-              </div>
-            </div>
-
-            {showInitialProductSkeleton ? (
+            ) : showInitialProductSkeleton ? (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {Array.from({ length: PAGE_SIZE }).map((_, index) => (
                   <article
@@ -479,7 +522,7 @@ export function ProductCatalog() {
                     No se encontraron productos
                   </h4>
                   <p className="mt-2 text-secondary-600">
-                    Esta marca no tiene productos visibles en este momento.
+                    No encontramos productos para "{selectedSearch}".
                   </p>
                 </div>
               </div>
@@ -518,6 +561,245 @@ export function ProductCatalog() {
                             )}
                           </div>
                           <div className="p-5">
+                            {product.primary_brand?.name && (
+                              <p className="text-xs font-semibold tracking-[0.14em] text-primary-700 uppercase">
+                                {product.primary_brand.name}
+                              </p>
+                            )}
+                            <h4 className="mt-2 text-lg font-semibold text-secondary-900">
+                              {product.product_codes?.description_data?.generated ?? 'Sin descripción generada'}
+                            </h4>
+                            <p className="mt-1 text-sm text-secondary-500">
+                              {product.product_codes?.product_code_data?.generated ?? 'Sin código generado'}
+                            </p>
+                            {product.additional_brands.length > 0 && (
+                              <p className="mt-3 text-sm text-secondary-500">
+                                También relacionado con:{' '}
+                                {product.additional_brands.map((brand) => brand.name).join(', ')}
+                              </p>
+                            )}
+                          </div>
+                        </button>
+                      );
+                    })}
+                    {Array.from({ length: emptySlotCount }).map((_, index) => (
+                      <article
+                        key={`product-placeholder-${index}`}
+                        aria-hidden="true"
+                        className="invisible overflow-hidden rounded-2xl border border-white/40 bg-white/50 ring-1 ring-white/20 ring-inset backdrop-blur-2xl"
+                      >
+                        <div className="aspect-[10/5]" />
+                        <div className="space-y-3 p-5">
+                          <div className="h-6 w-24 rounded-full" />
+                          <div className="h-6 w-3/4 rounded-full" />
+                          <div className="h-4 w-2/3 rounded-full" />
+                          <div className="h-4 w-full rounded-full" />
+                          <div className="h-4 w-5/6 rounded-full" />
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+
+                  {showProductsOverlay && (
+                    <div className="pointer-events-none absolute inset-0 rounded-3xl bg-white/30 backdrop-blur-[1px] transition-opacity duration-200">
+                      <div className="absolute inset-x-0 top-0 h-1 overflow-hidden rounded-t-3xl bg-white/40">
+                        <div className="h-full w-1/3 animate-pulse rounded-full bg-primary-500/70" />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {totalPages > 1 && (
+                  <div className="mt-8 flex items-center justify-center gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setPage((currentPage) => Math.max(1, currentPage - 1))}
+                      disabled={page <= 1}
+                      className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/70 px-4 py-2 text-sm font-medium text-secondary-700 transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                      Anterior
+                    </button>
+                    <span className="text-sm text-secondary-600">
+                      Página {page} de {totalPages}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setPage((currentPage) => Math.min(totalPages, currentPage + 1))}
+                      disabled={page >= totalPages}
+                      className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/70 px-4 py-2 text-sm font-medium text-secondary-700 transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      Siguiente
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                )}
+              </>
+            )}
+          </>
+        ) : (
+          <>
+            <div className="mb-8 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+              <div>
+                <button
+                  type="button"
+                  onClick={clearBrand}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 transition-colors hover:text-primary-900"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Volver a marcas
+                </button>
+                <h3 className="mt-3 text-2xl font-semibold text-secondary-900">
+                  {selectedBrand?.name ?? 'Productos de la marca'}
+                </h3>
+                <p className="mt-1 text-secondary-600">
+                  {totalCount} {hasActiveSearch ? 'productos encontrados' : 'productos relacionados con esta marca'}
+                </p>
+              </div>
+
+              <div className="w-full xl:max-w-3xl">
+                <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
+                  <div>
+                    <label
+                      htmlFor="catalog-product-search"
+                      className="mb-2 block text-sm font-medium text-secondary-700"
+                    >
+                      Buscar productos
+                    </label>
+                    <div className="relative">
+                      <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
+                      <input
+                        id="catalog-product-search"
+                        type="text"
+                        value={searchInput}
+                        onChange={(event) => setSearchInput(event.target.value)}
+                        placeholder="Buscar por código, descripción, modelo o submodelo"
+                        className="w-full rounded-full border border-white/50 bg-white/70 px-5 py-3 pl-11 pr-12 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200"
+                      />
+                      {searchInput && (
+                        <button
+                          type="button"
+                          onClick={() => setSearchInput('')}
+                          className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-secondary-500 transition-colors hover:bg-white hover:text-secondary-700"
+                          aria-label="Limpiar búsqueda"
+                        >
+                          <X className="h-4 w-4" />
+                        </button>
+                      )}
+                    </div>
+                    <p className="mt-2 text-xs text-secondary-500">
+                      {searchHelperText}
+                    </p>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="catalog-submodel-filter"
+                      className="mb-2 block text-sm font-medium text-secondary-700"
+                    >
+                      Filtrar por submodelo
+                    </label>
+                    <div className="relative">
+                      <select
+                        id="catalog-submodel-filter"
+                        value={selectedSubModel}
+                        onChange={(event) => updateSubModelFilter(event.target.value)}
+                        disabled={subModelsLoading}
+                        className="w-full appearance-none rounded-full border border-white/50 bg-white/70 px-4 py-3 pr-11 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:cursor-wait disabled:opacity-70"
+                      >
+                        <option value="">Todos los submodelos</option>
+                        {subModels.map((subModel) => (
+                          <option key={subModel} value={subModel}>
+                            {subModel}
+                          </option>
+                        ))}
+                      </select>
+                      <ChevronDown className="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
+                    </div>
+                    <p className="mt-2 text-xs text-secondary-500">
+                      {subModelsLoading
+                        ? 'Cargando submodelos...'
+                        : `${subModels.length} submodelos disponibles`}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {showInitialProductSkeleton ? (
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {Array.from({ length: PAGE_SIZE }).map((_, index) => (
+                  <article
+                    key={`product-skeleton-${index}`}
+                    className="overflow-hidden rounded-2xl border border-white/40 bg-white/50 ring-1 ring-white/20 ring-inset backdrop-blur-2xl"
+                  >
+                    <div className="aspect-[10/5] bg-white/40" />
+                    <div className="space-y-3 p-5">
+                      <div className="h-6 w-24 animate-pulse rounded-full bg-primary-100/70" />
+                      <div className="h-6 w-3/4 animate-pulse rounded-full bg-secondary-200/70" />
+                      <div className="h-4 w-2/3 animate-pulse rounded-full bg-secondary-200/60" />
+                      <div className="h-4 w-full animate-pulse rounded-full bg-secondary-200/50" />
+                      <div className="h-4 w-5/6 animate-pulse rounded-full bg-secondary-200/40" />
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : !showProductsGrid ? (
+              <div className="flex items-center justify-center py-20">
+                <div className="max-w-md text-center">
+                  <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-white/50 backdrop-blur-sm">
+                    <PackageSearch className="h-10 w-10 text-secondary-400" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-secondary-900">
+                    No se encontraron productos
+                  </h4>
+                  <p className="mt-2 text-secondary-600">
+                    {hasActiveSearch
+                      ? `No encontramos productos para "${selectedSearch}".`
+                      : 'Esta marca no tiene productos visibles en este momento.'}
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="relative" aria-busy={showProductsOverlay}>
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    {products.map((product) => {
+                      const imageUrl = getProductImage(product);
+
+                      return (
+                        <button
+                          key={product.id}
+                          type="button"
+                          onClick={() => setPreviewProduct(product)}
+                          data-gsap-catalog="product-card"
+                          className="overflow-hidden rounded-2xl border border-white/40 bg-white/50 text-left ring-1 ring-white/20 ring-inset backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:shadow-glass"
+                        >
+                          <div className="relative aspect-[10/5] overflow-hidden bg-white/30">
+                            {imageUrl ? (
+                              <img
+                                src={imageUrl}
+                                alt={getProductTitle(product)}
+                                className="absolute top-1/2 left-0 w-full -translate-y-1/2"
+                              />
+                            ) : (
+                              <div className="flex h-full w-full items-center justify-center">
+                                <Image
+                                  src="/rhino-logo.png"
+                                  alt="Sin imagen disponible"
+                                  width={312}
+                                  height={78}
+                                  className="object-contain opacity-35 grayscale"
+                                />
+                              </div>
+                            )}
+                          </div>
+                          <div className="p-5">
+                            {!selectedBrandId && product.primary_brand?.name && (
+                              <p className="text-xs font-semibold tracking-[0.14em] text-primary-700 uppercase">
+                                {product.primary_brand.name}
+                              </p>
+                            )}
                             <h4 className="text-lg font-semibold text-secondary-900">
                               {getProductTitle(product)}
                             </h4>
