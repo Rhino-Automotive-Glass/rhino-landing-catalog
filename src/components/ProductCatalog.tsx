@@ -22,6 +22,9 @@ import type {
 } from '@/lib/types';
 
 const PAGE_SIZE = 16;
+const CONNECTION_WARNING_TEXT = 'Tu conexion, tiene problemas.';
+const CONNECTION_WARNING_VISIBLE_MS = 2600;
+const CONNECTION_WARNING_FADE_MS = 500;
 
 const BRAND_LOGOS: Record<string, string> = {
   Changan: '/brands/changan.png',
@@ -59,6 +62,8 @@ function getProductPreviewTitle(product: ProductWithSource): string {
 
 export function ProductCatalog() {
   const sectionRef = useRef<HTMLElement>(null);
+  const connectionWarningFadeTimeoutRef = useRef<number | null>(null);
+  const connectionWarningHideTimeoutRef = useRef<number | null>(null);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -75,6 +80,7 @@ export function ProductCatalog() {
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
   const [previewProduct, setPreviewProduct] = useState<ProductWithSource | null>(null);
+  const [connectionWarningState, setConnectionWarningState] = useState<'hidden' | 'visible' | 'fading'>('hidden');
 
   const selectedBrand = useMemo(
     () => brands.find((brand) => brand.id === selectedBrandId) ?? null,
@@ -82,6 +88,45 @@ export function ProductCatalog() {
   );
   const hasActiveSearch = selectedSearch.trim().length > 0;
   const shouldShowProductResults = Boolean(selectedBrandId || hasActiveSearch);
+
+  function clearConnectionWarningTimers() {
+    if (connectionWarningFadeTimeoutRef.current !== null) {
+      window.clearTimeout(connectionWarningFadeTimeoutRef.current);
+      connectionWarningFadeTimeoutRef.current = null;
+    }
+
+    if (connectionWarningHideTimeoutRef.current !== null) {
+      window.clearTimeout(connectionWarningHideTimeoutRef.current);
+      connectionWarningHideTimeoutRef.current = null;
+    }
+  }
+
+  function showConnectionWarning() {
+    setConnectionWarningState('visible');
+    clearConnectionWarningTimers();
+
+    connectionWarningFadeTimeoutRef.current = window.setTimeout(() => {
+      setConnectionWarningState('fading');
+    }, CONNECTION_WARNING_VISIBLE_MS);
+
+    connectionWarningHideTimeoutRef.current = window.setTimeout(() => {
+      setConnectionWarningState('hidden');
+      clearConnectionWarningTimers();
+    }, CONNECTION_WARNING_VISIBLE_MS + CONNECTION_WARNING_FADE_MS);
+  }
+
+  useEffect(() => {
+    const handleOffline = () => {
+      showConnectionWarning();
+    };
+
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('offline', handleOffline);
+      clearConnectionWarningTimers();
+    };
+  }, []);
 
   useEffect(() => {
     setBrandsLoading(true);
@@ -94,7 +139,10 @@ export function ProductCatalog() {
         }
         setBrands(Array.isArray(json.brands) ? json.brands : []);
       })
-      .catch(() => setBrands([]))
+      .catch(() => {
+        setBrands([]);
+        showConnectionWarning();
+      })
       .finally(() => setBrandsLoading(false));
   }, []);
 
@@ -145,6 +193,7 @@ export function ProductCatalog() {
         }
 
         setSubModels([]);
+        showConnectionWarning();
       })
       .finally(() => {
         if (!controller.signal.aborted) {
@@ -207,6 +256,7 @@ export function ProductCatalog() {
 
         setProducts([]);
         setTotalCount(0);
+        showConnectionWarning();
       })
       .finally(() => {
         if (!controller.signal.aborted) {
@@ -391,6 +441,23 @@ export function ProductCatalog() {
       <div data-gsap="parallax-blob" className="absolute -bottom-40 -right-40 h-[550px] w-[550px] rounded-full bg-accent-300/30 blur-3xl" />
       <div data-gsap="parallax-blob" className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-200/25 blur-3xl" />
 
+      <div className="pointer-events-none fixed inset-x-0 bottom-6 z-[75] flex justify-center px-4">
+        <div
+          role="status"
+          aria-live="polite"
+          aria-hidden={connectionWarningState === 'hidden'}
+          className={`rounded-2xl border border-red-300/80 bg-red-600/90 px-6 py-4 text-base font-semibold text-white shadow-xl shadow-red-900/25 ring-1 ring-red-100/40 backdrop-blur-xl transition-all duration-500 md:text-lg ${
+            connectionWarningState === 'visible'
+              ? 'translate-y-0 opacity-100'
+              : connectionWarningState === 'fading'
+                ? 'translate-y-2 opacity-0'
+                : 'translate-y-4 opacity-0'
+          }`}
+        >
+          {CONNECTION_WARNING_TEXT}
+        </div>
+      </div>
+
       <div className="relative z-10 mx-auto max-w-7xl container-padding">
         <div data-gsap="section-heading" className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-secondary-900 md:text-4xl">
@@ -399,6 +466,39 @@ export function ProductCatalog() {
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-secondary-600">
             Explora primero las marcas disponibles y luego consulta todos los cristales
             relacionados con la marca seleccionada en el mismo catálogo.
+          </p>
+        </div>
+
+        <div data-gsap="reveal-card" className="mx-auto mb-10 w-full max-w-2xl">
+          <label
+            htmlFor="catalog-product-search"
+            className="mb-2 block text-center text-sm font-medium text-secondary-700"
+          >
+            Buscar productos
+          </label>
+          <div className="relative">
+            <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
+            <input
+              id="catalog-product-search"
+              type="text"
+              value={searchInput}
+              onChange={(event) => setSearchInput(event.target.value)}
+              placeholder="Buscar por código, descripción, modelo o submodelo"
+              className="w-full rounded-full border border-white/50 bg-white/70 px-5 py-3 pl-11 pr-12 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200"
+            />
+            {searchInput && (
+              <button
+                type="button"
+                onClick={() => setSearchInput('')}
+                className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-secondary-500 transition-colors hover:bg-white hover:text-secondary-700"
+                aria-label="Limpiar búsqueda"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+          <p className="mt-2 text-center text-xs text-secondary-500">
+            {searchHelperText}
           </p>
         </div>
 
@@ -412,39 +512,6 @@ export function ProductCatalog() {
                 {hasActiveSearch
                   ? `${totalCount} productos encontrados en todas las marcas.`
                   : 'Selecciona una marca para ver todos los productos relacionados.'}
-              </p>
-            </div>
-
-            <div data-gsap="reveal-card" className="mx-auto mb-8 w-full max-w-2xl">
-              <label
-                htmlFor="catalog-product-search"
-                className="mb-2 block text-center text-sm font-medium text-secondary-700"
-              >
-                Buscar productos
-              </label>
-              <div className="relative">
-                <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
-                <input
-                  id="catalog-product-search"
-                  type="text"
-                  value={searchInput}
-                  onChange={(event) => setSearchInput(event.target.value)}
-                  placeholder="Buscar por código, descripción, modelo o submodelo"
-                  className="w-full rounded-full border border-white/50 bg-white/70 px-5 py-3 pl-11 pr-12 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200"
-                />
-                {searchInput && (
-                  <button
-                    type="button"
-                    onClick={() => setSearchInput('')}
-                    className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-secondary-500 transition-colors hover:bg-white hover:text-secondary-700"
-                    aria-label="Limpiar búsqueda"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                )}
-              </div>
-              <p className="mt-2 text-center text-xs text-secondary-500">
-                {searchHelperText}
               </p>
             </div>
 
@@ -639,7 +706,7 @@ export function ProductCatalog() {
           </>
         ) : (
           <>
-            <div className="mb-8 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+            <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <button
                   type="button"
@@ -657,72 +724,35 @@ export function ProductCatalog() {
                 </p>
               </div>
 
-              <div className="w-full xl:max-w-3xl">
-                <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
-                  <div>
-                    <label
-                      htmlFor="catalog-product-search"
-                      className="mb-2 block text-sm font-medium text-secondary-700"
-                    >
-                      Buscar productos
-                    </label>
-                    <div className="relative">
-                      <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
-                      <input
-                        id="catalog-product-search"
-                        type="text"
-                        value={searchInput}
-                        onChange={(event) => setSearchInput(event.target.value)}
-                        placeholder="Buscar por código, descripción, modelo o submodelo"
-                        className="w-full rounded-full border border-white/50 bg-white/70 px-5 py-3 pl-11 pr-12 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200"
-                      />
-                      {searchInput && (
-                        <button
-                          type="button"
-                          onClick={() => setSearchInput('')}
-                          className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-secondary-500 transition-colors hover:bg-white hover:text-secondary-700"
-                          aria-label="Limpiar búsqueda"
-                        >
-                          <X className="h-4 w-4" />
-                        </button>
-                      )}
-                    </div>
-                    <p className="mt-2 text-xs text-secondary-500">
-                      {searchHelperText}
-                    </p>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="catalog-submodel-filter"
-                      className="mb-2 block text-sm font-medium text-secondary-700"
-                    >
-                      Filtrar por submodelo
-                    </label>
-                    <div className="relative">
-                      <select
-                        id="catalog-submodel-filter"
-                        value={selectedSubModel}
-                        onChange={(event) => updateSubModelFilter(event.target.value)}
-                        disabled={subModelsLoading}
-                        className="w-full appearance-none rounded-full border border-white/50 bg-white/70 px-4 py-3 pr-11 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:cursor-wait disabled:opacity-70"
-                      >
-                        <option value="">Todos los submodelos</option>
-                        {subModels.map((subModel) => (
-                          <option key={subModel} value={subModel}>
-                            {subModel}
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronDown className="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
-                    </div>
-                    <p className="mt-2 text-xs text-secondary-500">
-                      {subModelsLoading
-                        ? 'Cargando submodelos...'
-                        : `${subModels.length} submodelos disponibles`}
-                    </p>
-                  </div>
+              <div className="w-full sm:max-w-sm">
+                <label
+                  htmlFor="catalog-submodel-filter"
+                  className="mb-2 block text-sm font-medium text-secondary-700"
+                >
+                  Filtrar por submodelo
+                </label>
+                <div className="relative">
+                  <select
+                    id="catalog-submodel-filter"
+                    value={selectedSubModel}
+                    onChange={(event) => updateSubModelFilter(event.target.value)}
+                    disabled={subModelsLoading}
+                    className="w-full appearance-none rounded-full border border-white/50 bg-white/70 px-4 py-3 pr-11 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:cursor-wait disabled:opacity-70"
+                  >
+                    <option value="">Todos los submodelos</option>
+                    {subModels.map((subModel) => (
+                      <option key={subModel} value={subModel}>
+                        {subModel}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
                 </div>
+                <p className="mt-2 text-xs text-secondary-500">
+                  {subModelsLoading
+                    ? 'Cargando submodelos...'
+                    : `${subModels.length} submodelos disponibles`}
+                </p>
               </div>
             </div>
 
@@ -795,19 +825,18 @@ export function ProductCatalog() {
                             )}
                           </div>
                           <div className="p-5">
-                            {!selectedBrandId && product.primary_brand?.name && (
+                            {/* {!selectedBrandId && product.primary_brand?.name && (
                               <p className="text-xs font-semibold tracking-[0.14em] text-primary-700 uppercase">
                                 {product.primary_brand.name}
                               </p>
-                            )}
+                            )} */}
                             <h4 className="text-lg font-semibold text-secondary-900">
-                              {getProductTitle(product)}
+                            {product.product_codes?.description_data?.generated ?? 'Sin descripción generada'}
                             </h4>
                             <p className="mt-2 text-sm text-secondary-600">
                               {product.product_codes?.product_code_data?.generated ?? 'Sin código generado'}
                             </p>
                             <p className="mt-1 text-sm text-secondary-500">
-                              {product.product_codes?.description_data?.generated ?? 'Sin descripción generada'}
                             </p>
                             {product.additional_brands.length > 0 && (
                               <p className="mt-3 text-sm text-secondary-500">
