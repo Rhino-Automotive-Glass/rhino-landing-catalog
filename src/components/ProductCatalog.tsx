@@ -13,6 +13,7 @@ import {
   Search,
   X,
 } from 'lucide-react';
+import { getCatalogImageSrc } from '@/lib/catalog-image';
 import type {
   Brand,
   BrandListResponse,
@@ -611,7 +612,7 @@ export function ProductCatalog() {
                           <div className="relative aspect-[10/5] overflow-hidden bg-white/30">
                             {imageUrl ? (
                               <img
-                                src={imageUrl}
+                                src={getCatalogImageSrc(imageUrl)}
                                 alt={getProductTitle(product)}
                                 className="absolute top-1/2 left-0 w-full -translate-y-1/2"
                               />
@@ -808,7 +809,7 @@ export function ProductCatalog() {
                           <div className="relative aspect-[10/5] overflow-hidden bg-white/30">
                             {imageUrl ? (
                               <img
-                                src={imageUrl}
+                                src={getCatalogImageSrc(imageUrl)}
                                 alt={getProductTitle(product)}
                                 className="absolute top-1/2 left-0 w-full -translate-y-1/2"
                               />
@@ -938,7 +939,7 @@ export function ProductCatalog() {
               <div className="relative h-[72vh] min-h-[420px] overflow-hidden rounded-2xl bg-white/85">
                 {getProductImage(previewProduct) ? (
                   <Image
-                    src={getProductImage(previewProduct)!}
+                    src={getCatalogImageSrc(getProductImage(previewProduct))}
                     alt={getProductPreviewTitle(previewProduct)}
                     fill
                     className="object-contain"
