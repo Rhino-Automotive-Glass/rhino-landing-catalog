@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import { getCatalogImageSrc } from '@/lib/catalog-image';
+import { getProductDisplayName, getProductDisplayYear } from '@/lib/product-display';
 import type {
   Brand,
   BrandListResponse,
@@ -54,11 +55,15 @@ function getBrandLogo(brandName: string): string | null {
 }
 
 function getProductTitle(product: ProductWithSource): string {
-  return [product.model, product.subModel].filter(Boolean).join(' ') || 'Producto sin modelo';
+  return getProductDisplayName(product);
 }
 
 function getProductPreviewTitle(product: ProductWithSource): string {
-  return product.product_codes?.description_data?.generated ?? getProductTitle(product);
+  return getProductDisplayName(product);
+}
+
+function getProductYear(product: ProductWithSource): string | null {
+  return getProductDisplayYear(product);
 }
 
 export function ProductCatalog() {
@@ -600,6 +605,8 @@ export function ProductCatalog() {
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {products.map((product) => {
                       const imageUrl = getProductImage(product);
+                      const displayName = getProductTitle(product);
+                      const displayYear = getProductYear(product);
 
                       return (
                         <button
@@ -613,7 +620,7 @@ export function ProductCatalog() {
                             {imageUrl ? (
                               <img
                                 src={getCatalogImageSrc(imageUrl)}
-                                alt={getProductTitle(product)}
+                                alt={displayName}
                                 className="absolute top-1/2 left-0 w-full -translate-y-1/2"
                               />
                             ) : (
@@ -635,8 +642,13 @@ export function ProductCatalog() {
                               </p>
                             )}
                             <h4 className="mt-2 text-lg font-semibold text-secondary-900">
-                              {product.product_codes?.description_data?.generated ?? 'Sin descripción generada'}
+                              {displayName}
                             </h4>
+                            {displayYear && (
+                              <p className="mt-1 text-sm font-medium text-secondary-600">
+                                {displayYear}
+                              </p>
+                            )}
                             <p className="mt-1 text-sm text-secondary-500">
                               {product.product_codes?.product_code_data?.generated ?? 'Sin código generado'}
                             </p>
@@ -797,6 +809,8 @@ export function ProductCatalog() {
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {products.map((product) => {
                       const imageUrl = getProductImage(product);
+                      const displayName = getProductTitle(product);
+                      const displayYear = getProductYear(product);
 
                       return (
                         <button
@@ -810,7 +824,7 @@ export function ProductCatalog() {
                             {imageUrl ? (
                               <img
                                 src={getCatalogImageSrc(imageUrl)}
-                                alt={getProductTitle(product)}
+                                alt={displayName}
                                 className="absolute top-1/2 left-0 w-full -translate-y-1/2"
                               />
                             ) : (
@@ -832,8 +846,13 @@ export function ProductCatalog() {
                               </p>
                             )} */}
                             <h4 className="text-lg font-semibold text-secondary-900">
-                            {product.product_codes?.description_data?.generated ?? 'Sin descripción generada'}
+                              {displayName}
                             </h4>
+                            {displayYear && (
+                              <p className="mt-1 text-sm font-medium text-secondary-600">
+                                {displayYear}
+                              </p>
+                            )}
                             <p className="mt-2 text-sm text-secondary-600">
                               {product.product_codes?.product_code_data?.generated ?? 'Sin código generado'}
                             </p>
@@ -930,6 +949,11 @@ export function ProductCatalog() {
               <h4 className="line-clamp-2 text-xl leading-tight font-semibold text-secondary-900">
                 {getProductPreviewTitle(previewProduct)}
               </h4>
+              {getProductYear(previewProduct) && (
+                <p className="mt-1 text-sm font-medium text-secondary-600">
+                  {getProductYear(previewProduct)}
+                </p>
+              )}
               <p className="mt-1 truncate text-sm text-secondary-600">
                 {previewProduct.product_codes?.product_code_data?.generated ?? 'Sin código generado'}
               </p>
