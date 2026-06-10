@@ -1,16 +1,19 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { startTransition, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowLeft,
+  BookOpen,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
   Loader2,
   PackageSearch,
   Search,
+  Tags,
   X,
 } from 'lucide-react';
 import { getCatalogImageSrc } from '@/lib/catalog-image';
@@ -19,11 +22,13 @@ import type {
   Brand,
   BrandListResponse,
   PaginatedResponse,
+  ProductGroup,
   ProductWithSource,
   SubModelListResponse,
 } from '@/lib/types';
 
 const PAGE_SIZE = 16;
+const GROUP_PAGE_SIZE = 12;
 const CONNECTION_WARNING_TEXT = 'Tu conexion, tiene problemas.';
 const CONNECTION_WARNING_VISIBLE_MS = 2600;
 const CONNECTION_WARNING_FADE_MS = 500;
@@ -66,6 +71,12 @@ function getProductYear(product: ProductWithSource): string | null {
   return getProductDisplayYear(product);
 }
 
+function formatGroupYears(group: ProductGroup): string {
+  if (!group.year_start && !group.year_end) return 'Todos los años';
+  if (group.year_start && group.year_end) return `${group.year_start}-${group.year_end}`;
+  return String(group.year_start ?? group.year_end);
+}
+
 export function ProductCatalog() {
   const sectionRef = useRef<HTMLElement>(null);
   const connectionWarningFadeTimeoutRef = useRef<number | null>(null);
@@ -76,12 +87,17 @@ export function ProductCatalog() {
   const selectedBrandId = searchParams.get('brand') ?? '';
   const selectedSubModel = searchParams.get('subModel') ?? '';
   const selectedSearch = searchParams.get('search') ?? '';
+  const selectedTab = searchParams.get('tab') === 'vehicle' ? 'vehicle' : 'brand';
   const [brands, setBrands] = useState<Brand[]>([]);
   const [brandsLoading, setBrandsLoading] = useState(true);
   const [subModels, setSubModels] = useState<string[]>([]);
   const [subModelsLoading, setSubModelsLoading] = useState(false);
   const [products, setProducts] = useState<ProductWithSource[]>([]);
   const [productsLoading, setProductsLoading] = useState(false);
+  const [vehicleGroups, setVehicleGroups] = useState<ProductGroup[]>([]);
+  const [vehicleGroupCount, setVehicleGroupCount] = useState(0);
+  const [vehicleGroupPage, setVehicleGroupPage] = useState(1);
+  const [vehicleGroupsLoading, setVehicleGroupsLoading] = useState(false);
   const [searchInput, setSearchInput] = useState(selectedSearch);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
@@ -93,7 +109,8 @@ export function ProductCatalog() {
     [brands, selectedBrandId]
   );
   const hasActiveSearch = selectedSearch.trim().length > 0;
-  const shouldShowProductResults = Boolean(selectedBrandId || hasActiveSearch);
+  const isVehicleTab = selectedTab === 'vehicle';
+  const shouldShowProductResults = selectedTab === 'brand' && Boolean(selectedBrandId || hasActiveSearch);
 
   function clearConnectionWarningTimers() {
     if (connectionWarningFadeTimeoutRef.current !== null) {
@@ -154,7 +171,7 @@ export function ProductCatalog() {
 
   useEffect(() => {
     setPage(1);
-  }, [selectedBrandId, selectedSearch, selectedSubModel]);
+  }, [selectedBrandId, selectedSearch, selectedSubModel, selectedTab]);
 
   useEffect(() => {
     setSearchInput(selectedSearch);
@@ -174,7 +191,7 @@ export function ProductCatalog() {
   }, [previewProduct]);
 
   useEffect(() => {
-    if (!selectedBrandId) {
+    if (selectedTab !== 'brand' || !selectedBrandId) {
       setSubModels([]);
       setSubModelsLoading(false);
       return undefined;
@@ -210,7 +227,7 @@ export function ProductCatalog() {
     return () => {
       controller.abort();
     };
-  }, [selectedBrandId]);
+  }, [selectedBrandId, selectedTab]);
 
   useEffect(() => {
     if (!shouldShowProductResults) {
@@ -275,13 +292,60 @@ export function ProductCatalog() {
     };
   }, [page, selectedBrandId, selectedSearch, selectedSubModel, shouldShowProductResults]);
 
+  useEffect(() => {
+    if (!isVehicleTab) {
+      setVehicleGroupsLoading(false);
+      return undefined;
+    }
+
+    const controller = new AbortController();
+    setVehicleGroupsLoading(true);
+
+    fetch(`/api/product-groups?page=${vehicleGroupPage}&pageSize=${GROUP_PAGE_SIZE}`, {
+      signal: controller.signal,
+    })
+      .then(async (response) => {
+        const json = (await response.json()) as PaginatedResponse<ProductGroup> & {
+          error?: string;
+        };
+
+        if (!response.ok) {
+          throw new Error(json.error ?? 'Failed to load vehicle groups');
+        }
+
+        setVehicleGroups(Array.isArray(json.data) ? json.data : []);
+        setVehicleGroupCount(typeof json.count === 'number' ? json.count : 0);
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === 'AbortError') {
+          return;
+        }
+
+        setVehicleGroups([]);
+        setVehicleGroupCount(0);
+        showConnectionWarning();
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) {
+          setVehicleGroupsLoading(false);
+        }
+      });
+
+    return () => {
+      controller.abort();
+    };
+  }, [isVehicleTab, vehicleGroupPage]);
+
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
+  const vehicleGroupPages = Math.max(1, Math.ceil(vehicleGroupCount / GROUP_PAGE_SIZE));
   const emptySlotCount = Math.max(0, PAGE_SIZE - products.length);
+  const emptyGroupSlotCount = Math.max(0, GROUP_PAGE_SIZE - vehicleGroups.length);
   const showInitialProductSkeleton = productsLoading && products.length === 0;
   const showProductsGrid = products.length > 0;
   const showProductsOverlay = productsLoading && products.length > 0;
   const brandAnimationKey = brands.map(({ id }) => id).join(',');
   const productAnimationKey = products.map(({ id }) => id).join(',');
+  const groupAnimationKey = vehicleGroups.map(({ id }) => id).join(',');
 
   useEffect(() => {
     if (!sectionRef.current) {
@@ -292,11 +356,17 @@ export function ProductCatalog() {
       return undefined;
     }
 
-    const selector = shouldShowProductResults
+    const selector = isVehicleTab
+      ? '[data-gsap-catalog="group-card"]'
+      : shouldShowProductResults
       ? '[data-gsap-catalog="product-card"]'
       : '[data-gsap-catalog="brand-card"]';
 
-    if ((!shouldShowProductResults && brandsLoading) || (shouldShowProductResults && productsLoading)) {
+    if (
+      (isVehicleTab && vehicleGroupsLoading) ||
+      (!isVehicleTab && !shouldShowProductResults && brandsLoading) ||
+      (!isVehicleTab && shouldShowProductResults && productsLoading)
+    ) {
       return undefined;
     }
 
@@ -357,14 +427,19 @@ export function ProductCatalog() {
   }, [
     brandAnimationKey,
     brandsLoading,
+    groupAnimationKey,
+    isVehicleTab,
     page,
     productAnimationKey,
     productsLoading,
     shouldShowProductResults,
+    vehicleGroupPage,
+    vehicleGroupsLoading,
   ]);
 
   function openBrand(brandId: string) {
     const params = new URLSearchParams(searchParams.toString());
+    params.set('tab', 'brand');
     params.set('brand', brandId);
     params.delete('subModel');
     router.push(`${pathname}?${params.toString()}#catalogo`);
@@ -372,6 +447,7 @@ export function ProductCatalog() {
 
   function clearBrand() {
     const params = new URLSearchParams(searchParams.toString());
+    params.set('tab', 'brand');
     params.delete('brand');
     params.delete('subModel');
     const query = params.toString();
@@ -380,6 +456,7 @@ export function ProductCatalog() {
 
   function updateSubModelFilter(nextSubModel: string) {
     const params = new URLSearchParams(searchParams.toString());
+    params.set('tab', 'brand');
 
     if (nextSubModel) {
       params.set('subModel', nextSubModel);
@@ -406,6 +483,7 @@ export function ProductCatalog() {
       setProductsLoading(true);
 
       const params = new URLSearchParams(searchParams.toString());
+      params.set('tab', 'brand');
 
       if (normalizedSearchInput) {
         params.set('search', normalizedSearchInput);
@@ -430,6 +508,29 @@ export function ProductCatalog() {
       window.clearTimeout(timeoutId);
     };
   }, [pathname, router, searchInput, searchParams, selectedBrandId, selectedSearch]);
+
+  function setCatalogTab(tab: 'brand' | 'vehicle') {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('tab', tab);
+
+    if (tab === 'vehicle') {
+      params.delete('brand');
+      params.delete('subModel');
+      params.delete('search');
+      params.delete('q');
+      setSearchInput('');
+      setPage(1);
+      setProducts([]);
+      setTotalCount(0);
+      setVehicleGroupPage(1);
+    }
+
+    if (tab === 'brand') {
+      setVehicleGroupPage(1);
+    }
+
+    router.push(`${pathname}?${params.toString()}#catalogo`);
+  }
 
   const searchHelperText = hasActiveSearch
     ? selectedBrandId
@@ -470,45 +571,198 @@ export function ProductCatalog() {
             Catálogo de Cristales para Vans y Autobuses
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-secondary-600">
-            Explora primero las marcas disponibles y luego consulta todos los cristales
-            relacionados con la marca seleccionada en el mismo catálogo.
+            Explora por marca o por vehículo y consulta los cristales relacionados
+            en el mismo catálogo.
           </p>
         </div>
 
-        <div data-gsap="reveal-card" className="mx-auto mb-10 w-full max-w-2xl">
-          <label
-            htmlFor="catalog-product-search"
-            className="mb-2 block text-center text-sm font-medium text-secondary-700"
+        <div data-gsap="reveal-card" className="mx-auto mb-8 flex w-fit rounded-full border border-white/50 bg-white/60 p-1 shadow-sm ring-1 ring-white/20 ring-inset backdrop-blur-2xl">
+          <button
+            type="button"
+            onClick={() => setCatalogTab('brand')}
+            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+              selectedTab === 'brand'
+                ? 'bg-primary-600 text-white shadow-sm'
+                : 'text-secondary-600 hover:bg-white/70 hover:text-secondary-900'
+            }`}
+            aria-pressed={selectedTab === 'brand'}
           >
-            Buscar productos
-          </label>
-          <div className="relative">
-            <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
-            <input
-              id="catalog-product-search"
-              type="text"
-              value={searchInput}
-              onChange={(event) => setSearchInput(event.target.value)}
-              placeholder="Buscar por código, descripción, modelo o submodelo"
-              className="w-full rounded-full border border-white/50 bg-white/70 px-5 py-3 pl-11 pr-12 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200"
-            />
-            {searchInput && (
-              <button
-                type="button"
-                onClick={() => setSearchInput('')}
-                className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-secondary-500 transition-colors hover:bg-white hover:text-secondary-700"
-                aria-label="Limpiar búsqueda"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            )}
-          </div>
-          <p className="mt-2 text-center text-xs text-secondary-500">
-            {searchHelperText}
-          </p>
+            <BookOpen className="h-4 w-4" />
+            Marca
+          </button>
+          <button
+            type="button"
+            onClick={() => setCatalogTab('vehicle')}
+            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+              selectedTab === 'vehicle'
+                ? 'bg-primary-600 text-white shadow-sm'
+                : 'text-secondary-600 hover:bg-white/70 hover:text-secondary-900'
+            }`}
+            aria-pressed={selectedTab === 'vehicle'}
+          >
+            <Tags className="h-4 w-4" />
+            Vehículo
+          </button>
         </div>
 
-        {!selectedBrandId ? (
+        {!isVehicleTab && (
+          <div data-gsap="reveal-card" className="mx-auto mb-10 w-full max-w-2xl">
+            <label
+              htmlFor="catalog-product-search"
+              className="mb-2 block text-center text-sm font-medium text-secondary-700"
+            >
+              Buscar productos
+            </label>
+            <div className="relative">
+              <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
+              <input
+                id="catalog-product-search"
+                type="text"
+                value={searchInput}
+                onChange={(event) => setSearchInput(event.target.value)}
+                placeholder="Buscar por código, descripción, modelo o submodelo"
+                className="w-full rounded-full border border-white/50 bg-white/70 px-5 py-3 pl-11 pr-12 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200"
+              />
+              {searchInput && (
+                <button
+                  type="button"
+                  onClick={() => setSearchInput('')}
+                  className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-secondary-500 transition-colors hover:bg-white hover:text-secondary-700"
+                  aria-label="Limpiar búsqueda"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+            <p className="mt-2 text-center text-xs text-secondary-500">
+              {searchHelperText}
+            </p>
+          </div>
+        )}
+
+        {isVehicleTab ? (
+          <>
+            <div data-gsap="reveal-card" className="mb-8 text-center">
+              <h3 className="text-2xl font-semibold text-secondary-900">
+                Explora por vehículo
+              </h3>
+              <p className="mt-2 text-secondary-600">
+                Selecciona una aplicación para ver los cristales relacionados.
+              </p>
+            </div>
+
+            {vehicleGroupsLoading ? (
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {Array.from({ length: GROUP_PAGE_SIZE }).map((_, index) => (
+                  <article
+                    key={`group-skeleton-${index}`}
+                    className="overflow-hidden rounded-2xl border border-white/40 bg-white/50 ring-1 ring-white/20 ring-inset backdrop-blur-2xl"
+                  >
+                    <div className="aspect-[16/9] bg-white/40" />
+                    <div className="space-y-3 p-5">
+                      <div className="h-4 w-20 animate-pulse rounded-full bg-primary-100/70" />
+                      <div className="h-6 w-3/4 animate-pulse rounded-full bg-secondary-200/70" />
+                      <div className="h-4 w-2/3 animate-pulse rounded-full bg-secondary-200/60" />
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : vehicleGroups.length === 0 ? (
+              <div className="flex items-center justify-center py-20">
+                <div className="max-w-md text-center">
+                  <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-white/50 backdrop-blur-sm">
+                    <Tags className="h-10 w-10 text-secondary-400" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-secondary-900">
+                    No hay vehículos publicados
+                  </h4>
+                  <p className="mt-2 text-secondary-600">
+                    Aún no hay grupos de vehículo disponibles en el catálogo.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {vehicleGroups.map((group) => (
+                    <Link
+                      key={group.id}
+                      href={`/catalog/groups/${group.slug}`}
+                      data-gsap-catalog="group-card"
+                      className="group overflow-hidden rounded-2xl border border-white/40 bg-white/50 text-left ring-1 ring-white/20 ring-inset backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:shadow-glass"
+                    >
+                      <div className="relative aspect-[16/9] overflow-hidden bg-white/30">
+                        <Image
+                          src={getCatalogImageSrc(group.images[0])}
+                          alt={group.name}
+                          fill
+                          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        />
+                      </div>
+                      <div className="p-5">
+                        <p className="text-xs font-semibold tracking-[0.14em] text-primary-700 uppercase">
+                          {group.brand?.name ?? 'Cualquier marca'}
+                        </p>
+                        <h4 className="mt-2 text-lg font-semibold text-secondary-900">
+                          {group.name}
+                        </h4>
+                        <p className="mt-2 text-sm text-secondary-600">
+                          {[group.sub_model, formatGroupYears(group)].filter(Boolean).join(' / ')}
+                        </p>
+                        {group.description && (
+                          <p className="mt-3 line-clamp-2 text-sm text-secondary-500">
+                            {group.description}
+                          </p>
+                        )}
+                      </div>
+                    </Link>
+                  ))}
+                  {Array.from({ length: emptyGroupSlotCount }).map((_, index) => (
+                    <article
+                      key={`group-placeholder-${index}`}
+                      aria-hidden="true"
+                      className="invisible overflow-hidden rounded-2xl border border-white/40 bg-white/50 ring-1 ring-white/20 ring-inset backdrop-blur-2xl"
+                    >
+                      <div className="aspect-[16/9]" />
+                      <div className="space-y-3 p-5">
+                        <div className="h-4 w-20 rounded-full" />
+                        <div className="h-6 w-3/4 rounded-full" />
+                        <div className="h-4 w-2/3 rounded-full" />
+                      </div>
+                    </article>
+                  ))}
+                </div>
+
+                {vehicleGroupPages > 1 && (
+                  <div className="mt-8 flex items-center justify-center gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setVehicleGroupPage((currentPage) => Math.max(1, currentPage - 1))}
+                      disabled={vehicleGroupPage <= 1}
+                      className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/70 px-4 py-2 text-sm font-medium text-secondary-700 transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                      Anterior
+                    </button>
+                    <span className="text-sm text-secondary-600">
+                      Página {vehicleGroupPage} de {vehicleGroupPages}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setVehicleGroupPage((currentPage) => Math.min(vehicleGroupPages, currentPage + 1))}
+                      disabled={vehicleGroupPage >= vehicleGroupPages}
+                      className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/70 px-4 py-2 text-sm font-medium text-secondary-700 transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      Siguiente
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                )}
+              </>
+            )}
+          </>
+        ) : !selectedBrandId ? (
           <>
             <div data-gsap="reveal-card" className="mb-8 text-center">
               <h3 className="text-2xl font-semibold text-secondary-900">

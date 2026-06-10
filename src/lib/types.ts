@@ -2,6 +2,7 @@ export type ProductImages = string[];
 
 export type ProductStatus = "draft" | "published" | "archived";
 export type ProductVisibilityStatus = ProductStatus | "hidden";
+export type ProductGroupStatus = ProductStatus;
 
 export type Brand = {
   id: string;
@@ -66,6 +67,40 @@ export type Product = {
 
 export type ProductWithSource = Product & {
   product_codes: ProductCode;
+};
+
+export type ProductGroup = {
+  id: string;
+  slug: string;
+  name: string;
+  description: string | null;
+  images: ProductImages;
+  brand_id: string | null;
+  brand: Brand | null;
+  model: string | null;
+  sub_model: string | null;
+  year_start: number | null;
+  year_end: number | null;
+  status: ProductGroupStatus;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+  product_count?: number;
+  featured_count?: number;
+};
+
+export type ProductGroupProduct = {
+  group_id: string;
+  product_id: string;
+  sort_order: number;
+  is_featured: boolean;
+  created_at: string;
+  product: ProductWithSource;
+};
+
+export type ProductGroupProductsResponse = {
+  data: ProductGroupProduct[];
+  count: number;
 };
 
 export type PaginatedResponse<T> = {
