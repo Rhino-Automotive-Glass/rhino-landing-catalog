@@ -9,6 +9,8 @@ type RawBrand = {
   name: string;
 };
 
+const CATALOG_INCLUDED_BRANDS = ["Nissan"];
+
 function unwrapRelation<T>(value: T | T[] | null | undefined): T | null {
   if (!value) return null;
   return Array.isArray(value) ? value[0] ?? null : value;
@@ -81,6 +83,24 @@ export async function GET(req: NextRequest) {
       from += batchSize;
     }
 
+    const { data: includedBrands, error: includedBrandsError } = await supabase
+      .from("brands")
+      .select("id, name")
+      .in("name", CATALOG_INCLUDED_BRANDS);
+
+    if (includedBrandsError) {
+      return NextResponse.json({ error: includedBrandsError.message }, { status: 500 });
+    }
+
+    for (const brand of includedBrands ?? []) {
+      if (brandCounts.has(brand.id)) continue;
+      brandCounts.set(brand.id, {
+        id: brand.id,
+        name: brand.name,
+        productCount: 0,
+      });
+    }
+
     const response = NextResponse.json<BrandListResponse>({
       brands: [...brandCounts.values()].sort((a, b) => a.name.localeCompare(b.name)),
     });
@@ -130,6 +150,48 @@ export async function GET(req: NextRequest) {
 
     const response = NextResponse.json<BrandListResponse>({
       brands: [...allBrands.values()].sort((a, b) => a.name.localeCompare(b.name)),
+    });
+    response.headers.set("X-RateLimit-Remaining", String(rl.remaining));
+    response.headers.set("X-RateLimit-Reset", String(rl.resetAt));
+    return response;
+  }
+
+  if (scope === "vehicle") {
+    const vehicleBrands = new Map<string, RawBrand>();
+    let from = 0;
+    const batchSize = 1000;
+
+    while (true) {
+      const { data, error } = await supabase
+        .from("product_groups")
+        .select(`
+          brand:brands!product_groups_brand_id_fkey (
+            id,
+            name
+          )
+        `)
+        .eq("status", "published")
+        .not("brand_id", "is", null)
+        .order("sort_order", { ascending: true })
+        .range(from, from + batchSize - 1);
+
+      if (error) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
+      }
+
+      for (const row of data ?? []) {
+        const brand = unwrapRelation(row.brand as RawBrand | RawBrand[] | null);
+        if (brand) {
+          vehicleBrands.set(brand.id, brand);
+        }
+      }
+
+      if (!data || data.length < batchSize) break;
+      from += batchSize;
+    }
+
+    const response = NextResponse.json<BrandListResponse>({
+      brands: [...vehicleBrands.values()].sort((a, b) => a.name.localeCompare(b.name)),
     });
     response.headers.set("X-RateLimit-Remaining", String(rl.remaining));
     response.headers.set("X-RateLimit-Reset", String(rl.resetAt));

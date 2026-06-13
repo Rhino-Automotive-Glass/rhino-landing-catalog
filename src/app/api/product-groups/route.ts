@@ -31,13 +31,20 @@ export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const page = Math.max(1, Number(searchParams.get("page") ?? 1));
   const pageSize = Math.min(100, Math.max(1, Number(searchParams.get("pageSize") ?? 24)));
+  const brandId = searchParams.get("brandId") ?? "";
   const from = (page - 1) * pageSize;
   const to = from + pageSize - 1;
 
-  const { data, error, count } = await supabase
+  let query = supabase
     .from("product_groups")
     .select(PRODUCT_GROUP_SELECT, { count: "exact" })
-    .eq("status", "published")
+    .eq("status", "published");
+
+  if (brandId && brandId !== "all") {
+    query = query.eq("brand_id", brandId);
+  }
+
+  const { data, error, count } = await query
     .order("sort_order", { ascending: true })
     .order("name", { ascending: true })
     .range(from, to);

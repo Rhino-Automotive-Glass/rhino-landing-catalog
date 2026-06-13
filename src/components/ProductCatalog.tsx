@@ -43,6 +43,7 @@ const BRAND_LOGOS: Record<string, string> = {
   JAC: '/brands/jac.png',
   Joylong: '/brands/joylong.png',
   'Mercedes-Benz': '/brands/mercedesbenz.png',
+  Nissan: '/brands/nissan.png',
   Peugeot: '/brands/peugeot.png',
   Ram: '/brands/ram.png',
   Renault: '/brands/renault.png',
@@ -90,6 +91,8 @@ export function ProductCatalog() {
   const selectedTab = searchParams.get('tab') === 'vehicle' ? 'vehicle' : 'brand';
   const [brands, setBrands] = useState<Brand[]>([]);
   const [brandsLoading, setBrandsLoading] = useState(true);
+  const [vehicleBrands, setVehicleBrands] = useState<Brand[]>([]);
+  const [vehicleBrandsLoading, setVehicleBrandsLoading] = useState(true);
   const [subModels, setSubModels] = useState<string[]>([]);
   const [subModelsLoading, setSubModelsLoading] = useState(false);
   const [products, setProducts] = useState<ProductWithSource[]>([]);
@@ -105,9 +108,25 @@ export function ProductCatalog() {
   const [connectionWarningState, setConnectionWarningState] = useState<'hidden' | 'visible' | 'fading'>('hidden');
 
   const selectedBrand = useMemo(
-    () => brands.find((brand) => brand.id === selectedBrandId) ?? null,
-    [brands, selectedBrandId]
+    () =>
+      vehicleBrands.find((brand) => brand.id === selectedBrandId) ??
+      brands.find((brand) => brand.id === selectedBrandId) ??
+      null,
+    [brands, selectedBrandId, vehicleBrands]
   );
+  const vehicleBrandOptions = useMemo(() => {
+    const options = new Map<string, Brand>();
+
+    for (const brand of vehicleBrands) {
+      options.set(brand.id, brand);
+    }
+
+    if (selectedBrand && !options.has(selectedBrand.id)) {
+      options.set(selectedBrand.id, selectedBrand);
+    }
+
+    return [...options.values()].sort((a, b) => a.name.localeCompare(b.name));
+  }, [selectedBrand, vehicleBrands]);
   const hasActiveSearch = selectedSearch.trim().length > 0;
   const isVehicleTab = selectedTab === 'vehicle';
   const shouldShowProductResults = selectedTab === 'brand' && Boolean(selectedBrandId || hasActiveSearch);
@@ -167,6 +186,24 @@ export function ProductCatalog() {
         showConnectionWarning();
       })
       .finally(() => setBrandsLoading(false));
+  }, []);
+
+  useEffect(() => {
+    setVehicleBrandsLoading(true);
+
+    fetch('/api/brands?scope=vehicle')
+      .then(async (response) => {
+        const json = (await response.json()) as BrandListResponse & { error?: string };
+        if (!response.ok) {
+          throw new Error(json.error ?? 'Failed to load vehicle brands');
+        }
+        setVehicleBrands(Array.isArray(json.brands) ? json.brands : []);
+      })
+      .catch(() => {
+        setVehicleBrands([]);
+        showConnectionWarning();
+      })
+      .finally(() => setVehicleBrandsLoading(false));
   }, []);
 
   useEffect(() => {
@@ -301,9 +338,16 @@ export function ProductCatalog() {
     const controller = new AbortController();
     setVehicleGroupsLoading(true);
 
-    fetch(`/api/product-groups?page=${vehicleGroupPage}&pageSize=${GROUP_PAGE_SIZE}`, {
-      signal: controller.signal,
-    })
+    const params = new URLSearchParams({
+      page: String(vehicleGroupPage),
+      pageSize: String(GROUP_PAGE_SIZE),
+    });
+
+    if (selectedBrandId) {
+      params.set('brandId', selectedBrandId);
+    }
+
+    fetch(`/api/product-groups?${params}`, { signal: controller.signal })
       .then(async (response) => {
         const json = (await response.json()) as PaginatedResponse<ProductGroup> & {
           error?: string;
@@ -334,7 +378,7 @@ export function ProductCatalog() {
     return () => {
       controller.abort();
     };
-  }, [isVehicleTab, vehicleGroupPage]);
+  }, [isVehicleTab, selectedBrandId, vehicleGroupPage]);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
   const vehicleGroupPages = Math.max(1, Math.ceil(vehicleGroupCount / GROUP_PAGE_SIZE));
@@ -468,6 +512,25 @@ export function ProductCatalog() {
     router.push(query ? `${pathname}?${query}#catalogo` : `${pathname}#catalogo`);
   }
 
+  function updateVehicleBrandFilter(nextBrandId: string) {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('tab', 'vehicle');
+    params.delete('subModel');
+    params.delete('search');
+    params.delete('q');
+
+    if (nextBrandId) {
+      params.set('brand', nextBrandId);
+    } else {
+      params.delete('brand');
+    }
+
+    setVehicleGroupPage(1);
+
+    const query = params.toString();
+    router.push(query ? `${pathname}?${query}#catalogo` : `${pathname}#catalogo`);
+  }
+
   useEffect(() => {
     const normalizedSearchInput = searchInput.trim();
     const normalizedSelectedSearch = selectedSearch.trim();
@@ -514,7 +577,6 @@ export function ProductCatalog() {
     params.set('tab', tab);
 
     if (tab === 'vehicle') {
-      params.delete('brand');
       params.delete('subModel');
       params.delete('search');
       params.delete('q');
@@ -571,7 +633,7 @@ export function ProductCatalog() {
             Catálogo de Cristales para Vans y Autobuses
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-secondary-600">
-            Explora por marca o por vehículo y consulta los cristales relacionados
+            Explora por marca o por vehículo y consulta los vidrios relacionados
             en el mismo catálogo.
           </p>
         </div>
@@ -642,17 +704,47 @@ export function ProductCatalog() {
 
         {isVehicleTab ? (
           <>
-            <div data-gsap="reveal-card" className="mb-8 text-center">
-              <h3 className="text-2xl font-semibold text-secondary-900">
-                Explora por vehículo
-              </h3>
-              <p className="mt-2 text-secondary-600">
-                Selecciona una aplicación para ver los cristales relacionados.
-              </p>
+            <div data-gsap="reveal-card" className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <div className="text-center md:text-left">
+                <h3 className="text-2xl font-semibold text-secondary-900">
+                  Explora por vehículo
+                </h3>
+                <p className="mt-2 text-secondary-600">
+                  {selectedBrand
+                    ? `Mostrando vehículos relacionados con ${selectedBrand.name}.`
+                    : 'Selecciona una camioneta para ver los vidrios relacionados.'}
+                </p>
+              </div>
+
+              <div className="mx-auto w-full max-w-sm md:mx-0">
+                <label
+                  htmlFor="catalog-vehicle-brand-filter"
+                  className="mb-2 block text-sm font-medium text-secondary-700"
+                >
+                  Filtrar por marca
+                </label>
+                <div className="relative">
+                  <select
+                    id="catalog-vehicle-brand-filter"
+                    value={selectedBrandId}
+                    onChange={(event) => updateVehicleBrandFilter(event.target.value)}
+                    disabled={vehicleBrandsLoading}
+                    className="w-full appearance-none rounded-full border border-white/50 bg-white/70 px-4 py-3 pr-11 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:cursor-wait disabled:opacity-70"
+                  >
+                    <option value="">Todas las marcas</option>
+                    {vehicleBrandOptions.map((brand) => (
+                      <option key={brand.id} value={brand.id}>
+                        {brand.name}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-secondary-500" />
+                </div>
+              </div>
             </div>
 
             {vehicleGroupsLoading ? (
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {Array.from({ length: GROUP_PAGE_SIZE }).map((_, index) => (
                   <article
                     key={`group-skeleton-${index}`}
@@ -674,16 +766,18 @@ export function ProductCatalog() {
                     <Tags className="h-10 w-10 text-secondary-400" />
                   </div>
                   <h4 className="text-xl font-semibold text-secondary-900">
-                    No hay vehículos publicados
+                    {selectedBrand ? 'No hay vehículos para esta marca' : 'No hay vehículos publicados'}
                   </h4>
                   <p className="mt-2 text-secondary-600">
-                    Aún no hay grupos de vehículo disponibles en el catálogo.
+                    {selectedBrand
+                      ? 'Prueba con otra marca o vuelve a ver todos los vehículos del catálogo.'
+                      : 'Aún no hay grupos de vehículo disponibles en el catálogo.'}
                   </p>
                 </div>
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {vehicleGroups.map((group) => (
                     <Link
                       key={group.id}
@@ -697,7 +791,7 @@ export function ProductCatalog() {
                           alt={group.name}
                           fill
                           className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                          sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         />
                       </div>
                       <div className="p-5">
