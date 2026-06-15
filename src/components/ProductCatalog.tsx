@@ -731,7 +731,9 @@ export function ProductCatalog() {
                     disabled={vehicleBrandsLoading}
                     className="w-full appearance-none rounded-full border border-white/50 bg-white/70 px-4 py-3 pr-11 text-sm text-secondary-700 shadow-sm transition-colors focus:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:cursor-wait disabled:opacity-70"
                   >
-                    <option value="">Todas las marcas</option>
+                    <option value="">
+                      {vehicleBrandsLoading ? "Cargando marcas…" : "Todas las marcas"}
+                    </option>
                     {vehicleBrandOptions.map((brand) => (
                       <option key={brand.id} value={brand.id}>
                         {brand.name}
