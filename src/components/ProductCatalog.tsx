@@ -804,7 +804,7 @@ export function ProductCatalog() {
                           {group.name}
                         </h4>
                         <p className="mt-2 text-sm text-secondary-600">
-                          {[group.sub_model, formatGroupYears(group)].filter(Boolean).join(' / ')}
+                          {[[group.sub_model, group.version, group.additional, group.other].filter(Boolean).join(' '), formatGroupYears(group)].filter(Boolean).join(' / ')}
                         </p>
                         {group.description && (
                           <p className="mt-3 line-clamp-2 text-sm text-secondary-500">
