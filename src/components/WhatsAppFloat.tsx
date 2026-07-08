@@ -29,7 +29,7 @@ export function WhatsAppFloat() {
         fixed bottom-6 right-6 z-50
         w-16 h-16 rounded-full
         bg-[#25D366] hover:bg-[#1ebe5b]
-        flex items-center justify-center
+        hidden md:flex items-center justify-center
         shadow-lg hover:shadow-xl
         transition-all duration-300
         ${visible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'}

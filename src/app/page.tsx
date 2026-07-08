@@ -6,8 +6,14 @@ import { FloatingHeader } from '@/components'
 import { Hero } from '@/components'
 // import { ThreeSixtyViewer } from '@/components'
 import { ContactForm } from '@/components'
+import { Testimonials } from '@/components'
+import { WhyRhino } from '@/components'
+import { Process } from '@/components'
+import { FAQ } from '@/components'
 import { Location } from '@/components'
 import { WhatsAppFloat } from '@/components'
+import { MobileCTABar } from '@/components'
+import { TrustStrip } from '@/components'
 import { BackToTop } from '@/components'
 import Image from 'next/image'
 import { trackEvent } from '@/lib/gtm'
@@ -57,6 +63,9 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
+      {/* Trust / Value Strip */}
+      <TrustStrip />
+
       {/* 360 Vehicle Viewer — commented out until real images are ready */}
       {/* <ThreeSixtyViewer /> */}
 
@@ -65,8 +74,20 @@ export default function Home() {
         <ProductCatalog />
       </Suspense>
 
+      {/* Why Rhino Section */}
+      <WhyRhino />
+
+      {/* How It Works Section */}
+      <Process />
+
       {/* Contact Section */}
       <ContactForm />
+
+      {/* Client Reviews Section */}
+      <Testimonials />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Video Section */}
       <section className="bg-gradient-to-b from-gray-300 via-gray-500 to-gray-300 flex items-center justify-center max-h-[42vh] overflow-hidden">
@@ -199,6 +220,7 @@ export default function Home() {
 
       {/* Floating elements */}
       <WhatsAppFloat />
+      <MobileCTABar />
       <BackToTop />
     </main>
   )

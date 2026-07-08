@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { CTAButton } from './CTAButton';
 
 interface FloatingHeaderProps {
@@ -9,12 +10,17 @@ interface FloatingHeaderProps {
 }
 
 export function FloatingHeader({ title }: FloatingHeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Catalog routes render over a light background, so the transparent header
+  // loses its white text. Force the dark/solid state there immediately.
+  const isScrolled = scrolled || pathname?.startsWith('/catalog') === true;
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 100);
+      setScrolled(scrollPosition > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
