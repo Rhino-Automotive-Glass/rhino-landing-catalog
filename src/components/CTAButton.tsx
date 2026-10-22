@@ -24,7 +24,11 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
     trackEvent('cta_click', {
       button_name: button_name || label,
       button_label: label,
-      destination: page_location,
+      contact_method: page_location.startsWith('tel:')
+        ? 'phone'
+        : page_location.startsWith('mailto:')
+          ? 'email'
+          : 'link',
     });
 
     if (page_location.startsWith('tel:') || page_location.startsWith('mailto:')) {

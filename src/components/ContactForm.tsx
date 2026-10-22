@@ -18,7 +18,7 @@ export function ContactForm() {
   useEffect(() => {
     if (!state.message) return;
 
-    trackEvent(state.success ? 'form_submit_success' : 'form_submit_error', {
+    trackEvent(state.success ? 'generate_lead' : 'form_submit_error', {
       button_name: 'Contact_Form_Submit',
     });
 
@@ -90,7 +90,7 @@ export function ContactForm() {
               </p>
               <a
                 href="tel:+525527488329"
-                onClick={() => trackEvent('cta_click', { button_name: 'Contact_Call_Now', button_label: 'Llamar Ahora', destination: 'tel:+525527488329' })}
+                onClick={() => trackEvent('cta_click', { button_name: 'Contact_Call_Now', button_label: 'Llamar Ahora', contact_method: 'phone' })}
                 className="btn btn-accent btn-lg inline-flex items-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
@@ -255,7 +255,7 @@ export function ContactForm() {
                 href={`https://wa.me/525527488329?text=${encodeURIComponent('Hola, quiero cotizar cristales para mi vehiculo.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackEvent('whatsapp_click', { button_name: 'Contact_Form_WhatsApp', destination: 'https://wa.me/525527488329' })}
+                onClick={() => trackEvent('whatsapp_click', { button_name: 'Contact_Form_WhatsApp', contact_method: 'whatsapp' })}
                 className="btn btn-lg w-full flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white"
               >
                 <svg viewBox="0 0 32 32" className="w-5 h-5 fill-white" aria-hidden="true">

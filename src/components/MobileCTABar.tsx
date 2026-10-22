@@ -34,7 +34,7 @@ export function MobileCTABar() {
     >
       <a
         href={`tel:${PHONE}`}
-        onClick={() => trackEvent('cta_click', { button_name: 'MobileBar_Call', destination: `tel:${PHONE}` })}
+        onClick={() => trackEvent('cta_click', { button_name: 'MobileBar_Call', contact_method: 'phone' })}
         className="flex items-center justify-center gap-2 py-4 text-white font-semibold"
       >
         <Phone className="w-5 h-5" aria-hidden="true" />
@@ -44,7 +44,7 @@ export function MobileCTABar() {
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => trackEvent('whatsapp_click', { button_name: 'MobileBar_WhatsApp', destination: waUrl })}
+        onClick={() => trackEvent('whatsapp_click', { button_name: 'MobileBar_WhatsApp', contact_method: 'whatsapp' })}
         className="flex items-center justify-center gap-2 py-4 bg-[#25D366] text-white font-semibold"
       >
         <svg viewBox="0 0 32 32" className="w-5 h-5 fill-white" aria-hidden="true">

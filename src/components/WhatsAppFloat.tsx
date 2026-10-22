@@ -24,7 +24,7 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Enviar mensaje por WhatsApp"
-      onClick={() => trackEvent('whatsapp_click', { button_name: 'WhatsApp_Float', destination: url })}
+      onClick={() => trackEvent('whatsapp_click', { button_name: 'WhatsApp_Float', contact_method: 'whatsapp' })}
       className={`
         fixed bottom-6 right-6 z-50
         w-16 h-16 rounded-full
