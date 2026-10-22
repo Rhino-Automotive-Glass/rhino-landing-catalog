@@ -40,7 +40,7 @@ export function Location() {
   };
 
   const handleCallBusiness = () => {
-    trackEvent('cta_click', { button_name: 'Location_Call', button_label: 'Llamar', destination: `tel:${businessInfo.phone}` });
+    trackEvent('cta_click', { button_name: 'Location_Call', button_label: 'Llamar', contact_method: 'phone' });
     window.location.href = `tel:${businessInfo.phone}`;
   };
 
@@ -214,6 +214,7 @@ export function Location() {
                     <p className="font-medium text-secondary-900">Teléfono</p>
                     <a 
                       href={`tel:${businessInfo.phone}`}
+                      onClick={() => trackEvent('cta_click', { button_name: 'Location_Contact_Phone', contact_method: 'phone' })}
                       className="text-primary-600 hover:text-primary-700 transition-colors"
                     >
                       {businessInfo.phone}
@@ -230,6 +231,7 @@ export function Location() {
                     <p className="font-medium text-secondary-900">Email</p>
                     <a 
                       href={`mailto:${businessInfo.email}`}
+                      onClick={() => trackEvent('cta_click', { button_name: 'Location_Contact_Email', contact_method: 'email' })}
                       className="text-primary-600 hover:text-primary-700 transition-colors"
                     >
                       {businessInfo.email}

@@ -3,6 +3,7 @@ import { getAgentById } from '@/data/agents';
 import Link from 'next/link';
 import { Phone, Mail, User, ArrowLeft } from 'lucide-react';
 import AgentPhoto from '@/components/agent/AgentPhoto';
+import { TrackedLink } from '@/components/TrackedLink';
 
 interface AgentPageProps {
   searchParams: Promise<{ id?: string }>;
@@ -144,8 +145,10 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
               </h2>
               
               {/* Phone */}
-              <a
+              <TrackedLink
                 href={`tel:${agent.phone}`}
+                analyticsEvent="cta_click"
+                analyticsParams={{ button_name: 'Agent_Phone', contact_method: 'phone' }}
                 className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md hover:bg-white/80 rounded-xl transition-all duration-200 group border border-white/40"
               >
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -155,11 +158,13 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
                   <p className="text-sm text-gray-600 font-medium">Teléfono</p>
                   <p className="text-lg font-semibold text-gray-900">{agent.phone}</p>
                 </div>
-              </a>
+              </TrackedLink>
 
               {/* Email */}
-              <a
+              <TrackedLink
                 href={`mailto:${agent.email}`}
+                analyticsEvent="cta_click"
+                analyticsParams={{ button_name: 'Agent_Email', contact_method: 'email' }}
                 className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md hover:bg-white/80 rounded-xl transition-all duration-200 group border border-white/40"
               >
                 <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -169,7 +174,7 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
                   <p className="text-sm text-gray-600 font-medium">Correo electrónico</p>
                   <p className="text-lg font-semibold text-gray-900 break-all">{agent.email}</p>
                 </div>
-              </a>
+              </TrackedLink>
             </div>
 
             {/* CTA Section */}
@@ -181,14 +186,19 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
                 <p className="text-blue-100 mb-4">
                   Contáctame para recibir la mejor atención y servicio profesional
                 </p>
-                <a
+                <TrackedLink
                   href={`https://wa.me/${agent.phone.replace(/[^0-9]/g, '')}`}
+                  analyticsEvent="whatsapp_click"
+                  analyticsParams={{
+                    button_name: 'Agent_WhatsApp',
+                    contact_method: 'whatsapp',
+                  }}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white text-blue-700 font-semibold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
                 >
                   Enviar WhatsApp
-                </a>
+                </TrackedLink>
               </div>
             </div>
           </div>
