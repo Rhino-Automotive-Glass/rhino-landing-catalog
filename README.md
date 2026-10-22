@@ -2,7 +2,7 @@
 
 # RhinoAGlass
 
-A modern Next.js 15 application built with TypeScript and Tailwind CSS.
+A modern Next.js 16 application built with TypeScript and Tailwind CSS.
 
 ## Getting Started
 
@@ -34,9 +34,45 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
+## Analytics
+
+PostHog initializes through `src/instrumentation-client.ts`, following the
+[PostHog Next.js integration](https://posthog.com/docs/libraries/next-js).
+Existing Google Tag Manager and Vercel Analytics tracking remain active.
+
+Set these variables in `.env.local` and in your deployment environment:
+
+```dotenv
+NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN=your_project_token
+NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+```
+
+Use your project's public project token, not a personal API key. For EU projects,
+use `https://eu.i.posthog.com`; self-hosted projects should use their ingestion URL.
+Restart development or rebuild/redeploy after changing these public variables.
+When the token is blank or missing, PostHog stays disabled.
+
+PostHog captures the initial pageview and client-side route changes, plus these
+explicit events through the existing `trackEvent` helper:
+
+- `cta_click`: call, email, directions, and other existing CTA clicks.
+- `whatsapp_click`: existing WhatsApp entry points.
+- `form_submit`: contact form submission attempted.
+- `form_submit_success`: the server accepted the contact form submission.
+- `form_submit_error`: the server rejected or failed the submission.
+
+Events retain existing properties such as `button_name`, `button_label`, and
+`destination`. Contact form values are never passed to the tracking helper.
+DOM autocapture, session recordings, and surveys are disabled.
+
+To verify, start the app with your PostHog variables, visit a page, navigate to
+another route, and click a tracked CTA. Check PostHog's live events for
+`$pageview` and the corresponding custom event. Without a configured token,
+verify that the browser makes no requests to PostHog.
+
 ## Features
 
-- ⚡ Next.js 15 with App Router
+- ⚡ Next.js 16 with App Router
 - 🎨 Tailwind CSS for styling
 - 📝 TypeScript for type safety
 - 🧹 ESLint for code quality

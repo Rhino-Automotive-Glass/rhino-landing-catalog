@@ -14,12 +14,18 @@ export function ContactForm() {
   const [state, formAction, isPending] = useActionState(sendContactEmail, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 
-  // Reset the form on success
+  // Track the server result without sending any contact details to analytics.
   useEffect(() => {
+    if (!state.message) return;
+
+    trackEvent(state.success ? 'form_submit_success' : 'form_submit_error', {
+      button_name: 'Contact_Form_Submit',
+    });
+
     if (state.success) {
       formRef.current?.reset();
     }
-  }, [state.success]);
+  }, [state]);
 
   return (
     <section id="contacto" className="section-padding hero-bg relative overflow-hidden scroll-mt-20">
