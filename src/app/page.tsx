@@ -213,7 +213,7 @@ export default function Home() {
           
           {/* Bottom Footer */}
           <div className="border-t border-secondary-700 mt-8 pt-8 text-center text-secondary-400">
-            <p>&copy; {new Date().getFullYear()} Rhino Automotive Glass Mexico. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Rhino Automotive Glass Mexico. Todos los derechos reservados. Desarrollado por <a href="https://brilliant.dev/" className="hover:text-accent-400 transition-colors">https://brilliant.dev/</a></p>
           </div>
         </div>
       </footer>
