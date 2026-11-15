@@ -1,21 +1,23 @@
 'use client';
 
 import type { AnchorHTMLAttributes, MouseEvent } from 'react';
-import { trackEvent } from '@/lib/gtm';
+import type { CtaLocation, CtaType } from '@/lib/analytics';
+import { trackCta } from '@/lib/gtm';
 
+/** Link that sends `cta_click` (client island, usable from server components). */
 interface TrackedLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  analyticsEvent: string;
-  analyticsParams?: Record<string, unknown>;
+  ctaType: CtaType;
+  ctaLocation: CtaLocation;
 }
 
 export function TrackedLink({
-  analyticsEvent,
-  analyticsParams,
+  ctaType,
+  ctaLocation,
   onClick,
   ...props
 }: TrackedLinkProps) {
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    trackEvent(analyticsEvent, analyticsParams);
+    trackCta(ctaType, ctaLocation, event.currentTarget.href);
     onClick?.(event);
   };
 

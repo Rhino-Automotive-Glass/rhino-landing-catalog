@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MapPin, Clock, Phone, Navigation, Car, Wrench } from 'lucide-react';
-import { trackEvent } from '@/lib/gtm';
+import { trackCta } from '@/lib/gtm';
 
 export function Location() {
   const businessInfo = {
@@ -35,12 +35,13 @@ export function Location() {
   ];
 
   const handleGetDirections = () => {
-    trackEvent('cta_click', { button_name: 'Location_Directions', button_label: 'Como Llegar', destination: 'google_maps' });
-    window.open('https://maps.app.goo.gl/nazGPfcAyHNGmv3h9', '_blank');
+    const mapsUrl = 'https://maps.app.goo.gl/nazGPfcAyHNGmv3h9';
+    trackCta('directions', 'location', mapsUrl);
+    window.open(mapsUrl, '_blank');
   };
 
   const handleCallBusiness = () => {
-    trackEvent('cta_click', { button_name: 'Location_Call', button_label: 'Llamar', contact_method: 'phone' });
+    trackCta('phone', 'location');
     window.location.href = `tel:${businessInfo.phone}`;
   };
 
@@ -214,7 +215,7 @@ export function Location() {
                     <p className="font-medium text-secondary-900">Teléfono</p>
                     <a 
                       href={`tel:${businessInfo.phone}`}
-                      onClick={() => trackEvent('cta_click', { button_name: 'Location_Contact_Phone', contact_method: 'phone' })}
+                      onClick={() => trackCta('phone', 'location')}
                       className="text-primary-600 hover:text-primary-700 transition-colors"
                     >
                       {businessInfo.phone}
@@ -231,7 +232,7 @@ export function Location() {
                     <p className="font-medium text-secondary-900">Email</p>
                     <a 
                       href={`mailto:${businessInfo.email}`}
-                      onClick={() => trackEvent('cta_click', { button_name: 'Location_Contact_Email', contact_method: 'email' })}
+                      onClick={() => trackCta('email', 'location')}
                       className="text-primary-600 hover:text-primary-700 transition-colors"
                     >
                       {businessInfo.email}

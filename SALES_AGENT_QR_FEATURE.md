@@ -121,35 +121,13 @@ The responsive layout is in `/src/app/agent/page.tsx`. It uses:
 - Gradient backgrounds
 - Rounded corners and shadows
 
-## 📊 Analytics (Future Enhancement)
+## 📊 Analytics
 
-To add analytics tracking when someone scans a QR code:
-
-### Option 1: Google Analytics
-```typescript
-// In /src/app/agent/page.tsx
-useEffect(() => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'qr_scan', {
-      agent_id: agent.id,
-      agent_name: agent.name
-    });
-  }
-}, [agent]);
-```
-
-### Option 2: Vercel Analytics
-Already available if you're using Vercel hosting - check your dashboard.
-
-### Option 3: Custom API Endpoint
-Create `/src/app/api/track/route.ts`:
-```typescript
-export async function POST(request: Request) {
-  const { agentId } = await request.json();
-  // Log to your database
-  return Response.json({ success: true });
-}
-```
+GA4 and PostHog already track the agent page: `page_view` with `page_type: agent`
+and `cta_click` (`cta_location: agent`) for phone, email and WhatsApp. The `?id=`
+agent code is stripped from URLs sent to GA. Do not call `window.gtag` directly or
+send agent names as event params; use `trackCta()` / `trackEvent()` from
+`src/lib/gtm.ts`. Details: `docs/google-analytics.md`.
 
 ## 🔧 Maintenance
 

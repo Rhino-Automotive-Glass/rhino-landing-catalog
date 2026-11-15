@@ -72,7 +72,7 @@ export function Hero() {
               <CTAButton
                 label="Cotizar Ahora"
                 page_location="tel:+525527488329"
-                button_name="Hero_CTA"
+                cta_location="hero"
                 variant="accent"
                 size="xl"
                 className="hover:scale-105"

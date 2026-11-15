@@ -98,7 +98,7 @@ export function FloatingHeader({ title }: FloatingHeaderProps) {
             <CTAButton 
               label="Llamar Ahora"
               page_location="tel:+525527488329"
-              button_name="Header_CTA"
+              cta_location="header"
               className={`
                 btn btn-md font-semibold transition-all duration-300
                 ${isScrolled 

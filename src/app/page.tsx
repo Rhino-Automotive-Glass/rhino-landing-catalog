@@ -16,7 +16,8 @@ import { MobileCTABar } from '@/components'
 import { TrustStrip } from '@/components'
 import { BackToTop } from '@/components'
 import Image from 'next/image'
-import { trackEvent } from '@/lib/gtm'
+import Link from 'next/link'
+import { trackCta } from '@/lib/gtm'
 import { useLandingAnimations } from '@/components/useLandingAnimations'
 
 function ProductCatalogFallback() {
@@ -187,19 +188,19 @@ export default function Home() {
               <div className="space-y-3 text-secondary-300">
                 <div>
                   <p className="font-medium text-white">Teléfono</p>
-                  <a href="tel:+525527488329" aria-label="Llamar a Rhino Automotive Glass" onClick={() => trackEvent('cta_click', { button_name: 'Footer_Phone', contact_method: 'phone' })} className="hover:text-accent-400 transition-colors">
+                  <a href="tel:+525527488329" aria-label="Llamar a Rhino Automotive Glass" onClick={() => trackCta('phone', 'footer')} className="hover:text-accent-400 transition-colors">
                     +52 55 2748 8329
                   </a>
                 </div>
                 <div>
                   <p className="font-medium text-white">Email</p>
-                  <a href="mailto:info@rhinoautoglass.mx" aria-label="Enviar email a Rhino Automotive Glass" onClick={() => trackEvent('cta_click', { button_name: 'Footer_Email', contact_method: 'email' })} className="hover:text-accent-400 transition-colors">
+                  <a href="mailto:info@rhinoautoglass.mx" aria-label="Enviar email a Rhino Automotive Glass" onClick={() => trackCta('email', 'footer')} className="hover:text-accent-400 transition-colors">
                     info@rhinoautoglass.mx
                   </a>
                 </div>
                 <div>
                   <p className="font-medium text-white">WhatsApp</p>
-                  <a href="https://wa.me/525527488329" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_click', { button_name: 'Footer_WhatsApp', contact_method: 'whatsapp' })} className="hover:text-accent-400 transition-colors">
+                  <a href="https://wa.me/525527488329" target="_blank" rel="noopener noreferrer" onClick={() => trackCta('whatsapp', 'footer', 'https://wa.me/525527488329')} className="hover:text-accent-400 transition-colors">
                     +52 55 2748 8329
                   </a>
                 </div>
@@ -214,6 +215,7 @@ export default function Home() {
           {/* Bottom Footer */}
           <div className="border-t border-secondary-700 mt-8 pt-8 text-center text-secondary-400">
             <p>&copy; 2026 Rhino Automotive Glass Mexico. Todos los derechos reservados. Desarrollado por <a href="https://brilliant.dev/" className="hover:text-accent-400 transition-colors">https://brilliant.dev/</a></p>
+            <p className="mt-2"><Link href="/aviso-de-privacidad" className="hover:text-accent-400 transition-colors">Aviso de privacidad</Link></p>
           </div>
         </div>
       </footer>
