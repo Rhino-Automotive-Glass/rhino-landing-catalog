@@ -147,8 +147,8 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
               {/* Phone */}
               <TrackedLink
                 href={`tel:${agent.phone}`}
-                analyticsEvent="cta_click"
-                analyticsParams={{ button_name: 'Agent_Phone', contact_method: 'phone' }}
+                ctaType="phone"
+                ctaLocation="agent"
                 className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md hover:bg-white/80 rounded-xl transition-all duration-200 group border border-white/40"
               >
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -163,8 +163,8 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
               {/* Email */}
               <TrackedLink
                 href={`mailto:${agent.email}`}
-                analyticsEvent="cta_click"
-                analyticsParams={{ button_name: 'Agent_Email', contact_method: 'email' }}
+                ctaType="email"
+                ctaLocation="agent"
                 className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md hover:bg-white/80 rounded-xl transition-all duration-200 group border border-white/40"
               >
                 <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -188,11 +188,8 @@ export default async function AgentPage({ searchParams }: AgentPageProps) {
                 </p>
                 <TrackedLink
                   href={`https://wa.me/${agent.phone.replace(/[^0-9]/g, '')}`}
-                  analyticsEvent="whatsapp_click"
-                  analyticsParams={{
-                    button_name: 'Agent_WhatsApp',
-                    contact_method: 'whatsapp',
-                  }}
+                  ctaType="whatsapp"
+                  ctaLocation="agent"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white text-blue-700 font-semibold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"

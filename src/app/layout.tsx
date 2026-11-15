@@ -1,13 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import Script from 'next/script'
+import { PageAnalytics } from '@/components/analytics/PageAnalytics'
 import './globals.css'
-
-const GOOGLE_ANALYTICS_ID = 'G-P4B7CBWF83'
-// Load GA only on production deploys (skip localhost dev + Vercel previews).
-const GA_ENABLED =
-  process.env.VERCEL_ENV === 'production' || process.env.NEXT_PUBLIC_GA_DEBUG === '1'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -87,24 +82,6 @@ export default function RootLayout({
   return (
     <html lang="es" className={inter.variable}>
       <head>
-        {GA_ENABLED && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script
-              id="google-analytics"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `window.dataLayer = window.dataLayer || [];
-window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
-window.gtag('js', new Date());
-window.gtag('config', '${GOOGLE_ANALYTICS_ID}');`
-              }}
-            />
-          </>
-        )}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="geo.region" content="MX-MEX" />
         <meta name="geo.placename" content="Ciudad de México" />
@@ -257,6 +234,7 @@ window.gtag('config', '${GOOGLE_ANALYTICS_ID}');`
       </head>
       <body className={`${inter.className} font-sans antialiased`}>
         {children}
+        <PageAnalytics />
         <Analytics />
       </body>
     </html>

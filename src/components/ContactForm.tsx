@@ -2,7 +2,7 @@
 
 import React, { useActionState, useRef, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, XCircle } from 'lucide-react';
-import { trackEvent } from '@/lib/gtm';
+import { trackCta, trackEvent } from '@/lib/gtm';
 import { sendContactEmail, type ContactFormState } from '@/app/actions/send-contact-email';
 
 const initialState: ContactFormState = {
@@ -18,9 +18,12 @@ export function ContactForm() {
   useEffect(() => {
     if (!state.message) return;
 
-    trackEvent(state.success ? 'generate_lead' : 'form_submit_error', {
-      button_name: 'Contact_Form_Submit',
-    });
+    // generate_lead only after the server action confirmed the email was sent.
+    if (state.success) {
+      trackEvent('generate_lead', { form_name: 'contact' });
+    } else {
+      trackEvent('form_error', { form_name: 'contact', error_type: state.fieldErrors ? 'validation' : 'server' });
+    }
 
     if (state.success) {
       formRef.current?.reset();
@@ -90,7 +93,7 @@ export function ContactForm() {
               </p>
               <a
                 href="tel:+525527488329"
-                onClick={() => trackEvent('cta_click', { button_name: 'Contact_Call_Now', button_label: 'Llamar Ahora', contact_method: 'phone' })}
+                onClick={() => trackCta('phone', 'contact')}
                 className="btn btn-accent btn-lg inline-flex items-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
@@ -128,7 +131,7 @@ export function ContactForm() {
               </div>
             )}
 
-            <form ref={formRef} action={(formData) => { trackEvent('form_submit', { button_name: 'Contact_Form_Submit' }); formAction(formData); }} className="space-y-6">
+            <form ref={formRef} action={(formData) => { trackEvent('form_submit', { form_name: 'contact' }); formAction(formData); }} className="space-y-6">
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">
@@ -255,7 +258,7 @@ export function ContactForm() {
                 href={`https://wa.me/525527488329?text=${encodeURIComponent('Hola, quiero cotizar cristales para mi vehiculo.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackEvent('whatsapp_click', { button_name: 'Contact_Form_WhatsApp', contact_method: 'whatsapp' })}
+                onClick={(event) => trackCta('whatsapp', 'contact', event.currentTarget.href)}
                 className="btn btn-lg w-full flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#1ebe5b] text-white"
               >
                 <svg viewBox="0 0 32 32" className="w-5 h-5 fill-white" aria-hidden="true">

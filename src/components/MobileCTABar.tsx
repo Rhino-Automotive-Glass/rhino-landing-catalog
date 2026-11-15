@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Phone } from 'lucide-react';
-import { trackEvent } from '@/lib/gtm';
+import { trackCta } from '@/lib/gtm';
 
 const PHONE = '+525527488329';
 const WHATSAPP_NUMBER = '525527488329';
@@ -34,7 +34,7 @@ export function MobileCTABar() {
     >
       <a
         href={`tel:${PHONE}`}
-        onClick={() => trackEvent('cta_click', { button_name: 'MobileBar_Call', contact_method: 'phone' })}
+        onClick={() => trackCta('phone', 'mobile_bar')}
         className="flex items-center justify-center gap-2 py-4 text-white font-semibold"
       >
         <Phone className="w-5 h-5" aria-hidden="true" />
@@ -44,7 +44,7 @@ export function MobileCTABar() {
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => trackEvent('whatsapp_click', { button_name: 'MobileBar_WhatsApp', contact_method: 'whatsapp' })}
+        onClick={() => trackCta('whatsapp', 'mobile_bar', waUrl)}
         className="flex items-center justify-center gap-2 py-4 bg-[#25D366] text-white font-semibold"
       >
         <svg viewBox="0 0 32 32" className="w-5 h-5 fill-white" aria-hidden="true">

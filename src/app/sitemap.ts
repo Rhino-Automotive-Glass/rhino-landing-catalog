@@ -26,5 +26,11 @@ export default function sitemap() {
       changefreq: 'monthly' as const,
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/aviso-de-privacidad`,
+      lastModified: new Date(),
+      changefreq: 'yearly' as const,
+      priority: 0.2,
+    },
   ]
 }

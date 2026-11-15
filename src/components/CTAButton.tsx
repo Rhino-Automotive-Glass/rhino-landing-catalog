@@ -1,10 +1,13 @@
 import React from 'react';
-import { trackEvent } from '@/lib/gtm';
+import type { CtaLocation, CtaType } from '@/lib/analytics';
+import { trackCta } from '@/lib/gtm';
 
 interface CTAButtonProps {
   label: string;
   page_location: string;
-  button_name?: string;
+  cta_location: CtaLocation;
+  /** Defaults from the link scheme: tel → phone, mailto → email, wa.me → whatsapp. */
+  cta_type?: CtaType;
   className?: string;
   style?: React.CSSProperties;
   variant?: 'primary' | 'secondary' | 'accent' | 'ghost';
@@ -14,22 +17,20 @@ interface CTAButtonProps {
 export const CTAButton: React.FC<CTAButtonProps> = ({
   label = "Agenda una Visita",
   page_location = "tel:+525527488329",
-  button_name,
+  cta_location,
+  cta_type,
   className = "",
   style = {},
   variant = 'primary',
   size = 'md'
 }) => {
   const handleClick = () => {
-    trackEvent('cta_click', {
-      button_name: button_name || label,
-      button_label: label,
-      contact_method: page_location.startsWith('tel:')
-        ? 'phone'
-        : page_location.startsWith('mailto:')
-          ? 'email'
-          : 'link',
-    });
+    const type = cta_type
+      ?? (page_location.startsWith('tel:') ? 'phone'
+        : page_location.startsWith('mailto:') ? 'email'
+        : page_location.includes('wa.me/') ? 'whatsapp'
+        : undefined);
+    if (type) trackCta(type, cta_location, page_location);
 
     if (page_location.startsWith('tel:') || page_location.startsWith('mailto:')) {
       window.location.href = page_location;
